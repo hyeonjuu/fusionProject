@@ -1,11 +1,11 @@
-<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="source.UserDAO" %>
+<%@page import="java.io.PrintWriter"%>
+<%@page import="source.UserDAO" %>
 <% request.setCharacterEncoding("UTF-8"); %>
-<jsp:useBean id="Account" class="source.Account" scope="page"/>
-<jsp:setProperty name="Account" property="ID"/>
-<jsp:setProperty name="Account" property="PASSWORD"/>
+<jsp:useBean id="Account" class="source.Account" scope="page" />
+<jsp:setProperty name="Account" property="id"/>
+<jsp:setProperty name="Account" property="password"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +16,7 @@
 <%
 	UserDAO userDAO = new UserDAO();
 	PrintWriter script = response.getWriter();
-	int result = userDAO.login(Account.getID(),Account.getPASSWORD());
+	int result = userDAO.login(Account.getId(),Account.getPassword());
 	switch(result){
 	case 1:
 		

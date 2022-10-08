@@ -1,4 +1,4 @@
-<%@page import="java.io.PrintWriter"%>
+<%-- <%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="source.UserDAO" %>
@@ -7,9 +7,6 @@
 <jsp:setProperty name="Account" property="ID"/>
 <jsp:setProperty name="Account" property="PASSWORD"/>
 <jsp:setProperty name="Account" property="code"/>
-<jsp:useBean id="Bank" class="source.Bank" scope="page"/>
-<jsp:setProperty name="Bank" property="name"/>
-<jsp:setProperty name="Bank" property="rate"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,4 +40,4 @@
 	}
 %>
 </body>
-</html>
+</html> --%>

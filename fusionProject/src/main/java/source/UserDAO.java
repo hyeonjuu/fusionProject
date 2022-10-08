@@ -8,12 +8,13 @@ import java.sql.SQLIntegrityConstraintViolationException;
 
 public class UserDAO {
 	
-	private Connection conn = null;
-	private PreparedStatement pstmt; //������ ��� �� ����
-	private ResultSet rs; //�ᱣ��
+	private Connection conn;  //자바와 데이터베이스를 연결하는 Connection 객
+	private PreparedStatement pstmt; // 쿼리문 대기 및 설
+	private ResultSet rs; // 결괏값 받아오
 	
 	public UserDAO() {
-		//����̹� �˻� (db�� ���� �غ�)
+		// UserDAO가 실행되면 자동으로 생성되는 부분
+		// 메소드마다 반복되는 코드를 이곳에 넣
 		try {
 				Class.forName("oracle.jdbc.driver.OracleDriver");
 				String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -28,55 +29,34 @@ public class UserDAO {
 
 	}
 	
-	public int login(String Id, String Password) {
-		String sql =  "select PASSWORD from Account where ID = ?";
+	public int login(String id, String password) {
+		String sql =  "select password from Account where id = ?";
 		try{
-			pstmt = conn.prepareStatement(sql);  //sql ������ ���
-			pstmt.setString(1,Id);  // ù��° ? �� �Ű������� �޾ƿ� id�� ����
-			rs = pstmt.executeQuery(); //������ ������ ����� rs�� ����
+			pstmt = conn.prepareStatement(sql);  //sql 쿼리문을 대기시킨
+			pstmt.setString(1,id);  // 
+			rs = pstmt.executeQuery(); // 쿼리를 실행한 결과를 rs에 저 
+			System.out.println("성공?");			
 			if(rs.next()) { 
-				if(rs.getString(1).equals(Password)) {
-					return 1;  //�α��� ����
+				if(rs.getString(1).equals(password)) {  // 입력된 ID를 가진 Password 값을 가져온다.
+					return 1;  //같으면 1을 리턴 (비밀번호 일치)
 				}else {
-					return 0;  //��й�ȣ Ʋ��
+					return 0;  //틀리면 0을 리턴 (비밀번호 불 일치)
 				}
 			}
-			return -1;	//���̵� ����
+			return -1;	// rs.next()가 false (일치하는 아이디 없음)
 		} catch(Exception e){ 
 			e.printStackTrace();
 		}
-		return -2;  //����
+		return -2;  //아예 try문 오류 (데이터베이스 오류)
 	}
 		
-	public int join(Account account) {
-		String sql = "insert into ACCOUNT values(?,?,?)"; 
-		String code = "1234";
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,account.getID());
-			pstmt.setString(2, account.getPASSWORD());
-			if(account.getCode() == null) {
-			    account.setCode("");
-			}
-			if(account.getCode().equals(code)) {
-				account.setWHETHERADMIN(1);
-			}else {
-				account.setWHETHERADMIN(0);
-			}
-			pstmt.setInt(3,account.getWHETHERADMIN());
-
-			System.out.println("문제x"+account.getID());
-			return pstmt.executeUpdate();
-			
-		}
-//		catch(SQLIntegrityConstraintViolationException e) {
-//			System.out.println(account.getID());
-//		    return -1;
-//		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-		return -2;
+	public int SignUp(Account account, Member member) {
+		String sql;
+		
+		
+		
+		
+		return -1;
 	}
 	
 
