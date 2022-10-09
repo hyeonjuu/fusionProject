@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="login.jsp">·Î±×ÀÎ</a>
-	<a href="signUp.jsp">È¸¿ø°¡ÀÔ</a>
+	<a href="login.jsp">ë¡œê·¸ì¸</a>
+	<a href="signUp.jsp">íšŒì›ê°€ì…</a>
 </body>
 </html>
