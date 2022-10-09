@@ -1,18 +1,32 @@
 package source;
 
 public class Member {
+	private String no;
 	private String name;
+	private String id;
 	private String birth;
 	private String email;
 	private String tel;
 	private String addr;
 	private String gender;
 	private int rank;
+	public String getNo() {
+		return no;
+	}
+	public void setNo(String no) {
+		this.no = no;
+	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getBirth() {
 		return birth;
@@ -50,4 +64,6 @@ public class Member {
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
+	
+	
 }

@@ -50,11 +50,38 @@ public class UserDAO {
 		return -2;  //아예 try문 오류 (데이터베이스 오류)
 	}
 		
-	public int SignUp(Account account, Member member) {
-		String sql;
+	public int signUp(Account account, Member member) {
+		String sql = "insert int account value(?,?,?)";
+		String code = "1234";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,account.getId());
+			pstmt.setString(2,account.getPassword());
+			if(account.getCode().equals(code)) {
+				account.setWhetherAdmin(1);
+			}else {
+				account.setWhetherAdmin(0);
+			}
+			pstmt.setInt(3,account.getWhetherAdmin());	
+			return pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		
-		
-		
+		sql = "insert into member value(Member_seq.nextval,?,?,?,?,?,?,?)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,member.getName());
+			pstmt.setString(2,member.getId());
+			pstmt.setString(3,member.getBirth());
+			pstmt.setString(4,member.getEmail());
+			pstmt.setString(5,member.getAddr());
+			pstmt.setString(6,member.getGender());
+			pstmt.setString(7,member.getTel());
+			return pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		return -1;
 	}

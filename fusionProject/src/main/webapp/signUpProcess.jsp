@@ -1,12 +1,19 @@
-<%-- <%@page import="java.io.PrintWriter"%>
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="source.UserDAO" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="Account" class="source.Account" scope="page"/>
-<jsp:setProperty name="Account" property="ID"/>
-<jsp:setProperty name="Account" property="PASSWORD"/>
+<jsp:setProperty name="Account" property="id"/>
+<jsp:setProperty name="Account" property="password"/>
 <jsp:setProperty name="Account" property="code"/>
+<jsp:useBean id="Member" class="source.Member" scope="page"/>
+<jsp:setProperty name="Member" property="name"/>
+<jsp:setProperty name="Member" property="birth"/>
+<jsp:setProperty name="Member" property="gender"/>
+<jsp:setProperty name="Member" property="email"/>
+<jsp:setProperty name="Member" property="addr"/>
+<jsp:setProperty name="Member" property="tel"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,17 +23,17 @@
 <body>
 <%
 	PrintWriter script = response.getWriter();
-	if(Account.getID() == null || Account.getPASSWORD() == null){
+	if(Account.getId() == null || Account.getPassword() == null){
 		script.println("<script>");
 		script.println("alert('빈 칸 존재')");
 		script.println("history.back()");
 		script.println("</script>");
 	}else{
 	UserDAO userDAO = new UserDAO();
-	int result = userDAO.join(Account);
+	int result = userDAO.signUp(Account,Member);
 	if(result == -1){
 		script.println("<script>");
-		script.println("alert('아이디의 길이가 짧습니다.')");
+		script.println("alert('뭔가 오류')");
 		script.println("history.back()");
 		script.println("</script>");
 	}else{
@@ -40,4 +47,4 @@
 	}
 %>
 </body>
-</html> --%>
+</html>

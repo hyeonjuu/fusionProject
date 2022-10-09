@@ -56,12 +56,12 @@
     <div class="signup">
         <fieldset>
             <legend>회원가입</legend>
-            <form action="#" method="post" name="member">
+            <form action="signUpProcess.jsp" method="post" name="member">
                 <p>아이디</p>
                 <input type="text" class="form-control" name="id" maxlength="15" size="20" style="width: 50%; margin-left: 10%">
                 <br>
                 <p>비밀번호</p>
-                <input type="password" class="form-control" name="pw" maxlength="15" size="20" style="width: 50%; margin-left: 10%">
+                <input type="password" class="form-control" name="password" maxlength="15" size="20" style="width: 50%; margin-left: 10%">
                 <br>
                 <p>비밀번호 확인</p>
                 <input type="password" class="form-control" name="pwcheck" maxlength="15" size="20" style="width: 50%; margin-left: 10%">
@@ -70,6 +70,7 @@
                 <input type="text" class="form-control" name="name" maxlength="15" size="20" style="width: 50%; margin-left: 10%">
                 <br>
                 <p>생년월일</p>
+                <input type="text" name=birth">
                 <input type="text" class="form-control" name="year" maxlength="4" size="20" style="width: 5%; margin-left: 10%;"> 년
                 <select class="form-control" name="month" style="width: 5%; margin-left: 10%">
                     <option value="1">1월</option>
@@ -120,19 +121,19 @@
                 </select> 일
                 <br>
                 <p>성별</p>
-                남자 <input type="radio" name="male"> 여자 <input type="radio" name="female">
+                남자 <input type="radio" name="gender" value="male"> 여자 <input type="radio" name="gender" value="female">
                 <br>
                 <p>이메일</p>
                 <input type="text" class="form-control" name="email" maxlength="50" size="20" style="width: 50%; margin-left: 10%">
                 <br>
                 <p>주소</p>
-                <input type="text" class="form-control" name="address" maxlength="100" size="20" style="width: 50%; margin-left: 10%">
+                <input type="text" class="form-control" name="addr" maxlength="100" size="20" style="width: 50%; margin-left: 10%">
                 <br>
                 <p>핸드폰 번호</p>
                 <input type="tel" class="form-control" name="tel" maxlength="20" size="20" style="width: 50%; margin-left: 10%">
                 <br>
                 <p>관리자 번호</p>
-                <input type="text" class="form-control" name="admin_num" maxlength="15" size="20" style="width: 10%; margin-left: 10%">
+                <input type="text" class="form-control" name="code" maxlength="15" size="20" style="width: 10%; margin-left: 10%">
                 <br>
                 <input type="submit" class="btn btn-primary form-control" value="회원가입" style="width: 50%;">
             </form>
