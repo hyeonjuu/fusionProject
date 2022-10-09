@@ -30,7 +30,7 @@ public class UserDAO {
 	}
 	
 	public int login(String id, String password) {
-		String sql =  "select password from ACCOUNT where id = ?";
+		String sql =  "select \"password\" from ACCOUNT where \"id\" = ?";
 		try{
 			pstmt = conn.prepareStatement(sql);  //sql 쿼리문을 대기시킨
 			pstmt.setString(1,id);  // 
