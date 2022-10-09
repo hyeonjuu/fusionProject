@@ -50,9 +50,34 @@ public class UserDAO {
 		return -2;  //아예 try문 오류 (데이터베이스 오류)
 	}
 		
+	public int checkId(String s) {
+		String sql = "select \"id\" from account where \"id\" = ?"; //아이디 중복 체크
+		try {
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1,s); 
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			if(rs.getString(1).equals(s)){  // 입력된 ID값이 존재하나
+				return -2;  //아이디 중복 생성
+			}
+		}
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
 	public int signUp(Account account, Member member) {
-		String sql = "insert int account value(?,?,?)";
+		int checkId = checkId(account.getId());    //아이디 중복부터 체크한다.
+		if(checkId == -2) {
+			return -2;
+		}
+		String sql = "insert into account values(?,?,?)";
+		
+		
 		String code = "1234";
+		member.setId(account.getId());
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,account.getId());
@@ -63,13 +88,10 @@ public class UserDAO {
 				account.setWhetherAdmin(0);
 			}
 			pstmt.setInt(3,account.getWhetherAdmin());	
-			return pstmt.executeUpdate();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+			pstmt.executeQuery();
+			
+			sql = "insert into member values(Member_seq.nextval,?,?,?,?,?,?,?,?)";
 		
-		sql = "insert into member value(Member_seq.nextval,?,?,?,?,?,?,?)";
-		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,member.getName());
 			pstmt.setString(2,member.getId());
@@ -78,6 +100,8 @@ public class UserDAO {
 			pstmt.setString(5,member.getAddr());
 			pstmt.setString(6,member.getGender());
 			pstmt.setString(7,member.getTel());
+			member.setRank(1);
+			pstmt.setInt(8,member.getRank());
 			return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -85,7 +109,6 @@ public class UserDAO {
 		
 		return -1;
 	}
-	
 
 
 }

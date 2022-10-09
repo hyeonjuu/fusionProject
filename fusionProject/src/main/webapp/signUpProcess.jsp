@@ -36,7 +36,14 @@
 		script.println("alert('뭔가 오류')");
 		script.println("history.back()");
 		script.println("</script>");
-	}else{
+	}
+	if(result == -2){
+		script.println("<script>");
+		script.println("alert('아이디 중복')");
+		script.println("history.back()");
+		script.println("</script>");
+	}
+	else{
 		script.println("<script>");
 		script.println("alert('가입 성공')");
 		script.println("location.href='login.jsp'");

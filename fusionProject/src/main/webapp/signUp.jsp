@@ -11,6 +11,63 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/Login.css">
+    <script>
+    function check(){
+        var form = document.signUp;
+
+        if(form.id.value == ""){
+            alert("아이디를 입력하세요.");
+            form.id.focus();
+            return false;
+
+        }
+        var idlength = /^[a-zA-z0-9]{8,20}$/;  //정규식
+
+        if(!idlength.test(form.id.value)){
+            alert("아이디는 영문 대/소문자 8~20글자만 가능합니다.");
+            form.id.focus();
+            return false;
+        }
+        if (form.password.value == ""){
+            alert("비밀번호를 입력하세요.");
+            form.password.focus();
+            return false;
+        }
+        if(form.password.value != form.pwcheck.value){
+            alert("비밀번호가 틀립니다.");
+            return false;
+        }
+        if (form.name.value == ""){
+            alert("이름을 입력하세요.");
+            form.name.focus();
+            return false;
+        }
+        if (form.birth.value == ""){
+            alert("생년월일을 입력하세요.");
+            form.birth.focus();
+            return false;
+        }
+        if (form.gender.value == ""){
+            alert("성별을 선택하세요.");
+            return false;
+        }
+        if (form.email.value == ""){
+            alert("이메일을 입력하세요.");
+            form.email.focus();
+            return false;
+        }
+        if (form.addr.value == ""){
+            alert("주소를 입력하세요.");
+            form.addr.focus();
+            return false;
+        }
+        if (form.tel.value == ""){
+            alert("전화번호를 입력하세요.");
+            form.tel.focus();
+            return false;
+        }
+    }
+</script>
 </head>
 
 <body>
@@ -56,7 +113,7 @@
     <div class="signup">
         <fieldset>
             <legend>회원가입</legend>
-            <form action="signUpProcess.jsp" method="post" name="member">
+            <form action="signUpProcess.jsp" method="post" name="signUp" onsubmit="return check()">
                 <p>아이디</p>
                 <input type="text" class="form-control" name="id" maxlength="15" size="20" style="width: 50%; margin-left: 10%">
                 <br>
@@ -70,7 +127,7 @@
                 <input type="text" class="form-control" name="name" maxlength="15" size="20" style="width: 50%; margin-left: 10%">
                 <br>
                 <p>생년월일</p>
-                <input type="text" name=birth">
+                <input type="text" name="birth">
                 <input type="text" class="form-control" name="year" maxlength="4" size="20" style="width: 5%; margin-left: 10%;"> 년
                 <select class="form-control" name="month" style="width: 5%; margin-left: 10%">
                     <option value="1">1월</option>
