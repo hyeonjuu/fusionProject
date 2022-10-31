@@ -3,13 +3,16 @@
     pageEncoding="UTF-8"%>
 <%@ page import="source.UserDAO" %>
 <% request.setCharacterEncoding("UTF-8"); %>
+<jsp:useBean id="Account" class="source.Account" scope="page"/>
+<jsp:setProperty name="Account" property="id"/>
+<jsp:setProperty name="Account" property="password"/>
+<jsp:setProperty name="Account" property="code"/>
 <jsp:useBean id="Member" class="source.Member" scope="page"/>
-<jsp:setProperty name="Member" property="id"/>
 <jsp:setProperty name="Member" property="name"/>
-<jsp:setProperty name="Member" property="password"/>
 <jsp:setProperty name="Member" property="birth"/>
 <jsp:setProperty name="Member" property="gender"/>
 <jsp:setProperty name="Member" property="email"/>
+<jsp:setProperty name="Member" property="addr"/>
 <jsp:setProperty name="Member" property="tel"/>
 <!DOCTYPE html>
 <html>
@@ -20,9 +23,14 @@
 <body>
 <%
 	PrintWriter script = response.getWriter();
-	
+	if(Account.getId() == null || Account.getPassword() == null){
+		script.println("<script>");
+		script.println("alert('빈 칸 존재')");
+		script.println("history.back()");
+		script.println("</script>");
+	}else{
 	UserDAO userDAO = new UserDAO();
-	int result = userDAO.signUp(Member);
+	int result = userDAO.signUp(Account,Member);
 	if(result == -1){
 		script.println("<script>");
 		script.println("alert('뭔가 오류')");
@@ -43,7 +51,7 @@
 			
 		
 		}
-	
+	}
 %>
 </body>
 </html>

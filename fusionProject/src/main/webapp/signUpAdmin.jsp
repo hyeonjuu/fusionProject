@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/SignUp.css">
-    <script src="signUp.js"></script>
+    <script src="js/signUp.js"></script>
 </head>
 
 <body>
@@ -56,8 +56,8 @@
     <!--main-->
     <div class="signup">
         <fieldset>
-            <legend>회원가입</legend>
-            <form action="signUpProcess.jsp" method="post" name="Member">
+            <legend>관리자 회원가입</legend>
+            <form action="signUpProcessAdmin.js" method="post" name="Admin">
                 <div class="join_content">
                     <div class="join_row_group">
                         <h3 class="join_title">
@@ -120,6 +120,15 @@
                                 <input type="text" id="email" name="email" class="int" maxlength="100">
                             </span> 
                         </div>
+                        <!--주소-->
+                        <div class="join_row join_address">
+                            <h3 class="join_title">
+                                <label for="addr">주소</label>
+                            </h3>
+                            <span class="ps_box box_right_space">
+                                <input type="text" id="addr" name="addr" class="int" maxlength="100">
+                            </span>
+                        </div>
                         <!--전화번호-->
                         <div class="join_row join_tel">
                             <h3 class="join_title">
@@ -141,9 +150,9 @@
                     <div class="join_row_group">
                         <!--버튼-->
                         <div class="btn_area">
-                            <input type="submit" id="btnJoin" class="btn_type btn_primary" value="회원가입">
-                
-
+                            <button type="button" id="btnJoin" class="btn_type btn_primary">
+                                <span>회원가입</span>
+                            </button>
                         </div>
                     </div>
                 </div>
