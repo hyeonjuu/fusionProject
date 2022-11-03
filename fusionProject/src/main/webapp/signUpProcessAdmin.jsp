@@ -30,7 +30,7 @@
 		script.println("</script>");
 	}else{
 	UserDAO userDAO = new UserDAO();
-	int result = userDAO.signUp(Account,Member);
+	int result = userDAO.signUp(Admin);
 	if(result == -1){
 		script.println("<script>");
 		script.println("alert('뭔가 오류')");

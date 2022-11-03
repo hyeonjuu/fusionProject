@@ -1,5 +1,5 @@
 function check(){
-    var form = document.signUp;
+    var form = document.mSignUp;
 
     if(form.id.value == ""){
         alert("아이디를 입력하세요.");
@@ -43,14 +43,10 @@ function check(){
         form.email.focus();
         return false;
     }
-    if (form.addr.value == ""){
-        alert("주소를 입력하세요.");
-        form.addr.focus();
-        return false;
-    }
     if (form.tel.value == ""){
         alert("전화번호를 입력하세요.");
         form.tel.focus();
         return false;
     }
+    return true;
 }

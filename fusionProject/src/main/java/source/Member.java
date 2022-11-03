@@ -4,6 +4,7 @@ public class Member {
 	private String no;
 	private String name;
 	private String id;
+	private String password;
 	private String birth;
 	private String email;
 	private String tel;
@@ -27,6 +28,12 @@ public class Member {
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getBirth() {
 		return birth;

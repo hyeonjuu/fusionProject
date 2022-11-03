@@ -68,36 +68,18 @@ public class UserDAO {
 		return 0;
 	}
 	
-	public int signUp(Account account, Member member) {
-		int checkId = checkId(account.getId());    //아이디 중복부터 체크한다.
-		if(checkId == -2) {
-			return -2;
-		}
-		String sql = "insert into account values(?,?,?)";
+	public int signUp(Member member) {
 		
 		
-		String code = "1234";
-		member.setId(account.getId());
 		try {
+			String sql = "insert into member values(?,?,?,?,?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,account.getId());
-			pstmt.setString(2,account.getPassword());
-			if(account.getCode().equals(code)) {
-				account.setWhetherAdmin(1);
-			}else {
-				account.setWhetherAdmin(0);
-			}
-			pstmt.setInt(3,account.getWhetherAdmin());	
-			pstmt.executeQuery();
 			
-			sql = "insert into member values(Member_seq.nextval,?,?,?,?,?,?,?,?)";
-		
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,member.getName());
-			pstmt.setString(2,member.getId());
-			pstmt.setString(3,member.getBirth());
-			pstmt.setString(4,member.getEmail());
-			pstmt.setString(5,member.getAddr());
+			pstmt.setString(1,member.getId());
+			pstmt.setString(2,member.getName());
+			pstmt.setString(3,member.getPassword());
+			pstmt.setString(4,member.getBirth());
+			pstmt.setString(5,member.getEmail());
 			pstmt.setString(6,member.getGender());
 			pstmt.setString(7,member.getTel());
 			member.setRank(1);

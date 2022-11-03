@@ -11,7 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/SignUp.css">
-    <script src="signUp.js"></script>
+    <script type="text/javascript" src="./js/signUp.js?ver=1"></script>
+    
 </head>
 
 <body>
@@ -57,7 +58,7 @@
     <div class="signup">
         <fieldset>
             <legend>회원가입</legend>
-            <form action="signUpProcess.jsp" method="post" name="Member">
+            <form action="signUpProcess.jsp" method="post" name="mSignUp" onsubmit="return check()">
                 <div class="join_content">
                     <div class="join_row_group">
                         <h3 class="join_title">
