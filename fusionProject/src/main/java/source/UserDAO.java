@@ -30,7 +30,7 @@ public class UserDAO {
 	}
 	
 	public int login(String id, String password) {
-		String sql =  "select \"password\" from ACCOUNT where \"id\" = ?";
+		String sql =  "select \"password\" from Member where \"id\" = ?";
 		try{
 			pstmt = conn.prepareStatement(sql);  //sql 쿼리문을 대기시킨
 			pstmt.setString(1,id);  // 
@@ -68,10 +68,13 @@ public class UserDAO {
 		return 0;
 	}
 	
+
+	
 	public int signUp(Member member) {
 		
 		
 		try {
+			
 			String sql = "insert into member values(?,?,?,?,?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			

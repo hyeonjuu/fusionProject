@@ -25,7 +25,7 @@
 	int result = userDAO.signUp(Member);
 	if(result == -1){
 		script.println("<script>");
-		script.println("alert('뭔가 오류')");
+		script.println("alert('오류가 발생했습니다.')");
 		script.println("history.back()");
 		script.println("</script>");
 	}

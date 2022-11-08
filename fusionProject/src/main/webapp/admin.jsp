@@ -54,7 +54,7 @@ html {
 			<div class="ji">
 				<fieldset>
 					<legend>관리자 로그인</legend>
-					<form action="loginProcess.jsp" method="post" name="member">
+					<form action="adminProcess.jsp" method="post" name="member">
 						<input type="text" placeholder="ID" class="form-control" name="id"
 							maxlength="15" size="20" style="width: 50%; margin-left: 25%;">
 						<input type="password" placeholder="PW" class="form-control"
@@ -76,7 +76,7 @@ html {
 				</div>
 				<div class="bottomLine"></div>
 				<div class="signIn">
-					<a class="s-In" href="signUp.jsp">회원가입</a>
+					<a class="s-In" href="signUpAdmin.jsp">회원가입</a>
 				</div>
 			</div>
 		</div>

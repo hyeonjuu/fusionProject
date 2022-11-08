@@ -25,7 +25,7 @@
 		<div class="signup">
 			<fieldset>
 				<legend>관리자 회원가입</legend>
-				<form action="#" method="post" name="member">
+				<form action="signUpAdminProcess.jsp" method="post" name="member">
 					<div class="join_content">
 						<div class="join_row_group">
 							<h3 class="join_title">
@@ -39,7 +39,7 @@
 									<label for="pswd1">비밀번호</label>
 								</h3>
 								<span class="ps_box int_pass" id="pswd1Img"> <input
-									type="password" id="pswd1" name="pswd1" class="int"
+									type="password" id="pswd1" name="password" class="int"
 									title="비밀번호 입력" aria-describedby="pswd1Msg" maxlength="20">
 								</span>
 								<h3 class="join_title">
@@ -65,9 +65,9 @@
 								</h3>
 								<div class="bir_wrap">
 									<div class="bir_yy">
-										<span class="ps_box"> <input type="text" id="yy"
+										<span class="ps_box"> <input type="text" id="yy" name="birth"
 											placeholder="생년월일 6자리" aria-label="생년월일 6자리" class="int"
-											maxlength="4">
+											maxlength="6">
 										</span>
 									</div>
 								</div>
@@ -134,7 +134,7 @@
 									<label for="admin_code">관리자 번호</label>
 								</h3>
 								<span class="ps_box int_admin_code box_right_space"> <input
-									type="text" id="admin_code" name="admin_code" class="int"
+									type="text" id="admin_code" name="code" class="int"
 									maxlength="#">
 								</span>
 							</div>
