@@ -9,6 +9,8 @@ public class Admin {
 	private String email;
 	private String birth;
 	private String tel;
+	private String code;
+	
 	public String getId() {
 		return id;
 	}
@@ -57,6 +59,11 @@ public class Admin {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
 	
 }
