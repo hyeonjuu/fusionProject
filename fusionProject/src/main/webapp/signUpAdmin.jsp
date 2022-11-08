@@ -13,7 +13,7 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="/css/pagesignupadmin.css">
+<link rel="stylesheet" href="./css/pagesignupadmin.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 		<!--main-->
 		<div class="signup">
 			<fieldset>
-				<legend>회원가입</legend>
+				<legend>관리자 회원가입</legend>
 				<form action="#" method="post" name="member">
 					<div class="join_content">
 						<div class="join_row_group">
