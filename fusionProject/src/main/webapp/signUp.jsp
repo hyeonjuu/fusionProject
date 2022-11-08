@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,58 +7,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입 페이지</title>
+    <title>회원가입</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/SignUp.css">
-    <script type="text/javascript" src="./js/signUp.js?ver=1"></script>
-    
+    <link rel="stylesheet" href="./css/SignUp.css">
 </head>
 
 <body>
 <!--header-->
     <div class="main">
-        <nav class="navbar navbar-expand navbar-light" id="nav">
-            <div class="container-fluid" id="navbarLogo">
-                <a class="navbar-brand" href="#">KH개혁</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#" id="navMoeny">계좌</a>
-                        </li>
-                        <div class="line"></div>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="navGive">이체</a>
-                        </li>
-                        <div class="line"></div>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="navInfo">정보</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSIgn">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link ac" href="#" id="logIn">로그인</a>
-                        </li>
-                        <div class="line"></div>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="signIn">회원가입</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <%@ include file="nav.jsp"%>
 
     <!--main-->
     <div class="signup">
         <fieldset>
             <legend>회원가입</legend>
-            <form action="signUpProcess.jsp" method="post" name="mSignUp" onsubmit="return check()">
+            <form action="#" method="post" name="member">
                 <div class="join_content">
                     <div class="join_row_group">
                         <h3 class="join_title">
@@ -72,13 +36,13 @@
                                 <label for="pswd1">비밀번호</label>
                             </h3>
                             <span class="ps_box int_pass" id="pswd1Img">
-                                <input type="password" id="password" name="password" class="int" title="비밀번호 입력" aria-describedby="pswd1Msg" maxlength="20">
+                                <input type="password" id="pswd1" name="pswd1" class="int" title="비밀번호 입력" aria-describedby="pswd1Msg" maxlength="20">
                             </span>
                             <h3 class="join_title">
-                                <label for="password_check">비밀번호 재확인</label>
+                                <label for="pswd2">비밀번호 재확인</label>
                             </h3>
                             <span class="ps_box int_pass_check" id="pswd2Img">
-                                <input type="password" id="password_check" class="int" title="비밀번호 재확인" aria-describedby="pswd2Blind" maxlength="20">
+                                <input type="password" id="pswd2" class="int" title="비밀번호 재확인" aria-describedby="pswd2Blind" maxlength="20">
                             </span> 
                         </div>
                     </div>
@@ -95,9 +59,9 @@
                                 <label for="yy">생년월일</label>
                             </h3>
                             <div class="bir_wrap">
-                                <div class="birth">
+                                <div class="bir_yy">
                                     <span class="ps_box">
-                                        <input type="text" id="birth" name="birth" placeholder="ex) 000609" aria-label="ex) 000609" class="int" maxlength="6">
+                                        <input type="text" id="yy" placeholder="생년월일 6자리" aria-label="생년월일 6자리" class="int" maxlength="4">
                                     </span>
                                 </div>
                             </div>
@@ -132,19 +96,19 @@
                         </div>
                         <div class="join_row join_admin_code">
                             <h3 class="join_title">
-                                <label for="code">관리자 번호</label>
+                                <label for="admin_code">관리자 번호</label>
                             </h3>
                             <span class="ps_box int_admin_code box_right_space">
-                                <input type="text" id="code" name="code" class="int" maxlength="13">
+                                <input type="text" id="admin_code" name="admin_code" class="int" maxlength="#">
                             </span>
                         </div>
                     </div>
                     <div class="join_row_group">
                         <!--버튼-->
                         <div class="btn_area">
-                            <input type="submit" id="btnJoin" class="btn_type btn_primary" value="회원가입">
-                
-
+                            <button type="submit" id="btnJoin" class="btn_type btn_primary">
+                                <span>회원가입</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -152,17 +116,7 @@
         </fieldset>
     </div>
 
-<!--footer-->
-<footer class="bottom">
-    <div id="footer_logo">
-        <img src="./footer_logo.PNG" alt="아무튼 이미지임">
-    </div>
-    <p>
-        <span> 회사 주소 : 암튼 어딘가에 있어요. </span> <br>
-        <span> 회사 번호 : 032 - 987 - 6543 </span> <span> 대표 번호 : 010 - 1234 - 5678 </span> <br>
-        <span> Copyright KH Kaehyeok Bank. All Rights Reserved. </span>
-    </p>
-</footer>
+	<%@ include file="footer.jsp" %>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

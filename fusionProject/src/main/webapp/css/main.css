@@ -1,0 +1,50 @@
+
+.mainEvent {
+    padding: 15%;
+    background-color: aqua;
+    margin-top: 30px;
+}
+.mainAdd > p {
+    text-align: center;
+    margin: 40px;
+}
+.page-item {
+    color: black;
+}
+
+.paging {
+    text-align: center; font-size: 20px; 
+}
+.paging > li {
+    display: inline-block; vertical-align: middle; 
+}
+.paging > li > a {
+    display: block; width: 20px; height: 20px; line-height: 20px; color: black; text-decoration: none;
+}
+.paging > li > .on > a {
+    color: #ff7979;
+    text-decoration: underline;
+}
+.paging > li > a:hover {
+    color: #ff7979;
+    text-decoration: underline;
+}
+
+.mainMenu {
+    display: flex;
+}
+.box {
+    background-color: #d9d9d9;
+    margin: auto;
+    width: 33%;
+    height: 500px;
+}
+.boxHeader1 {
+    margin-right: 20px;
+}
+.boxHeader2 {
+    margin-right: 20px;
+}
+.bottom {
+    margin-top: 50px;
+}
