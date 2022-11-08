@@ -34,6 +34,7 @@
 						<div class="line"></div>
 						<li class="nav-item"><a class="nav-link" href="signUpTerms.jsp"
 							id="signIn">회원가입</a></li>
+							<li>ㅇㅇ</li>
 					</ul>
 				</div>
 			</div>
