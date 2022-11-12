@@ -3,9 +3,9 @@
 <%@page import="java.io.PrintWriter"%>
 <%@page import="source.UserDAO" %>
 <% request.setCharacterEncoding("UTF-8"); %>
-<jsp:useBean id="Account" class="source.Account" scope="page" />
-<jsp:setProperty name="Account" property="id"/>
-<jsp:setProperty name="Account" property="password"/>
+<jsp:useBean id="Member" class="source.Member" scope="page" />
+<jsp:setProperty name="Member" property="id"/>
+<jsp:setProperty name="Member" property="password"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,12 +14,25 @@
 </head>
 <body>
 <%
-	UserDAO userDAO = new UserDAO();
 	PrintWriter script = response.getWriter();
-	int result = userDAO.login(Account.getId(),Account.getPassword());
+	String userID = null;
+	if(session.getAttribute("userID") != null){
+		userID = (String)session.getAttribute("userID");
+	}
+	
+	if(userID != null){
+		script.println("<script>");
+		script.println("alert('이미 로그인 되어있습니다.')");
+		script.println("location.href='main.jsp'");
+		script.println("</script>");
+	}
+
+
+	UserDAO userDAO = new UserDAO();
+	int result = userDAO.login(Member.getId(),Member.getPassword());
 	switch(result){
 	case 1:
-		
+		session.setAttribute("userID", Member.getId());
 		script.println("<script>");
 		script.println("alert('로그인 성공')");
 		script.println("location.href='main.jsp'");
