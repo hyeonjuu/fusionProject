@@ -45,8 +45,8 @@
 							id="signIn">회원가입</a></li>
 							<%} else{
 								%>
-						<li class="nav-item"><a class="nav-link" href="login.jsp"
-							id="logIn">홍길동님 어서옵쇼.</a></li>
+						<li class="nav-item"><a class="nav-link" href="changeInfo.jsp"
+							id="logIn"><%=session.getAttribute("userID") %>님 어서오세요.</a></li>
 						<div class="line"></div>
 						<li class="nav-item"><a class="nav-link" href="logout.jsp"
 							id="signIn">로그아웃</a></li>

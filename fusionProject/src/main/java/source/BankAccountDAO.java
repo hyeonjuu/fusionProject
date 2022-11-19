@@ -33,29 +33,24 @@ public class BankAccountDAO {
 
 	
 	
-	public int bankAccountCreate(BankAccount ba, String id) {
+	public int create(BankAccount ba, String id) {
 		String sql = "select id from Member where id = ?";
-		LocalDate now = LocalDate.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
-		int count = countRow();
+		
 		try {
-			String sql = "insert into bank_account values(TO_CHAR(SYSDATE,'YYYYMMDD')||LPAD(:SEQ_NO, 3, '0') SEQ FROM DUAL,?,?,?,?,?,?,?)";
+			sql = "insert into bank_account values('1234'||LPAD(BA_SEQ.NEXTVAL,7,'0'),'개혁은행',?,?,?,?,?,?,SYSDATE)";
+			//insert into bank_account values(TO_CHAR(SYSDATE,'YYYYMMDD')||LPAD(BA_SEQ.NEXTVAL,7,'0'),'개혁은행','test1234','1234',0,1,'개혁예적금','대기',SYSDATE);
 			pstmt = conn.prepareStatement(sql);
-
-			
-			System.out.println("성공?");
-			if (rs.next()) {
-				if (rs.getString(1).equals(id)) { // 입력된 ID를 가진 Password 값을 가져온다.
-					return 1; // 같으면 1을 리턴 (비밀번호 일치)
-				} else {
-					return 0; // 틀리면 0을 리턴 (비밀번호 불 일치)
-				}
-			}
-			return -1; // rs.next()가 false (일치하는 아이디 없음)
-		} catch (Exception e) {
+			pstmt.setString(1,id);
+			pstmt.setString(2, ba.getPassword());
+			pstmt.setInt(3,0);
+			pstmt.setDouble(4, 1.0);
+			pstmt.setString(5,"개혁예적금");
+			pstmt.setString(6, "대기");
+			return pstmt.executeUpdate();
+			} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -2; // 아예 try문 오류 (데이터베이스 오류)
+		return -1; // 오류
 	}
 
 	public int checkId(String id) {
