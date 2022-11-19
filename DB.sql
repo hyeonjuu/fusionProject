@@ -1,6 +1,11 @@
 --------------------------------------------------------
---  ������ ������ - �����-11��-12-2022   
+--  파일이 생성됨 - 토요일-11월-19-2022   
 --------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Sequence BA_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "HYEONJU"."BA_SEQ"  MINVALUE 1 MAXVALUE 99999 INCREMENT BY 1 START WITH 34 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Sequence MEMBER_SEQ
 --------------------------------------------------------
@@ -42,7 +47,7 @@
 --------------------------------------------------------
 
   CREATE TABLE "HYEONJU"."BANK_ACCOUNT" 
-   (	"BANKNUMBER" NUMBER, 
+   (	"BANKNUMBER" VARCHAR2(20 BYTE), 
 	"BANK" VARCHAR2(20 BYTE), 
 	"ID" VARCHAR2(20 BYTE), 
 	"PASSWORD" VARCHAR2(20 BYTE), 
@@ -110,21 +115,52 @@
   TABLESPACE "SYSTEM" ;
 REM INSERTING into HYEONJU.ADMIN
 SET DEFINE OFF;
-Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin1234','������','qwe123','dev','emp','admin@test.com',to_date('00/05/30','RR/MM/DD'),'01012341234');
-Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin123','������','qwe123','dev','emp','admin@test.com',to_date('00/05/30','RR/MM/DD'),'01012341234');
-Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin','������','qwe123','marketing','emp','qwe123',to_date('00/05/30','RR/MM/DD'),'01012341234');
-Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin12345','������','qwe123','finance','emp','test02@admin.org',to_date('00/05/30','RR/MM/DD'),'01012345678');
+Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin1234','조현주','qwe123','dev','emp','admin@test.com',to_date('00/05/30','RR/MM/DD'),'01012341234');
+Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin123','조현주','qwe123','dev','emp','admin@test.com',to_date('00/05/30','RR/MM/DD'),'01012341234');
+Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin','조현주','qwe123','marketing','emp','qwe123',to_date('00/05/30','RR/MM/DD'),'01012341234');
+Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin12345','조현주','qwe123','finance','emp','test02@admin.org',to_date('00/05/30','RR/MM/DD'),'01012345678');
 REM INSERTING into HYEONJU.BANK
 SET DEFINE OFF;
-Insert into HYEONJU.BANK (NAME,"rate",CODE) values ('��������',1.28,'gh1234');
+Insert into HYEONJU.BANK (NAME,"rate",CODE) values ('개혁은행',1.28,'gh1234');
 REM INSERTING into HYEONJU.BANK_ACCOUNT
 SET DEFINE OFF;
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000004','개혁은행',null,'1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000012','개혁은행',null,'1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000014','개혁은행',null,null,0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000003','개혁은행','test1234','1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000005','개혁은행',null,null,0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000006','개혁은행',null,null,0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000007','개혁은행','test1234','1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000008','개혁은행','test1234','1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000009','개혁은행','test1234','1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000010','개혁은행',null,'1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000011','개혁은행',null,'1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000013','개혁은행',null,'2345',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000015','개혁은행',null,'1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000016','개혁은행','test1234','1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000017','개혁은행','test1234','1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000018','개혁은행',null,'1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000019','개혁은행',null,'1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000020','개혁은행',null,'1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000021','개혁은행',null,'1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000022','개혁은행',null,'1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000023','개혁은행',null,'1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000024','개혁은행',null,'1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000025','개혁은행','test1234','qwe123',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000026','개혁은행','test1234','qwe123',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000027','개혁은행','test1234','1234',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000028','개혁은행','test1234','qwe123',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000029','개혁은행','test1234','qwe123',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000030','개혁은행','test1234','qwe123',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000031','개혁은행','test1234','qwe123',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000032','개혁은행','test1234','qwe123',0,1,'개혁예적금','대기','22/11/19');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000033','개혁은행','test1234','qwe123',0,1,'개혁예적금','대기','22/11/19');
 REM INSERTING into HYEONJU.DEAL
 SET DEFINE OFF;
 REM INSERTING into HYEONJU.MEMBER
 SET DEFINE OFF;
-Insert into HYEONJU.MEMBER (ID,NAME,PASSWORD,BIRTH,EMAIL,TEL,GENDER,RANK) values ('test1234','������','qwe123','000530','hyeonju.dlf@gmai','male','01012341234',1);
-Insert into HYEONJU.MEMBER (ID,NAME,PASSWORD,BIRTH,EMAIL,TEL,GENDER,RANK) values ('test123445','������','qwe123','000530','hyeonju.dlf@gmai','male','01012341234',1);
+Insert into HYEONJU.MEMBER (ID,NAME,PASSWORD,BIRTH,EMAIL,TEL,GENDER,RANK) values ('test1234','조현주','qwe123','000530','hyeonju.dlf@gmai','male','01012341234',1);
+Insert into HYEONJU.MEMBER (ID,NAME,PASSWORD,BIRTH,EMAIL,TEL,GENDER,RANK) values ('test123445','조현주','qwe123','000530','hyeonju.dlf@gmai','male','01012341234',1);
 REM INSERTING into HYEONJU.POST
 SET DEFINE OFF;
 --------------------------------------------------------

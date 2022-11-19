@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -33,28 +34,50 @@ public class BankAccountDAO {
 
 	
 	
-	public int create(BankAccount ba, String id) {
-		String sql = "select id from Member where id = ?";
+	public int create(String id,String password) {
+		String sql;
 		
 		try {
 			sql = "insert into bank_account values('1234'||LPAD(BA_SEQ.NEXTVAL,7,'0'),'개혁은행',?,?,?,?,?,?,SYSDATE)";
 			//insert into bank_account values(TO_CHAR(SYSDATE,'YYYYMMDD')||LPAD(BA_SEQ.NEXTVAL,7,'0'),'개혁은행','test1234','1234',0,1,'개혁예적금','대기',SYSDATE);
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,id);
-			pstmt.setString(2, ba.getPassword());
+			pstmt.setString(2,password);
 			pstmt.setInt(3,0);
 			pstmt.setDouble(4, 1.0);
 			pstmt.setString(5,"개혁예적금");
 			pstmt.setString(6, "대기");
 			return pstmt.executeUpdate();
+		
 			} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return -1; // 오류
 	}
-
+	
+	public int selectBankAccountNumber(BankAccount ba) {
+		String sql;
+		try {
+			sql = "select * from (select * from bank_account order by banknumber desc) where rownum = 1";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				
+				ba.setBankNumber(rs.getString(1));
+				ba.setBank(rs.getString(2));
+				ba.setName(rs.getString(7));
+				ba.setDate(rs.getString(9));
+				return 1;
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
+	
 	public int checkId(String id) {
-		String sql = "select id from bank_ account where id = ?"; // 아이디 중복 체크
+		String sql = "select name from bank_ account where id = ?"; // 
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,id);
