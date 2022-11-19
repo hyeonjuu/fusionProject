@@ -13,14 +13,16 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="/css/BankAccountWelcome.css">
+<link rel="stylesheet" href="./css/BankAccountWelcome.css">
 </head>
 
 <body>
 	<!--header-->
 	<div class="main">
 		<%@ include file="nav.jsp"%>
-
+	<% String name = (String)request.getAttribute("name");  
+		System.out.print(name);
+	%>
 		<!--main-->
 		<div class="bankaccountwelcome">
 			<fieldset>
@@ -32,7 +34,7 @@
 						<h3 class="title">
 							<label>신청인</label>
 						</h3>
-						<span class="applicant_main"> <input type="text">
+						<span class="applicant_main"> <input type="text" name ="">
 						</span>
 					</div>
 					<!-- 상품명 및 계좌번호 -->
@@ -41,14 +43,14 @@
 							<h3 class="title">
 								<label>상품명</label>
 							</h3>
-							<span class="product_name"> <input type="text">
+							<span class="product_name"> <input type="text" name ="name" >
 							</span>
 						</div>
 						<div class="middle2">
 							<h3 class="title">
 								<label>계좌번호</label>
 							</h3>
-							<span class="accountNum"> <input type="text">
+							<span class="accountNum"> <%=name%>
 							</span>
 						</div>
 					</div>
@@ -57,7 +59,7 @@
 						<h3 class="title">
 							<label>개설일</label>
 						</h3>
-						<span class="openingDate_main"> <input type="text">
+						<span class="openingDate_main"> <input type="text" name="date">
 						</span>
 					</div>
 					<!-- 메인 버튼 -->
