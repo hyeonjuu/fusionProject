@@ -5,6 +5,12 @@
 <head>
 </head>
 <body>
+	<%
+	String userID = null;
+	if(session.getAttribute("userID") != null){
+		userID = (String) session.getAttribute("userID");
+	}
+	%>
 	<nav class="navbar navbar-expand navbar-light" id="nav">
 			<div class="container-fluid" id="navbarLogo">
 				<a class="navbar-brand" href="main.jsp">KH개혁</a>
@@ -29,11 +35,24 @@
 				<div class="collapse navbar-collapse justify-content-end"
 					id="navbarSign">
 					<ul class="navbar-nav">
+						<%
+							if (userID == null){
+						%>
 						<li class="nav-item"><a class="nav-link" href="login.jsp"
 							id="logIn">로그인</a></li>
 						<div class="line"></div>
 						<li class="nav-item"><a class="nav-link" href="signUpTerms.jsp"
 							id="signIn">회원가입</a></li>
+							<%} else{
+								%>
+						<li class="nav-item"><a class="nav-link" href="changeInfo.jsp"
+							id="logIn"><%=session.getAttribute("userID") %>님 어서오세요.</a></li>
+						<div class="line"></div>
+						<li class="nav-item"><a class="nav-link" href="logout.jsp"
+							id="signIn">로그아웃</a></li>
+								<%
+							}
+						%>
 					</ul>
 				</div>
 			</div>

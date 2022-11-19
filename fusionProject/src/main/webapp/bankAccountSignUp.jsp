@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,9 +64,9 @@ legend {
 		<div class="signup">
 			<fieldset>
 				<legend>개인정보 입력</legend>
-				<form action="#" method="post" name="ADMIN">
+				<form action="bankAccountProcess.jsp" method="post" name="ADMIN">
 					<p>직업구분</p>
-					<input type="text" class="form-control" name="job" maxlength="15"
+					<input type="text" class="form-control" name="id" maxlength="15"
 						size="10" style="width: 50%;">
 					<p>거래목적</p>
 					<input type="text" class="form-control" name="forWhy"

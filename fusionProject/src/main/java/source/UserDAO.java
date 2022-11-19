@@ -30,11 +30,12 @@ public class UserDAO {
 	}
 	
 	public int login(String id, String password) {
-		String sql =  "select \"password\" from Member where \"id\" = ?";
+		String sql =  "select password from Member where id = ?";
 		try{
 			pstmt = conn.prepareStatement(sql);  //sql 쿼리문을 대기시킨
 			pstmt.setString(1,id);  // 
-			rs = pstmt.executeQuery(); // 쿼리를 실행한 결과를 rs에 저 
+			rs = pstmt.executeQuery(); // 쿼리를 실행한 결과를 rs에 저
+
 			System.out.println("성공?");			
 			if(rs.next()) { 
 				if(rs.getString(1).equals(password)) {  // 입력된 ID를 가진 Password 값을 가져온다.
@@ -51,7 +52,7 @@ public class UserDAO {
 	}
 		
 	public int checkId(String s) {
-		String sql = "select \"id\" from account where \"id\" = ?"; //아이디 중복 체크
+		String sql = "select id from account where id = ?"; //아이디 중복 체크
 		try {
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1,s); 

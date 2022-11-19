@@ -12,7 +12,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/SignUp.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
+    <!-- <script>
 // 아이디 유효성 검사(1 = 중복 / 0 != 중복)
 	$("#id").blur(function() {
 		// id = "id_reg" / name = "userId"
@@ -54,7 +54,7 @@
 				}
 			});
 		});
-</script>
+</script> -->
     
 </head>
 
