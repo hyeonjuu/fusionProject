@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 
 public class UserDAO {
@@ -50,7 +51,24 @@ public class UserDAO {
 		}
 		return -2;  //아예 try문 오류 (데이터베이스 오류)
 	}
-		
+	
+	public String getUserName(String id) {
+		String sql;
+		try {
+			sql = "select name from member where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getString(1);
+			}
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return "오류";
+	}
+	
 	public int checkId(String s) {
 		String sql = "select id from account where id = ?"; //아이디 중복 체크
 		try {
@@ -84,8 +102,8 @@ public class UserDAO {
 			pstmt.setString(3,member.getPassword());
 			pstmt.setString(4,member.getBirth());
 			pstmt.setString(5,member.getEmail());
-			pstmt.setString(6,member.getGender());
-			pstmt.setString(7,member.getTel());
+			pstmt.setString(6,member.getTel());
+			pstmt.setString(7,member.getGender());
 			member.setRank(1);
 			pstmt.setInt(8,member.getRank());
 			return pstmt.executeUpdate();
@@ -96,5 +114,24 @@ public class UserDAO {
 		return -1;
 	}
 
-
+	public Member getInfo(String id) {
+		String sql;
+		Member member = null;
+		try {
+			sql = "select id,email,tel from member where id= ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				member = new Member();
+				member.setId(id);
+				member.setEmail(rs.getString(2));
+				member.setTel(rs.getString(3));
+				}
+			}
+		 catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return member;
+	}
 }
