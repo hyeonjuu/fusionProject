@@ -5,7 +5,7 @@
 <%@page import="java.io.PrintWriter"%>
 <%@page import="source.UserDAO" %>
 <% request.setCharacterEncoding("UTF-8"); %>
-<jsp:useBean id="BankAccount" class="source.BankAccount" scope="session" />
+<jsp:useBean id="BankAccount" class="source.BankAccount" scope="page" />
 <jsp:setProperty name="BankAccount" property="password"/>
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,7 @@
 	
 
 	BankAccountDAO baDAO = new BankAccountDAO();
-	int create = baDAO.create((String)session.getAttribute("userID"),BankAccount.getPassword());
+	int create = baDAO.create(userID,BankAccount.getPassword());
 	
 	if(create == 1){
 		int result = baDAO.selectBankAccountNumber(BankAccount);
@@ -37,7 +37,7 @@
 	}else{
 	
 		script.println("<script>");
-		script.println("alert('데이터베이스 오류')");
+		script.println("alert('오류가 발생하였습니다.')");
 		script.println("history.back()");
 		script.println("</script>");
 	}

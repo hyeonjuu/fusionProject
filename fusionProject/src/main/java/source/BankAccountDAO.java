@@ -74,7 +74,22 @@ public class BankAccountDAO {
 		}
 		return -1;
 	}
-	
+	public String getUserName(String id) {
+		String sql;
+		try {
+			sql = "select name from member where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getString(1);
+			}
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return "오류";
+	}
 	
 	public int checkId(String id) {
 		String sql = "select name from bank_ account where id = ?"; // 
