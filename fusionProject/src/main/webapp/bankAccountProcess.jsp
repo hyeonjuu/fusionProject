@@ -1,3 +1,4 @@
+<%@page import="source.BankAccount"%>
 <%@page import="source.BankAccountDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -22,28 +23,23 @@
 	
 
 	BankAccountDAO baDAO = new BankAccountDAO();
-	int result = baDAO.create(BankAccount,(String)session.getAttribute("userID"));
-	switch(result){
-	case 1:
-		script.println("<script>");
-		script.println("alert('계좌생 성공')");
-		script.println("location.href='main.jsp'");
-		script.println("</script>");
-		break;
-
-	case -1:
-		script.println("<script>");
-		script.println("alert('존재하지 않는 아이디입니다.')");
-		script.println("history.back()");
-		script.println("</script>");
-		break;
+	int create = baDAO.create(userID,BankAccount.getPassword());
 	
-	default:
+	if(create == 1){
+		int result = baDAO.selectBankAccountNumber(BankAccount);
+		
+		request.setAttribute("bankNumber", BankAccount.getBankNumber());
+		request.setAttribute("bank", BankAccount.getBank());
+		request.setAttribute("name", BankAccount.getName());
+		request.setAttribute("date", BankAccount.getDate());
+		
+		request.getRequestDispatcher("bankAccountWelcome.jsp").forward(request,response);
+	}else{
+	
 		script.println("<script>");
-		script.println("alert('데이터베이스 오류')");
+		script.println("alert('오류가 발생하였습니다.')");
 		script.println("history.back()");
 		script.println("</script>");
-		break;
 	}
 	
 	

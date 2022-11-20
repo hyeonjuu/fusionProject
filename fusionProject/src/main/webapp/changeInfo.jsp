@@ -1,3 +1,5 @@
+
+<%@page import="source.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -64,7 +66,16 @@ p {
 	<!--header-->
 	<div class="main">
 		<%@ include file="nav.jsp"%>
+		<% 
 
+		UserDAO userDAO = new UserDAO();
+		Member member = userDAO.getInfo(userID);
+		
+		String id = member.getId();
+		String email = member.getEmail();
+		String tel = member.getTel();
+		
+		%>
 
 		<!--main-->
 		<div class="signup">
@@ -73,7 +84,7 @@ p {
 				<form action="#" method="post" name="modify">
 					<p>ID</p>
 					<input type="text" class="form-control" name="id" maxlength="15"
-						size="10" style="width: 70%;">
+						size="10" style="width: 70%;" value ="<%=id%>">
 					<p>비밀번호</p>
 					<input type="password" class="form-control" name="password"
 						maxlength="15" size="10"
@@ -87,18 +98,14 @@ p {
 					<p style="color: #ff7979; font-size: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;비밀번호가
 						일치하지 않습니다.</p>
 
-					<p>주소</p>
-					<input type="text" class="form-control" name="adress" size="10"
-						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;">
-
 					<p>이메일</p>
 					<input type="text" class="form-control" name="adress" size="10"
-						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;">
+						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;"value="<%=email%>" >
 
 					<p>전화번호</p>
 					<input type="password" class="form-control" name="password"
 						size="10"
-						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;">
+						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;" value="<%=tel%>">
 					<br> <br> <input type="submit"
 						class="btn btn-primary form-control" value="변경"
 						style="width: 20%; margin-left: 25%; margin-bottom: 5%;">

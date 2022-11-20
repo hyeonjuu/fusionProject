@@ -3,7 +3,7 @@ package source;
 import java.util.Date;
 
 public class BankAccount {
-	private int bankNumber;
+	private String bankNumber;
 	private String bank;
 	private String id;
 	private String password;
@@ -11,11 +11,11 @@ public class BankAccount {
 	private double rate;
 	private String status;
 	private String name;
-	private Date date;
-	public int getBankNumber() {
+	private String date;
+	public String getBankNumber() {
 		return bankNumber;
 	}
-	public void setBankNumber(int bankNumber) {
+	public void setBankNumber(String bankNumber) {
 		this.bankNumber = bankNumber;
 	}
 	public String getBank() {
@@ -60,10 +60,10 @@ public class BankAccount {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	

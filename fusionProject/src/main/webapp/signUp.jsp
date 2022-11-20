@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/SignUp.css">
+    <link rel="stylesheet" href="css/basic.css?after">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <script>
 // 아이디 유효성 검사(1 = 중복 / 0 != 중복)
@@ -67,7 +68,7 @@
     <div class="signup">
         <fieldset>
             <legend>회원가입</legend>
-            <form action="#" method="post" name="member">
+            <form action="signUpProcess.jsp" method="post" name="member">
                 <div class="join_content">
                     <div class="join_row_group">
                         <h3 class="join_title">
@@ -82,7 +83,7 @@
                                 <label for="pswd1">비밀번호</label>
                             </h3>
                             <span class="ps_box int_pass" id="pswd1Img">
-                                <input type="password" id="pswd1" name="pswd1" class="int" title="비밀번호 입력" aria-describedby="pswd1Msg" maxlength="20">
+                                <input type="password" id="pswd1" name="password" class="int" title="비밀번호 입력" aria-describedby="pswd1Msg" maxlength="20">
                             </span>
                             <h3 class="join_title">
                                 <label for="pswd2">비밀번호 재확인</label>
@@ -107,7 +108,7 @@
                             <div class="bir_wrap">
                                 <div class="bir_yy">
                                     <span class="ps_box">
-                                        <input type="text" id="yy" placeholder="생년월일 6자리" aria-label="생년월일 6자리" class="int" maxlength="4">
+                                        <input type="text" id="yy" name="birth" placeholder="생년월일 6자리" aria-label="생년월일 6자리" class="int" maxlength="6">
                                     </span>
                                 </div>
                             </div>
