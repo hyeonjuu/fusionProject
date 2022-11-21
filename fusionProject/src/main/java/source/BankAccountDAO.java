@@ -45,8 +45,8 @@ public class BankAccountDAO {
 			pstmt.setString(2,password);
 			pstmt.setInt(3,0);
 			pstmt.setDouble(4, 1.0);
-			pstmt.setString(5,"개혁예적금");
-			pstmt.setString(6, "대기");
+			pstmt.setString(5, "대기");
+			pstmt.setString(6,"개혁예적금");
 			return pstmt.executeUpdate();
 		
 			} catch (Exception e) {
@@ -65,7 +65,7 @@ public class BankAccountDAO {
 				
 				ba.setBankNumber(rs.getString(1));
 				ba.setBank(rs.getString(2));
-				ba.setName(rs.getString(7));
+				ba.setName(rs.getString(8));
 				ba.setDate(rs.getString(9));
 				return 1;
 			}
@@ -91,6 +91,20 @@ public class BankAccountDAO {
 		return "오류";
 	}
 	
+	public ResultSet getMyAccounts(String id) {
+		String sql;
+		try {
+			sql = "select * from bank_account where id = ? ";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			return rs;
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	public int checkId(String id) {
 		String sql = "select name from bank_ account where id = ?"; // 
 		try {
@@ -108,11 +122,28 @@ public class BankAccountDAO {
 		}
 		return 0;
 	}
-	
-	public int countRow() {
+	public int totalBalance(String id) {
 		try {
-			String sql = "select count(*) from bank_account";
+			String sql = "select sum(balance) from bank_account where id =?";
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}
+		return -1;
+	}
+	
+	
+	public int countRow(String id) {
+		try {
+			String sql = "select count(*) from bank_account where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,id);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				return rs.getInt(1);
