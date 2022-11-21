@@ -41,13 +41,13 @@
 					<li class="nav-item"><a class="nav-link" aria-current="page"
 						href="#" id="navMoeny">계좌</a>
 					  <ul id="sub">
-            			<li><a class="" href="#">내 계좌</a></li>
-            			<li><a class="" href="#">계좌 생성</a></li>
+            			<li><a class="" href="myAccounts.jsp">내 계좌</a></li>
+            			<li><a class="" href="bankAccountSignUp.jsp">계좌 생성</a></li>
           				</ul>
 						</li>
 					<div class="line"></div>
 					<li class="nav-item"><a class="nav-link"
-						href="bankAccountSignUp.jsp" id="navGive">이체</a></li>
+						href="#" id="navGive">이체</a></li>
 					<div class="line"></div>
 					<li class="nav-item"><a class="nav-link" href="#" id="navInfo">정보</a></li>
 				</ul>
