@@ -31,6 +31,13 @@
                         </thead>
                         <tbody>
                             <tr>
+                               <td>
+                               		<input type="radio" value="news">새소식
+                                	<input type="radio" value="notice">공지사항
+                                	<input type="radio" value="qna">Q&A
+                                </td>
+                            </tr>
+                            <tr>
                                 <td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"></td>
                             </tr>
                             <tr>
