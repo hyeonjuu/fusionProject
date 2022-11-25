@@ -128,18 +128,35 @@ footer p span {
 
 
 
-fieldset {
+fieldset.main_field {
     width: 80%;
-    padding: 3% 25% 3% 25%;
+    padding: 3% 0 0 0;
     border-radius: 10px;
-    margin: 2% 0 2% 10% ;
+    margin: 2% 0 2% 2% ;
     border: 1px solid #ff7979;
 }
 
 legend {
     margin-top: 10px;
     margin-bottom: 40px;
-    text-align: center;
     font-size: 40px;
 }
 
+legend.main_title {
+    font-size: 25px;
+}
+
+span.title_text {
+    font-size: 40px;
+}
+
+span.post_type {
+    font-size: 15px;
+}
+
+fieldset.middle_field {
+    width: 80%;
+    padding: 3% 10px 3% 10px;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+}
