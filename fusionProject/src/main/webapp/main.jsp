@@ -44,21 +44,21 @@
 		<div class="mainMenu">
 			<div class="box">
 				<div class="boxHeader1">
-					<h2>새소식</h2>
+					<h2 onclick="location.href='news.jsp'">새소식</h2>
 					<hr>
 				</div>
 				<p>안녕</p>
 			</div>
 			<div class="box">
 				<div class="boxHeader2">
-					<h2>공지사항</h2>
+					<h2 onclick="location.href='notice.jsp'">공지사항</h2>
 					<hr>
 				</div>
 				<p>안녕 못 해</p>
 			</div>
 			<div class="box">
 				<div class="boxHeader3">
-					<h2>QnA</h2>
+					<h2 onclick="location.href='qna.jsp'">QnA</h2>
 					<hr>
 				</div>
 				<p>힝</p>

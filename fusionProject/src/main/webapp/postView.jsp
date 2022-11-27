@@ -1,3 +1,5 @@
+<%@page import="source.Post"%>
+<%@page import="source.PostDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,30 +19,46 @@
 </head>
 
 <body>
+
 	<!--header-->
 	<div class="main">
 		<%@ include file="nav.jsp"%>
-
+		<%
+			int postNo = 0;
+			String category = null;
+			
+			if(request.getParameter("no") != null){
+				postNo = Integer.parseInt(request.getParameter("no"));
+			}
+			if(request.getParameter("category") != null){
+				category = (String)request.getParameter("category");
+			}
+			
+			PostDAO postDAO = new PostDAO();
+			Post post = postDAO.getPost(postNo, category);
+			
+			String viewCategory = postDAO.translateCategory(category);
+			
+		%>
 		<!--main-->
 		<div class="post_view">
-			<fieldset class="main_field">
-                <form action="#" method="post" name="member">
                     <div class="container">
                         <legend class="main_title">게시글</legend>
 						<fieldset class="middle_field">
 							<div id="title_text">
-								<span class="title_text">대면 편취형 보이스피싱 피해 주의</span>
+								<span class="title_text"><%=post.getTitle() %></span>
 							</div>
 							<div id="post_date">
-								<span class="post_type">게시판 | 2022.11.25</span>
+								<span class="post_type"><%=viewCategory %> | <%=post.getDateeOfIssue() %></span>
 							</div> <br><br>
 							<div id="main_text">
-최근 "대면편취형 보이스피싱" 피해사례가 급증하고 있어, 각별한 주의를 당부드립니다.
+								<%=post.getContents() %>
 							</div>
 						</fieldset> <br>
-						<input type="button" id="list_btn" value="목록으로">	
+						<button type="button" id="list_btn" onclick="location.href='<%=category%>.jsp'">
+						목록으로
+						</button>
                     </div>
-                </form>
 			</fieldset>
 		</div>
 
