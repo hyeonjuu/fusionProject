@@ -42,7 +42,7 @@
 								<tr style="background-color: #eeeeee;">
 									<th>번호</th>
 									<th>작성자</th>
-									<th>제목</th>
+									<th>제목</th>
 									<th>작성일자</th>
 								</tr>
 							</thead>
@@ -54,9 +54,11 @@
 							%>
 							<tbody>
 								<tr>
-									<td><%=i + 1 + ((pageNumber - 1) * 10)%></td>
+									<td><%=post.getNo()%></td>
 									<td><%=post.getWriter()%></td>
-									<td><%=post.getTitle()%></td>
+									<td><a href="postView.jsp?no=<%=post.getNo()%>&category=<%=post.getCategory()%>">
+										<%=post.getTitle()%>
+										</a></td>
 									<td><%=post.getDateeOfIssue()%></td>
 								</tr>
 								<%
