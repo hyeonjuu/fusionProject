@@ -49,7 +49,7 @@
                             </table>
                         </div>
                         <div class="writeBtn">
-                            <button type="submit">
+                            <button type="button" onclick="write.jsp">
                                 <span> 글쓰기 </span>
                             </button>
                         </div>
