@@ -154,6 +154,37 @@ public class PostDAO {
 			return "자주 묻는 질문";
 		return null;
 	}
+	
+	public int update(Post post) {
+		String sql;
+		try {
+			sql = "update post set writer = ?, title = ? ,contents = ? where no = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, post.getWriter());
+			pstmt.setString(2, post.getTitle());
+			pstmt.setString(3, post.getContents());
+			pstmt.setInt(4, post.getNo());
+			return pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
+	public int delete(int no,String category) {
+		String sql;
+		try {
+			sql = "update post set available = 0 where no = ? and category = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			pstmt.setString(2, category);
+			return pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
 	// "insert into post
 	// values(POST_SEQ.NEXTVAL,'news','제목','test1234','내용입니다.',to_char(SYSDATE,'yyyy-mm-dd
 	// hh24:mi:ss'))";

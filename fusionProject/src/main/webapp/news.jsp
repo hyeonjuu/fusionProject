@@ -52,13 +52,15 @@
 							ArrayList<Post> list = postDAO.getPostList("news", pageNumber);
 							for (int i = 0; i < list.size(); i++) {
 								Post post = list.get(i);
-							%>
+								String title = post.getTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>");
+								
+								%>
 							<tbody>
 								<tr>
 									<td><%=post.getNo()%></td>
 									<td><%=post.getWriter() %></td>
 									<td><a href="postView.jsp?no=<%=post.getNo()%>&category=<%=post.getCategory()%>">
-										<%=post.getTitle()%>
+										<%=title%>
 										</a></td>
 									<td><%=post.getDateeOfIssue()%></td>
 								</tr>

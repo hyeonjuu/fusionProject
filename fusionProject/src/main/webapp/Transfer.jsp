@@ -47,6 +47,9 @@
                               <label>받는 은행</label>
                           </h3>
                           <span class="product_name">
+                          	<select name="bank">
+                          		<option value="개혁은행"> 개혁은행
+                          	</select>
                               <input type="text" id="product_name">
                           </span>
                       </div>

@@ -38,6 +38,8 @@
 			Post post = postDAO.getPost(postNo, category);
 			
 			String viewCategory = postDAO.translateCategory(category);
+			String title = post.getTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>");
+			String contents = post.getContents().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>");
 			
 		%>
 		<!--main-->
@@ -46,17 +48,26 @@
                         <legend class="main_title">게시글</legend>
 						<fieldset class="middle_field">
 							<div id="title_text">
-								<span class="title_text"><%=post.getTitle() %></span>
+								<span class="title_text"><%=title%></span>
 							</div>
 							<div id="post_date">
 								<span class="post_type"><%=viewCategory %> | <%=post.getDateeOfIssue() %></span>
 							</div> <br><br>
 							<div id="main_text">
-								<%=post.getContents() %>
+								<%=contents%>
 							</div>
 						</fieldset> <br>
 						<button type="button" id="list_btn" onclick="location.href='<%=category%>.jsp'">
 						목록으로
+						</button>
+						<%
+						//어드민이라면
+						%>
+						<button type="button" id="list_btn" onclick="location.href='update.jsp?no=<%=postNo%>&category=<%=category%>'">
+						수정하기
+						</button>
+						<button type="button" id="list_btn" onclick="location.href='deleteProcess.jsp?no=<%=postNo%>&category=<%=category%>'">
+						삭제하기
 						</button>
                     </div>
 			</fieldset>
