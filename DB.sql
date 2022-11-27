@@ -1,21 +1,36 @@
 --------------------------------------------------------
---  ÌååÏùºÏù¥ ÏÉùÏÑ±Îê® - ÏùºÏöîÏùº-11Ïõî-27-2022   
+--  ∆ƒ¿œ¿Ã ª˝º∫µ  - ¿œø‰¿œ-11ø˘-27-2022   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Sequence BA_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "HYEONJU"."BA_SEQ"  MINVALUE 1 MAXVALUE 99999 INCREMENT BY 1 START WITH 47 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "HYEONJU"."BA_SEQ"  MINVALUE 1 MAXVALUE 99999 INCREMENT BY 1 START WITH 155 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Sequence MEMBER_SEQ
 --------------------------------------------------------
 
    CREATE SEQUENCE  "HYEONJU"."MEMBER_SEQ"  MINVALUE 1000000 MAXVALUE 9999999 INCREMENT BY 1 START WITH 1000001 NOCACHE  NOORDER  NOCYCLE ;
 --------------------------------------------------------
+--  DDL for Sequence NEWS_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "HYEONJU"."NEWS_SEQ"  MINVALUE 1 MAXVALUE 99999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence NOTICE_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "HYEONJU"."NOTICE_SEQ"  MINVALUE 1 MAXVALUE 99999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
 --  DDL for Sequence POST_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "HYEONJU"."POST_SEQ"  MINVALUE 1 MAXVALUE 99999 INCREMENT BY 1 START WITH 22 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "HYEONJU"."POST_SEQ"  MINVALUE 1 MAXVALUE 99999 INCREMENT BY 1 START WITH 42 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence QNA_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "HYEONJU"."QNA_SEQ"  MINVALUE 1 MAXVALUE 99999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Table ADMIN
 --------------------------------------------------------
@@ -122,37 +137,33 @@
   TABLESPACE "SYSTEM" ;
 REM INSERTING into HYEONJU.ADMIN
 SET DEFINE OFF;
-Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin1234','Ï°∞ÌòÑÏ£º','qwe123','dev','emp','admin@test.com',to_date('00/05/30','RR/MM/DD'),'01012341234');
-Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin123','Ï°∞ÌòÑÏ£º','qwe123','dev','emp','admin@test.com',to_date('00/05/30','RR/MM/DD'),'01012341234');
-Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin','Ï°∞ÌòÑÏ£º','qwe123','marketing','emp','qwe123',to_date('00/05/30','RR/MM/DD'),'01012341234');
-Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin12345','Ï°∞ÌòÑÏ£º','qwe123','finance','emp','test02@admin.org',to_date('00/05/30','RR/MM/DD'),'01012345678');
+Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin1234','¡∂«ˆ¡÷','qwe123','dev','emp','admin@test.com',to_date('00/05/30','RR/MM/DD'),'01012341234');
+Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin123','¡∂«ˆ¡÷','qwe123','dev','emp','admin@test.com',to_date('00/05/30','RR/MM/DD'),'01012341234');
+Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin','¡∂«ˆ¡÷','qwe123','marketing','emp','qwe123',to_date('00/05/30','RR/MM/DD'),'01012341234');
+Insert into HYEONJU.ADMIN (ID,"name",PASSWORD,"dept","rank","email","birth","tel") values ('admin12345','¡∂«ˆ¡÷','qwe123','finance','emp','test02@admin.org',to_date('00/05/30','RR/MM/DD'),'01012345678');
 REM INSERTING into HYEONJU.BANK
 SET DEFINE OFF;
-Insert into HYEONJU.BANK (NAME,"rate",CODE) values ('Í∞úÌòÅÏùÄÌñâ',1.28,'gh1234');
+Insert into HYEONJU.BANK (NAME,"rate",CODE) values ('∞≥«ı¿∫«‡',1.28,'gh1234');
 REM INSERTING into HYEONJU.BANK_ACCOUNT
 SET DEFINE OFF;
-Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000041','Í∞úÌòÅÏùÄÌñâ',null,'1234',0,1,'ÎåÄÍ∏∞','Í∞úÌòÅÏòàÏ†ÅÍ∏à','22/11/21');
-Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000043','Í∞úÌòÅÏùÄÌñâ','test1234','1234',300000000,1,'ÎåÄÍ∏∞','Í∞úÌòÅÏòàÏ†ÅÍ∏à','22/11/21');
-Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000042','Í∞úÌòÅÏùÄÌñâ','test1234','1234',20000,1,'ÎåÄÍ∏∞','Í∞úÌòÅÏòàÏ†ÅÍ∏à','22/11/21');
-Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000044','Í∞úÌòÅÏùÄÌñâ','test1234','1234',0,1,'ÎåÄÍ∏∞','Í∞úÌòÅÏòàÏ†ÅÍ∏à','22/11/21');
-Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000045','Í∞úÌòÅÏùÄÌñâ','test1234','1234',0,1,'ÎåÄÍ∏∞','Í∞úÌòÅÏòàÏ†ÅÍ∏à','22/11/21');
-Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000046','Í∞úÌòÅÏùÄÌñâ','juuyeoon','1027',769898879,1,'ÎåÄÍ∏∞','Í∞úÌòÅÏòàÏ†ÅÍ∏à','22/11/21');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000041','∞≥«ı¿∫«‡',null,'1234',0,1,'¥Î±‚','∞≥«ıøπ¿˚±›','22/11/21');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000043','∞≥«ı¿∫«‡','test1234','1234',300000000,1,'¥Î±‚','∞≥«ıøπ¿˚±›','22/11/21');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000042','∞≥«ı¿∫«‡','test1234','1234',20000,1,'¥Î±‚','∞≥«ıøπ¿˚±›','22/11/21');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000044','∞≥«ı¿∫«‡','test1234','1234',0,1,'¥Î±‚','∞≥«ıøπ¿˚±›','22/11/21');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000045','∞≥«ı¿∫«‡','test1234','1234',0,1,'¥Î±‚','∞≥«ıøπ¿˚±›','22/11/21');
+Insert into HYEONJU.BANK_ACCOUNT (BANKNUMBER,BANK,ID,PASSWORD,BALANCE,RATE,STATUS,NAME,CREATIONDATE) values ('12340000046','∞≥«ı¿∫«‡','juuyeoon','1027',769898879,1,'¥Î±‚','∞≥«ıøπ¿˚±›','22/11/21');
 REM INSERTING into HYEONJU.DEAL
 SET DEFINE OFF;
 REM INSERTING into HYEONJU.MEMBER
 SET DEFINE OFF;
-Insert into HYEONJU.MEMBER (ID,NAME,PASSWORD,BIRTH,EMAIL,TEL,GENDER,RANK) values ('test1234','Ï°∞ÌòÑÏ£º','qwe123','000530','hyeonju.dlf@gmai','male','01012341234',1);
-Insert into HYEONJU.MEMBER (ID,NAME,PASSWORD,BIRTH,EMAIL,TEL,GENDER,RANK) values ('test123445','Ï°∞ÌòÑÏ£º','qwe123','000530','hyeonju.dlf@gmai','male','01012341234',1);
-Insert into HYEONJU.MEMBER (ID,NAME,PASSWORD,BIRTH,EMAIL,TEL,GENDER,RANK) values ('juuyeoon','ÌòÑÏ£ºÎ∞îÎ≥¥','guswnqkqh','981016','hyeonju_babo@gmail.com','01020211027','female',1);
+Insert into HYEONJU.MEMBER (ID,NAME,PASSWORD,BIRTH,EMAIL,TEL,GENDER,RANK) values ('test1234','¡∂«ˆ¡÷','qwe123','000530','hyeonju.dlf@gmai','male','01012341234',1);
+Insert into HYEONJU.MEMBER (ID,NAME,PASSWORD,BIRTH,EMAIL,TEL,GENDER,RANK) values ('test123445','¡∂«ˆ¡÷','qwe123','000530','hyeonju.dlf@gmai','male','01012341234',1);
+Insert into HYEONJU.MEMBER (ID,NAME,PASSWORD,BIRTH,EMAIL,TEL,GENDER,RANK) values ('juuyeoon','«ˆ¡÷πŸ∫∏','guswnqkqh','981016','hyeonju_babo@gmail.com','01020211027','female',1);
 REM INSERTING into HYEONJU.POST
 SET DEFINE OFF;
-Insert into HYEONJU.POST (NO,CATEGORY,TITLE,WRITER,CONTENTS,DATEOFISSUE,AVAILABLE) values (2,'news','ÌÖåÏä§Ìä∏ÏûÖÎãàÎã§.','test1234','ÏÉàÏÜåÏãù',to_timestamp('22/11/25 13:59:09.000000000','RR/MM/DD HH24:MI:SSXFF'),'1');
-Insert into HYEONJU.POST (NO,CATEGORY,TITLE,WRITER,CONTENTS,DATEOFISSUE,AVAILABLE) values (3,'qna','ÌÖåÏä§Ìä∏ÏûÖÎãàÎã§.',null,'Îøú',to_timestamp('22/11/25 14:30:00.000000000','RR/MM/DD HH24:MI:SSXFF'),'1');
-Insert into HYEONJU.POST (NO,CATEGORY,TITLE,WRITER,CONTENTS,DATEOFISSUE,AVAILABLE) values (4,'news','Í∏Ä Ï†úÎ™©ÏûÖÎãàÎã§.','test1234','ÏÉàÏÜåÏãùS',to_timestamp('22/11/25 14:33:25.000000000','RR/MM/DD HH24:MI:SSXFF'),'1');
-Insert into HYEONJU.POST (NO,CATEGORY,TITLE,WRITER,CONTENTS,DATEOFISSUE,AVAILABLE) values (5,'news','Í∏Ä Ï†úÎ™©ÏûÖÎãàÎã§.','test1234','ÏÉàÏÜåÏãùS',to_timestamp('22/11/25 14:34:11.000000000','RR/MM/DD HH24:MI:SSXFF'),'1');
-Insert into HYEONJU.POST (NO,CATEGORY,TITLE,WRITER,CONTENTS,DATEOFISSUE,AVAILABLE) values (6,'notice','Í∏Ä Ï†úÎ™©ÏûÖÎãàÎã§.',null,'ÎÖ∏Ìã∞Ïì∞',to_timestamp('22/11/25 15:24:05.000000000','RR/MM/DD HH24:MI:SSXFF'),'1');
-Insert into HYEONJU.POST (NO,CATEGORY,TITLE,WRITER,CONTENTS,DATEOFISSUE,AVAILABLE) values (1,'news','Ï†úÎ™©','test1234','ÎÇ¥Ïö©ÏûÖÎãàÎã§.',to_timestamp('22/11/21 14:53:18.000000000','RR/MM/DD HH24:MI:SSXFF'),null);
-Insert into HYEONJU.POST (NO,CATEGORY,TITLE,WRITER,CONTENTS,DATEOFISSUE,AVAILABLE) values (7,'qna','Í∏Ä Ï†úÎ™©ÏûÖÎãàÎã§.',null,'ÌÅêÏóîÏóêÏù¥!',to_timestamp('22/11/25 15:24:19.000000000','RR/MM/DD HH24:MI:SSXFF'),'1');
+Insert into HYEONJU.POST (NO,CATEGORY,TITLE,WRITER,CONTENTS,DATEOFISSUE,AVAILABLE) values (2,'news','12',null,'1',to_timestamp('22/11/27 13:36:25.000000000','RR/MM/DD HH24:MI:SSXFF'),'1');
+Insert into HYEONJU.POST (NO,CATEGORY,TITLE,WRITER,CONTENTS,DATEOFISSUE,AVAILABLE) values (3,'news','1212',null,'1212',to_timestamp('22/11/27 13:37:56.000000000','RR/MM/DD HH24:MI:SSXFF'),'1');
+Insert into HYEONJU.POST (NO,CATEGORY,TITLE,WRITER,CONTENTS,DATEOFISSUE,AVAILABLE) values (1,'notice','1',null,'1',to_timestamp('22/11/27 13:35:15.000000000','RR/MM/DD HH24:MI:SSXFF'),'1');
 --------------------------------------------------------
 --  DDL for Index ADMIN_PK
 --------------------------------------------------------
@@ -181,10 +192,10 @@ Insert into HYEONJU.POST (NO,CATEGORY,TITLE,WRITER,CONTENTS,DATEOFISSUE,AVAILABL
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "SYSTEM" ;
 --------------------------------------------------------
---  DDL for Index BANK_NAME
+--  DDL for Index POST_PK1
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "HYEONJU"."BANK_NAME" ON "HYEONJU"."BANK" ("NAME") 
+  CREATE UNIQUE INDEX "HYEONJU"."POST_PK1" ON "HYEONJU"."POST" ("NO", "CATEGORY") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
@@ -208,68 +219,78 @@ Insert into HYEONJU.POST (NO,CATEGORY,TITLE,WRITER,CONTENTS,DATEOFISSUE,AVAILABL
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "SYSTEM" ;
 --------------------------------------------------------
+--  DDL for Index BANK_NAME
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "HYEONJU"."BANK_NAME" ON "HYEONJU"."BANK" ("NAME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
 --  Constraints for Table DEAL
 --------------------------------------------------------
 
+  ALTER TABLE "HYEONJU"."DEAL" MODIFY ("no" NOT NULL ENABLE);
   ALTER TABLE "HYEONJU"."DEAL" ADD CONSTRAINT "TABLE1_PK" PRIMARY KEY ("no")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "SYSTEM"  ENABLE;
-  ALTER TABLE "HYEONJU"."DEAL" MODIFY ("no" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table POST
 --------------------------------------------------------
 
-  ALTER TABLE "HYEONJU"."POST" ADD CONSTRAINT "POST_PK" PRIMARY KEY ("NO")
+  ALTER TABLE "HYEONJU"."POST" ADD CONSTRAINT "POST_PK" PRIMARY KEY ("NO", "CATEGORY")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "SYSTEM"  ENABLE;
   ALTER TABLE "HYEONJU"."POST" MODIFY ("NO" NOT NULL ENABLE);
+  ALTER TABLE "HYEONJU"."POST" MODIFY ("CATEGORY" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table BANK
 --------------------------------------------------------
 
-  ALTER TABLE "HYEONJU"."BANK" MODIFY ("CODE" NOT NULL ENABLE);
+  ALTER TABLE "HYEONJU"."BANK" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "HYEONJU"."BANK" MODIFY ("rate" NOT NULL ENABLE);
   ALTER TABLE "HYEONJU"."BANK" ADD CONSTRAINT "BANK_NAME" PRIMARY KEY ("NAME")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "SYSTEM"  ENABLE;
-  ALTER TABLE "HYEONJU"."BANK" MODIFY ("rate" NOT NULL ENABLE);
-  ALTER TABLE "HYEONJU"."BANK" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "HYEONJU"."BANK" MODIFY ("CODE" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table MEMBER
 --------------------------------------------------------
 
+  ALTER TABLE "HYEONJU"."MEMBER" MODIFY ("ID" NOT NULL ENABLE);
   ALTER TABLE "HYEONJU"."MEMBER" ADD CONSTRAINT "MEMBER_PK" PRIMARY KEY ("ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "SYSTEM"  ENABLE;
-  ALTER TABLE "HYEONJU"."MEMBER" MODIFY ("ID" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table ADMIN
 --------------------------------------------------------
 
+  ALTER TABLE "HYEONJU"."ADMIN" MODIFY ("ID" NOT NULL ENABLE);
   ALTER TABLE "HYEONJU"."ADMIN" ADD CONSTRAINT "ADMIN_PK" PRIMARY KEY ("ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "SYSTEM"  ENABLE;
-  ALTER TABLE "HYEONJU"."ADMIN" MODIFY ("ID" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table BANK_ACCOUNT
 --------------------------------------------------------
 
+  ALTER TABLE "HYEONJU"."BANK_ACCOUNT" MODIFY ("BANKNUMBER" NOT NULL ENABLE);
+  ALTER TABLE "HYEONJU"."BANK_ACCOUNT" MODIFY ("BANK" NOT NULL ENABLE);
   ALTER TABLE "HYEONJU"."BANK_ACCOUNT" ADD CONSTRAINT "BANK_ACCOUNT_PK" PRIMARY KEY ("BANKNUMBER", "BANK")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "SYSTEM"  ENABLE;
-  ALTER TABLE "HYEONJU"."BANK_ACCOUNT" MODIFY ("BANK" NOT NULL ENABLE);
-  ALTER TABLE "HYEONJU"."BANK_ACCOUNT" MODIFY ("BANKNUMBER" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Ref Constraints for Table BANK_ACCOUNT
 --------------------------------------------------------

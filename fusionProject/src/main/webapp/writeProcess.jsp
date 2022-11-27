@@ -21,12 +21,15 @@
 	
 	PrintWriter script = response.getWriter();
 	String userID = null;
-	if(session.getAttribute("userID") != null){
-		userID = (String)session.getAttribute("userID");
+	String userName = null;
+		if(session.getAttribute("userID") != null){
+			userID = (String) session.getAttribute("userID");
+			UserDAO userDAO = new UserDAO();
+			userName = userDAO.getUserName(userID);
 	}
 	
 	
-	Post.setWriter(userID);
+	Post.setWriter(userName);
  	System.out.println(Post.getCategory());
  	System.out.println(Post.getTitle());
  	System.out.println(Post.getContents());

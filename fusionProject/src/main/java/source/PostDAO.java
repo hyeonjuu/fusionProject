@@ -28,6 +28,17 @@ public class PostDAO {
 
 	}
 	public int getNext() {
+		String sql;
+		try {
+			sql = "select no from Post order by no desc";
+			pstmt = conn.prepareStatement(sql);
+			rs= pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1)+1;
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return -1;
 	}
 	
@@ -35,9 +46,11 @@ public class PostDAO {
 		String sql;
 		ArrayList<Post> list = new ArrayList<Post>();
 		try{
-			sql  = "select * from Post where no < ? and available = 1 order by no desc limit 10";
+			int no = getNext()-(pageNumber - 1) * 10;
+			sql  = "select * from(select * from post where no < ? and available = 1 and category = ? order by no desc) where rownum <= 10 ";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, getNext()-(pageNumber - 1) * 10);
+			pstmt.setInt(1, no);
+			pstmt.setString(2,category);
 			rs = pstmt.executeQuery();
 			while(rs.next()){
 				Post post = new Post();
@@ -49,19 +62,38 @@ public class PostDAO {
 				post.setDateeOfIssue(rs.getString(6));
 				post.setAvailable(rs.getInt(7));
 				list.add(post);
+				System.out.println("게시글 삽입");
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
+			System.out.println("게시글 실패");
 		}
 		return list;
 	}
 	
-	
+	public boolean nextPage(String category,int pageNumber) {
+		String sql;
+		try {
+			int no = getNext()-(pageNumber - 1) * 10;
+			sql = "select * from post where no < ? and available = 1 and category = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			pstmt.setString(2,category);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return true;
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 	
 	public int createPost(Post post) {
 		String sql;
 		try {
-			sql = "insert into post values(POST_SEQ.NEXTVAL,?,?,?,?,to_char(SYSDATE,'yyyy-mm-dd hh24:mi:ss'),?)";
+			System.out.println(post.getCategory());
+			sql = "insert into post values("+post.getCategory()+"_seq.nextval,?,?,?,?,to_char(SYSDATE,'yyyy-mm-dd hh24:mi:ss'),?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, post.getCategory());
 			pstmt.setString(2, post.getTitle());
