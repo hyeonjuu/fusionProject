@@ -1,0 +1,27 @@
+fieldset.main_field {
+	width: 30%;
+	height: 200px;
+	border: 2px solid #ff7979;
+}
+
+legend {
+    font-size: 20px;
+    text-align: center;
+    margin: 5% 0 5% 0;
+}
+
+input {
+	margin-left: 15%;
+}
+
+button {
+	width: 30%;
+	height: 30px;
+	margin: 5% 0 0 35%;
+	border: none;
+	border-radius: 5px;
+	background-color: #ff7979;
+	color: #ffffff;
+	
+}
+
