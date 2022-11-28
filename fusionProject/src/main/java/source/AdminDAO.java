@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class AdminDAO {
 	private Connection conn;  //자바와 데이터베이스를 연결하는 Connection 객
@@ -95,5 +97,98 @@ public class AdminDAO {
 		}
 		
 		return -2;
+	}
+	public int getNext() {
+		String sql;
+		try {
+			sql = "select id from member order by no desc";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				return rs.getInt(1) + 1;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	public ArrayList<Member> getUserList() {
+		String sql;
+		ArrayList<Member> list = new ArrayList<Member>();
+		try {
+			sql = "select * from member";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Member member = new Member();
+				member.setId(rs.getString(1));
+				member.setName(rs.getString(2));
+				member.setPassword(rs.getString(3));
+				member.setBirth(rs.getString(4));
+				member.setEmail(rs.getString(5));
+				member.setTel(rs.getString(6));
+				member.setGender(rs.getString(7));
+				member.setRank(rs.getInt(8));
+				list.add(member);
+				System.out.println("유저 불러오");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("유저 목록 실패");
+		}
+		return list;
+	}
+	public Member getInfo(String id) {
+		String sql;
+		Member member = null;
+		try {
+			sql = "select * from member where id= ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				member = new Member();
+				member.setId(rs.getString(1));
+				member.setName(rs.getString(2));
+				member.setPassword(rs.getString(3));
+				member.setBirth(rs.getString(4));
+				member.setEmail(rs.getString(5));
+				member.setTel(rs.getString(6));
+				member.setGender(rs.getString(7));
+				member.setRank(rs.getInt(8));
+				}
+			}
+		 catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return member;
+	}
+	public ArrayList<BankAccount> getUserAccountList(String id) {
+		String sql;
+		ArrayList<BankAccount> list = new ArrayList<BankAccount>();
+		try {
+			sql = "select * from bank_account where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				BankAccount ba = new BankAccount();
+				ba.setBankNumber(rs.getString(1));
+				ba.setBank(rs.getString(2));
+				ba.setId(rs.getString(3));
+				ba.setPassword(rs.getString(4));
+				ba.setBalance(rs.getInt(5));
+				ba.setRate(rs.getDouble(6));
+				ba.setStatus(rs.getString(7));
+				ba.setName(rs.getString(8));
+				ba.setDate(rs.getString(9));
+				list.add(ba);
+				System.out.println("계 불러오");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("계좌 목록 실패");
+		}
+		return list;
 	}
 }

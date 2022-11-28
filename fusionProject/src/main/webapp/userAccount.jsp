@@ -1,5 +1,8 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="source.AdminDAO"%>
+<%@page import="source.BankAccount"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,54 +23,66 @@
 	<!--header-->
 	<div class="main">
 		<%@ include file="nav.jsp"%>
-
+		<%
+		String id = null;
+		if(request.getParameter("id") != null){
+			id = (String)request.getParameter("id");
+		}
+		%>
 		<!--main-->
 		<div class="findaccount">
 			<fieldset id="main_field">
-                <form action="#" method="post" name="member">
-                    <div class="account">
-                        <legend>User님의 계좌</legend>
-                        <div class="row">
-                            <table class="table"
-                                style="text-align: center; border: 1px solid #dddddd;">
-                                <thead>
-                                    <tr style="background-color: #eeeeee;">
-                                        <th>번호</th>
-                                        <th>계좌번호</th>
-                                        <th>잔고</th>
-                                        <th>이율</th>
-                                        <th>날짜</th>
-                                        <th>상태</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>0000-00-0000000</td>
-                                        <td>5,000,000</td>
-                                        <td>3.7%</td>
-                                        <td>2009.03.05</td>
-                                        <td>
-                                            <select>
-                                                <option value="거래가능">거래가능</option>
-                                                <option value="거래중지">거래중지</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="saveBtn">
-                            <button type="submit">
-                                <span> 저장 </span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+				<form action="#" method="post" name="member">
+					<div class="account">
+						<legend><%=id%>님의 계좌
+						</legend>
+						<div class="row">
+							<table class="table"
+								style="text-align: center; border: 1px solid #dddddd;">
+								<thead>
+									<tr style="background-color: #eeeeee;">
+										<th>번호</th>
+										<th>계좌번호</th>
+										<th>잔고</th>
+										<th>이율</th>
+										<th>날짜</th>
+										<th>상태</th>
+									</tr>
+								</thead>
+								<tbody>
+								<%
+                                AdminDAO adminDAO = new AdminDAO();
+                            	ArrayList<BankAccount> list = adminDAO.getUserAccountList(id);
+                            	for (int i = 0; i < list.size(); i++) {
+    								BankAccount ba = list.get(i);
+                                %>
+								
+									<tr onclick="window.open('main.jsp','status')">
+										<td><%=i+1 %></td>
+										<td><%=ba.getBankNumber() %></td>
+										<td><%=ba.getBalance() %></td>
+										<td><%=ba.getRate() %>%</td>
+										<td><%=ba.getDate() %></td>
+										<td><%=ba.getStatus() %></td>
+									</tr>
+								
+								<%
+								}
+								%>
+								</tbody>
+							</table>
+						</div>
+						<div class="saveBtn">
+							<button type="submit">
+								<span> 저장 </span>
+							</button>
+						</div>
+					</div>
+				</form>
 			</fieldset>
 		</div>
 
-		<%@ include file="footer.jsp" %>
+		<%@ include file="footer.jsp"%>
 
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
