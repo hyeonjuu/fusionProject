@@ -13,8 +13,8 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-    <link rel="stylesheet" href="css/basic.css">
-    <link rel="stylesheet" href="css/Transfer.css">
+    <link rel="stylesheet" href="css/basic.css?after">
+    <link rel="stylesheet" href="css/Transfer.css?after">
 
 </head>
 
@@ -50,7 +50,6 @@
                           	<select name="bank">
                           		<option value="개혁은행"> 개혁은행
                           	</select>
-                              <input type="text" id="product_name">
                           </span>
                       </div>
                       <div class="middle2">

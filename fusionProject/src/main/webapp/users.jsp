@@ -1,3 +1,6 @@
+<%@page import="source.Member"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="source.AdminDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -40,16 +43,25 @@
                                         <th>고객등급</th>
                                     </tr>
                                 </thead>
+                                <%
+                                	AdminDAO adminDAO = new AdminDAO();
+                                	ArrayList<Member> list = adminDAO.getUserList();
+                                	for (int i = 0; i < list.size(); i++) {
+        								Member member = list.get(i);
+                                %>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>jwd123</td>
-                                        <td>정원동</td>
-                                        <td>2000.06.09</td>
-                                        <td>010-5664-6814</td>
-                                        <td>1</td>
+                                    <tr onclick="location.href = 'amendUserInfo.jsp?id=<%=member.getId()%>'">
+                                        <td><%=i+1%></td>
+                                        <td><%=member.getId() %></td>
+                                        <td><%=member.getName()%></td>
+                                        <td><%=member.getBirth() %></td>
+                                        <td><%=member.getTel()%></td>
+                                        <td><%=member.getRank() %></td>
+                                        
                                     </tr>
+                                    
                                 </tbody>
+                                <%} %>
                             </table>
                         </div>
                         <div class="saveBtn">

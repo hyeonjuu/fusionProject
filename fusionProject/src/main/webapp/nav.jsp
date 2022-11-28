@@ -47,9 +47,11 @@
 						</li>
 					<div class="line"></div>
 					<li class="nav-item"><a class="nav-link"
-						href="#" id="navGive">이체</a></li>
+						href="transfer.jsp" id="navGive">이체</a></li>
 					<div class="line"></div>
-					<li class="nav-item"><a class="nav-link" href="#" id="navInfo">정보</a></li>
+					<li class="nav-item"><a class="nav-link" href="changeInfo.jsp" id="navInfo">정보</a></li>
+					<div class="line"></div>
+					<li class="nav-item"><a class="nav-link" href="users.jsp" id="navInfo">관리자</a></li>
 				</ul>
 			</div>
 			<div class="collapse navbar-collapse justify-content-end"
