@@ -1,0 +1,48 @@
+.btn-primary {
+	color: #fff;
+	background-color: #ff7979;
+	border-color: #ff7979;
+}
+
+fieldset {
+	border: 1px solid #ff7979;
+	border-radius: 10px;
+	padding-top: 30px;
+	margin: 3% 15% 10px 15%;
+}
+
+form {
+	padding-left: 30px;
+}
+
+legend {
+	text-align: center;
+	margin: 0 0 5% 0;
+}
+
+input.form-control {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #dfdfdf;
+    width: 50%;
+    height: 50px;
+    margin: 0 0 1px 23%;
+    font-size: 15px;
+}
+
+p {
+	margin: 5% 0 0 23%;
+}
+
+input.form-radio1 {
+	margin: 3% 0 0 23%;
+}
+
+input.form-radio2 {
+	margin: 3% 0 0 5%;
+}
+
+input.btn {
+	margin-bottom: 5%;
+}
