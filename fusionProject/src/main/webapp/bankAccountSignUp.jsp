@@ -14,45 +14,8 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/basic.css">
-<style>
-.btn-primary {
-	color: #fff;
-	background-color: #ff7979;
-	border-color: #ff7979;
-}
-
-.btn-primary:hover {
-	color: #fff;
-	background-color: #ff5656;
-	border-color: #ff5656;
-}
-
-.btn:focus, .btn:active {
-	outline: none !important;
-	box-shadow: none !important;
-}
-
-.form-control:focus, .form-control:active {
-	outline: none !important;
-	box-shadow: none !important;
-}
-
-fieldset {
-	border: 1px solid #ff7979;
-	border-radius: 10px;
-	padding-top: 30px;
-	margin: 10% 15% 10px 15%;
-}
-
-form {
-	padding-left: 30px;
-}
-
-legend {
-	text-align: center;
-}
-</style>
+<link rel="stylesheet" href="css/basic.css?after">
+<link rel="stylesheet" href="css/bankAccountSignUp.css?after">
 </head>
 
 <body>
@@ -65,33 +28,39 @@ legend {
 			<fieldset>
 				<legend>개인정보 입력</legend>
 				<form action="bankAccountProcess.jsp" method="post" name="ADMIN">
-					<p>직업구분</p>
-					<input type="text" class="form-control" name="id" maxlength="15"
-						size="10" style="width: 50%;">
-					<p>거래목적</p>
-					<input type="text" class="form-control" name="forWhy"
-						maxlength="15" size="10" style="width: 50%;">
-					<p>거래자금의 원천</p>
-					<input type="text" class="form-control" name="forWhy"
-						maxlength="15" size="10" style="width: 50%;">
-					<p>거래자금이 본인 소유인가요?</p>
-					<input type="radio" name="own">아니요 <input type="radio"
-						name="own"> 예 <br> <br>
-
-					<p>해외 납세 의무자인가요?</p>
-					<input type="radio" name="foreign">아니요 <input type="radio"
-						name="foreign"> 예 <br> <br>
-
-					<p>비밀번호</p>
-					<input type="password" class="form-control" name="password"
-						maxlength="15" size="10" style="width: 50%;"> <br>
-
-					<p>비밀번호 확인</p>
-					<input type="password" class="form-control" name="password"
-						maxlength="15" size="10" style="width: 50%;"> <br> <br>
-
-					<input type="submit" class="btn btn-primary form-control"
-						value="다음" style="width: 20%;">
+					<div>
+						<p>직업구분</p>
+						<input type="text" class="form-control" name="id" maxlength="15" size="10">
+					</div>
+					<div>
+						<p>거래목적</p>
+						<input type="text" class="form-control" name="forWhy" maxlength="15" size="10">
+					</div>
+					<div>
+						<p>거래자금의 원천</p>
+						<input type="text" class="form-control" name="forWhy" maxlength="15" size="10">
+					</div>
+					<div class="radio_div">
+						<p>거래자금이 본인 소유인가요?</p>
+						<input type="radio" name="own" class="form-radio1">아니요
+						<input type="radio" name="own" class="form-radio2"> 예 <br> <br>
+					</div>
+					<div class="radio_div">
+						<p>해외 납세 의무자인가요?</p>
+						<input type="radio" name="foreign" class="form-radio1">아니요
+						<input type="radio" name="foreign" class="form-radio2"> 예 <br> <br>
+					</div>
+					<div>
+						<p>비밀번호</p>
+						<input type="password" class="form-control" name="password" maxlength="15" size="10"> <br>
+					</div>
+					<div>
+						<p>비밀번호 확인</p>
+						<input type="password" class="form-control" name="password" maxlength="15" size="10"> <br> <br>
+					</div>	
+					<div>
+						<input type="submit" class="btn btn-primary form-control" value="다음">
+					</div>
 				</form>
 			</fieldset>
 		</div>
