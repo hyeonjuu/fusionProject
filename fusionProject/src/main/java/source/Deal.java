@@ -1,13 +1,14 @@
 package source;
 
-public class Transfer {
+public class Deal {
 	private int no;
 	private String type;
-	private String date;
+	private String transfertime;
 	private String hostBank;
 	private String hostBankAccount;
 	private String targetBank;
 	private String targetBankAccount;
+	private int amount;
 	private int balance;
 	private String targetShow;
 	public int getNo() {
@@ -22,12 +23,14 @@ public class Transfer {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public String getDate() {
-		return date;
+	
+	public String getTransfertime() {
+		return transfertime;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setTransfertime(String transfertime) {
+		this.transfertime = transfertime;
 	}
+	
 	public String getHostBank() {
 		return hostBank;
 	}
@@ -51,6 +54,12 @@ public class Transfer {
 	}
 	public void setTargetBankAccount(String targetBankAccount) {
 		this.targetBankAccount = targetBankAccount;
+	}
+	public int getAmount() {
+		return amount;
+	}
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
 	public int getBalance() {
 		return balance;

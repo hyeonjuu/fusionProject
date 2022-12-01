@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class BankAccountDAO {
 
@@ -105,6 +106,7 @@ public class BankAccountDAO {
 		return null;
 	}
 	
+	
 	public int checkId(String id) {
 		String sql = "select name from bank_ account where id = ?"; // 
 		try {
@@ -139,6 +141,7 @@ public class BankAccountDAO {
 	}
 	
 	
+	
 	public int countRow(String id) {
 		try {
 			String sql = "select count(*) from bank_account where id = ?";
@@ -154,6 +157,32 @@ public class BankAccountDAO {
 		return -1;
 	}
 
-
+	public ArrayList<BankAccount> getUserAccountList(String id) {
+		String sql;
+		ArrayList<BankAccount> list = new ArrayList<BankAccount>();
+		try {
+			sql = "select * from bank_account where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				BankAccount ba = new BankAccount();
+				ba.setBankNumber(rs.getString(1));
+				ba.setBank(rs.getString(2));
+				ba.setId(rs.getString(3));
+				ba.setPassword(rs.getString(4));
+				ba.setBalance(rs.getInt(5));
+				ba.setRate(rs.getDouble(6));
+				ba.setStatus(rs.getString(7));
+				ba.setName(rs.getString(8));
+				ba.setDate(rs.getString(9));
+				list.add(ba);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("계좌 목록 실패");
+		}
+		return list;
+	}
 
 }

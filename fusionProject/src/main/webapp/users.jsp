@@ -27,7 +27,6 @@
 		<!--main-->
 		<div class="users">
 			<fieldset id="main_field">
-                <form action="#" method="post" name="member">
                     <div class="account">
                         <legend>고객 목록</legend>
                         <div class="row">
@@ -45,7 +44,15 @@
                                 </thead>
                                 <%
                                 	AdminDAO adminDAO = new AdminDAO();
-                                	ArrayList<Member> list = adminDAO.getUserList();
+                                	ArrayList<Member> list = null;
+                                	if(request.getParameter("name")!= null){
+                                		String name = (String)request.getParameter("name");
+                                	 	list = adminDAO.getUserList(name);
+                                	 	
+                                	} else {
+                                		list = adminDAO.getUserList();
+                                	}
+                                
                                 	for (int i = 0; i < list.size(); i++) {
         								Member member = list.get(i);
                                 %>
@@ -65,11 +72,12 @@
                             </table>
                         </div>
                         <div class="saveBtn">
-                            <input type="text" placeholder="이름">
-                            <input type="button" value="검색">
+                        	<form action="users.jsp" method="get">
+                            <input type="text" placeholder="이름" name="name">
+                            <input type="submit" value="검색" >
+                            </form>
                         </div>
                     </div>
-                </form>
 			</fieldset>
 		</div>
 
