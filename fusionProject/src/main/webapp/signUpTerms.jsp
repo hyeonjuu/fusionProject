@@ -58,8 +58,8 @@
 						</li>
 					</ul>
 					<ul class="footBtwrap clearfix">
-						<li><button class="fpmgBt1" onclick="location.href='main.jsp'">취소</button></li>
-						<li><button class="fpmgBt2" onclick="location.href='signUp.jsp'">확인</button></li>
+						<li><button type="button" class="fpmgBt1" onclick="location.href='main.jsp'">취소</button></li>
+						<li><button type="button" class="fpmgBt2" onclick="location.href='signUp.jsp'">확인</button></li>
 					</ul>
 				</form>
 			</fieldset>

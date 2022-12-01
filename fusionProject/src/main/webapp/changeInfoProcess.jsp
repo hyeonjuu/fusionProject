@@ -7,8 +7,6 @@
 <jsp:setProperty name="Member" property="id"/>
 <jsp:setProperty name="Member" property="name"/>
 <jsp:setProperty name="Member" property="password"/>
-<jsp:setProperty name="Member" property="birth"/>
-<jsp:setProperty name="Member" property="gender"/>
 <jsp:setProperty name="Member" property="email"/>
 <jsp:setProperty name="Member" property="tel"/>
 <!DOCTYPE html>
@@ -23,8 +21,25 @@
 	String userID = null;
 	if(session.getAttribute("userID") != null){
 		userID = (String)session.getAttribute("userID");
+		
 	}
+	Member.setId(userID);
 	
+	UserDAO userDAO = new UserDAO();
+	int result = userDAO.updateInfo(Member);
+	
+	if(result == -1){
+		script.println("<script>");
+		script.println("alert('오류가 발생했습니다.')");
+		script.println("history.back()");
+		script.println("</script>");
+	}
+	else{
+		script.println("<script>");
+		script.println("alert('수정되었습니다.')");
+		script.println("location.href='main.jsp'");
+		script.println("</script>");
+	}
 	
 	%>
 </body>

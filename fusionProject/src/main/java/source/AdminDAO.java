@@ -138,6 +138,32 @@ public class AdminDAO {
 		}
 		return list;
 	}
+	public ArrayList<Member> getUserList(String name) {
+		String sql;
+		ArrayList<Member> list = new ArrayList<Member>();
+		try {
+			sql = "select * from member where name = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Member member = new Member();
+				member.setId(rs.getString(1));
+				member.setName(rs.getString(2));
+				member.setPassword(rs.getString(3));
+				member.setBirth(rs.getString(4));
+				member.setEmail(rs.getString(5));
+				member.setTel(rs.getString(6));
+				member.setGender(rs.getString(7));
+				member.setRank(rs.getInt(8));
+				list.add(member);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("유저 목록 실패");
+		}
+		return list;
+	}
 	public Member getInfo(String id) {
 		String sql;
 		Member member = null;
@@ -183,12 +209,39 @@ public class AdminDAO {
 				ba.setName(rs.getString(8));
 				ba.setDate(rs.getString(9));
 				list.add(ba);
-				System.out.println("계 불러오");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("계좌 목록 실패");
 		}
 		return list;
+	}
+	public int setStatus(BankAccount bankAccount) {
+		String sql;
+		try {
+			sql = "update bank_account set status = ? where banknumber = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bankAccount.getStatus());
+			pstmt.setString(2, bankAccount.getBankNumber());
+			return pstmt.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	public int updateInfo(Member member) {
+		String sql;
+		try {
+			sql = "update member set email = ?, tel = ?, rank = ? where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, member.getEmail());
+			pstmt.setString(2, member.getTel());
+			pstmt.setInt(3, member.getRank());
+			pstmt.setString(4, member.getId());
+			return pstmt.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
 	}
 }

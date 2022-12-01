@@ -28,6 +28,8 @@
 		if(request.getParameter("id") != null){
 			id = (String)request.getParameter("id");
 		}
+		
+		
 		%>
 		<!--main-->
 		<div class="findaccount">
@@ -57,7 +59,8 @@
     								BankAccount ba = list.get(i);
                                 %>
 								
-									<tr onclick="window.open('main.jsp','status')">
+									<tr onclick="window.open('bankAccountStatus.jsp?bankNumber=<%=ba.getBankNumber() %>','popup',
+							            'width=400, height=300, top=200, left=50, scrollbars=0, toolbar=0, menubar=no');">
 										<td><%=i+1 %></td>
 										<td><%=ba.getBankNumber() %></td>
 										<td><%=ba.getBalance() %></td>

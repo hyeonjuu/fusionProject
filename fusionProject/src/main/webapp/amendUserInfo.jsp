@@ -39,13 +39,13 @@
 		<div class="amenduseraccount">
 			<fieldset>
 				<legend><%=id %>님의 정보</legend>
-				<form action="#" method="post" name="modify">
+				<form action="amendUserInfoProcess.jsp" method="post" name="modify">
 					<p>ID</p>
 					<input type="text" class="form-control" name="id" maxlength="15"
 						size="10" style="width: 70%;" value ="<%=member.getId()%>">
 
 					<p>이메일</p>
-					<input type="email" class="form-control" name="adress" size="10"
+					<input type="email" class="form-control" name="email" size="10"
 						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;"value="<%=member.getEmail() %>" >
 
 					<p>전화번호</p>
@@ -54,7 +54,7 @@
 						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;" value="<%=member.getTel()%>">
 
                     <p>신용도</p>
-                    <select class="form-control" name="creditrating">
+                    <select class="form-control" name="rank">
                         <option value="1"<%=member.getRank()==1?"selected":"" %>>1</option>
                         <option value="2"<%=member.getRank()==2?"selected":"" %>>2</option>
                         <option value="3"<%=member.getRank()==3?"selected":"" %>>3</option>
@@ -65,7 +65,7 @@
                     <p>은행 계좌</p>
                      
                 	
-                    <select class="form-control" name="bankaccount">
+                    <select class="form-control" name="bankAccount">
                     <%
                     ArrayList<BankAccount> list = adminDAO.getUserAccountList(id);
                 	for (int i = 0; i < list.size(); i++) {
@@ -74,10 +74,10 @@
                         <%} %>
                     </select>
 					
-                    <Button type="button" class="btn form-control" value="계좌 조회"
+                    <input type="submit" class="btn form-control" value="계좌 조회"
                         style="width: 20%; margin-left: 25%; margin-bottom: 5%; background-color: #ff7979; color: #ffffff;"
-                        onclick="location.href = 'userAccount.jsp?id=<%=id%>'">계좌 조회
-					</Button>
+                        formaction="userAccount.jsp">
+					
 					<br> <br> <input type="submit"
 						class="btn btn-primary form-control" value="변경"
 						style="width: 20%; margin-left: 25%; margin-bottom: 5%;">

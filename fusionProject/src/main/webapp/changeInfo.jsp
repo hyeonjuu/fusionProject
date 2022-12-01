@@ -103,7 +103,7 @@ p {
 						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;"value="<%=email%>" >
 
 					<p>전화번호</p>
-					<input type="password" class="form-control" name="tel"
+					<input type="text" class="form-control" name="tel"
 						size="10"
 						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;" value="<%=tel%>">
 					<br> <br> <input type="submit"

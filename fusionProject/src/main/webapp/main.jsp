@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="source.PostDAO"%>
+<%@page import="source.Post"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -47,21 +50,55 @@
 					<h2 onclick="location.href='news.jsp'">새소식</h2>
 					<hr>
 				</div>
-				<p>안녕</p>
+				<ul>
+				<%
+				PostDAO postDAO = new PostDAO();
+				ArrayList<Post> list = postDAO.getPostList("news", 1);
+				for (int i = 0; i < 5; i++) {
+					Post post = list.get(i);
+				%>
+					<li>
+					<a href="postView.jsp?no=<%=post.getNo()%>&category=<%=post.getCategory()%>">
+					<%=post.getTitle() %></a>
+					</li>
+					<%} %>
+				</ul>
 			</div>
 			<div class="box">
 				<div class="boxHeader2">
 					<h2 onclick="location.href='notice.jsp'">공지사항</h2>
 					<hr>
 				</div>
-				<p>안녕 못 해</p>
+				<ul>
+				<%
+				list = postDAO.getPostList("notice", 1);
+				for (int i = 0; i < 5; i++) {
+					Post post = list.get(i);
+				%>
+					<li>
+					<a href="postView.jsp?no=<%=post.getNo()%>&category=<%=post.getCategory()%>">
+					<%=post.getTitle() %></a>
+					</li>
+				<% } %>
+				</ul>
 			</div>
 			<div class="box">
 				<div class="boxHeader3">
 					<h2 onclick="location.href='qna.jsp'">QnA</h2>
 					<hr>
 				</div>
-				<p>힝</p>
+				<ul>
+				<%
+				list = postDAO.getPostList("qna", 1);
+				for (int i = 0; i < 5; i++) {
+					Post post = list.get(i);
+				%>
+					<li>
+					<a href="postView.jsp?no=<%=post.getNo()%>&category=<%=post.getCategory()%>">
+					<%=post.getTitle() %></a>
+					</li>
+				<% } %>
+				</ul>
 			</div>
 		</div>
 	</div>

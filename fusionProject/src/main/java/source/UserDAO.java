@@ -134,4 +134,19 @@ public class UserDAO {
 		}
 		return member;
 	}
+	public int updateInfo(Member member) {
+		String sql;
+		try {
+			sql = "update member set password = ? , email = ? , tel = ? where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, member.getPassword());
+			pstmt.setString(2, member.getEmail());
+			pstmt.setString(3, member.getTel());
+			pstmt.setString(4, member.getId());
+			return pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
 }
