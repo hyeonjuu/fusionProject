@@ -20,8 +20,8 @@
 		userID = (String)session.getAttribute("userID");
 	}
 	
-	String hostBankAccount = (String)request.getParameter("hostBankAccount");
-	String targetBankAccount = (String)request.getParameter("targetBankAccount");
+	String hostBankAccount = (String)request.getParameter("host");
+	String targetBankAccount = (String)request.getParameter("target");
 	String password = (String)request.getParameter("password");
 	String showMessage = (String)request.getParameter("showMesseage");
 	int amount = Integer.parseInt(request.getParameter("amount"));
@@ -30,8 +30,8 @@
 	BankAccount host = dealDAO.getBankAccount(hostBankAccount);
 	BankAccount target = dealDAO.getBankAccount(targetBankAccount);
 	
-	dealDAO.deposit(host, target, amount, showMessage);
-	
+	int result = dealDAO.deposit(host, target, amount, showMessage);
+	System.out.println(result);
 %>
 </body>
 </html>

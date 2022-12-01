@@ -32,26 +32,29 @@
 		<div class="transfer">
 			<fieldset class="main_field">
 				<legend>이체</legend>
-				<form action="#" method="post" name="member" id="bankaccountwelcome">
+				<form action="transferProcess.jsp" method="post" name="member"
+					id="bankaccountwelcome">
 					<!-- 보낼계좌 -->
 					<div class="sendAccount">
 						<h3 class="title">
 							<label>보낼계좌</label>
 						</h3>
-						<span class="sendAccount_main"> <select id="myaccount">
+						<span class="sendAccount_main"> <select id="myaccount"
+							name="host">
 								<%
 								ArrayList<BankAccount> list = baDAO.getUserAccountList(userID);
 								for (int i = 0; i < list.size(); i++) {
 									BankAccount ba = list.get(i);
 									String disabled = null;
-									if (!ba.getStatus().equals("거래가능")){
+									if (!ba.getStatus().equals("거래가능")) {
 										disabled = "disabled";
-										
+
 									}
 								%>
-								<option value="<%=ba.getBankNumber()%>"<%=disabled %>><%=ba.getBankNumber()%>
+								<option value="<%=ba.getBankNumber()%>" <%=disabled%>><%=ba.getBankNumber()%>
 									(잔액 :
-									<%=ba.getBalance()%>) <%=ba.getStatus() %>
+									<%=ba.getBalance()%>)
+									<%=ba.getStatus()%>
 								</option>
 								<%
 								}
@@ -83,7 +86,8 @@
 								<h3 class="title">
 									<label>받는 분 계좌번호</label>
 								</h3>
-								<span class="openingDate_main"> <input type="text">
+								<span class="openingDate_main"> <input type="text"
+									name="target">
 								</span>
 							</div>
 							<div class="middle2">
@@ -91,7 +95,7 @@
 									<label>받는 분 표기</label>
 								</h3>
 								<span class="accountNum"> <input type="text"
-									id="accountNum" value="<%=userName%>">
+									id="accountNum" name="showMessage" value="<%=userName%>">
 								</span>
 							</div>
 						</div>
@@ -101,15 +105,15 @@
 							<h3>
 								<label>보낼 금액</label>
 							</h3>
-							<span> <input type="text" id="sendmoney">
+							<span> <input type="text" id="sendmoney" name="amount">
 							</span>
 						</div>
-
+						<div class="btn">
+							<input type="submit" id="btn" class="mainBtn" value="이체하기">
+						</div>
 					</div>
 					<!-- 이체하기 버튼 -->
-					<div class="btn">
-						<input type="submit" id="btn" class="mainBtn" value="이체하기">
-					</div>
+
 				</form>
 			</fieldset>
 		</div>

@@ -3,7 +3,7 @@
 
 fieldset.main_field{
     width: 80%;
-    padding: 3% 10% 3% 10%;
+    padding: 3% 10% 5% 10%;
     border-radius: 10px;
     margin: 2% 0 2% 10% ;
     border: none;
@@ -18,9 +18,10 @@ legend {
 }
 
 #btn {
-    margin-top: 50px;
-    margin-left: 200%;
-    width: 820%;
+	position : absolute;
+    margin-bottom : 10px;
+    margin-left : 10%;
+    width : 38.4%;
     height: 50px;
     background-color: #ff7979;
     border: none;
