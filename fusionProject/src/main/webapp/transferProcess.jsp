@@ -22,11 +22,15 @@
 	
 	String hostBankAccount = (String)request.getParameter("hostBankAccount");
 	String targetBankAccount = (String)request.getParameter("targetBankAccount");
+	String password = (String)request.getParameter("password");
+	String showMessage = (String)request.getParameter("showMesseage");
+	int amount = Integer.parseInt(request.getParameter("amount"));
 	
 	DealDAO dealDAO = new DealDAO();
 	BankAccount host = dealDAO.getBankAccount(hostBankAccount);
 	BankAccount target = dealDAO.getBankAccount(targetBankAccount);
 	
+	dealDAO.deposit(host, target, amount, showMessage);
 	
 %>
 </body>

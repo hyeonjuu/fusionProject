@@ -51,7 +51,7 @@
 								%>
 								<option value="<%=ba.getBankNumber()%>"<%=disabled %>><%=ba.getBankNumber()%>
 									(잔액 :
-									<%=ba.getBalance()%>)
+									<%=ba.getBalance()%>) <%=ba.getStatus() %>
 								</option>
 								<%
 								}
@@ -108,9 +108,7 @@
 					</div>
 					<!-- 이체하기 버튼 -->
 					<div class="btn">
-						<button type="button" class="mainBtn">
-							<span>이체하기</span>
-						</button>
+						<input type="submit" id="btn" class="mainBtn" value="이체하기">
 					</div>
 				</form>
 			</fieldset>
