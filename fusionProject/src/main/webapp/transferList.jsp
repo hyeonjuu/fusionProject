@@ -26,26 +26,26 @@
 				<legend>이체 내역</legend>
 				<!--총 계좌 목록-->
 				<fieldset id="transfer_list_field">
-					<div id="transfer_list_money">
-						<h3 id="transfer_list_h3">총 개</h3>
-						<h1 id="transfer_money">원</h1>
+					<div class="transfer_list_money">
+						<h3 id="transfer_list_h3 left_list">계좌번호</h3>
+						<h1 id="transfer_money">잔액</h1>
 					</div>
 				</fieldset>
 				<!--이체내역1-->
 				<fieldset id="mytransfer">
 					<div id="user_transfer">
-						<div>
+						<div id="left_list">
 							<h3 id="mytransfer_h3">받는사람</h3>
 							<h3 id="mytransfer_h3">계좌번호</h3>
 						</div>
 						<div id="dropdownmenu"></div>
 					</div>
 					<div id="transfer_money">
-						<div>
+						<div id="left_list">
 							<h4>입금</h4>
 							<h4>22/12/02</h4>
 						</div>
-						<div>
+						<div id="money">
 							<h1 id="mybank_money"> 100원</h1>
 							<h1 id="mybank_money"> 50원</h1>
 						</div>
