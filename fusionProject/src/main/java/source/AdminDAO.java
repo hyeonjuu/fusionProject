@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class AdminDAO {
@@ -259,5 +260,16 @@ public class AdminDAO {
 			e.printStackTrace();
 		}
 		return "오류";
+	}
+	public String replace(String bankNumber) {
+		StringBuilder str = new StringBuilder(bankNumber);
+		str.insert(4,"-");
+		str.insert(8,"-");
+		return str.toString();
+	}
+	public String comma(int balance) {
+		DecimalFormat decFormat = new DecimalFormat("#,###");
+		String val =  decFormat.format(balance);
+		return val;
 	}
 }

@@ -30,6 +30,7 @@ request.setCharacterEncoding("UTF-8");
 
 	DealDAO dealDAO = new DealDAO();
 	BankAccount host = dealDAO.getBankAccount(hostBankAccount, password);
+	System.out.print(password);
 	if (host == null){
 		script.println("<script>");
 		script.println("alert('비밀번호가 틀립니다.')");

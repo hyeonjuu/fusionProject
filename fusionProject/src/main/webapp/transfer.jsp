@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="source.BankAccountDAO"%>
 <%@page import="source.BankAccount"%>
 <%@page import="java.util.ArrayList"%>
@@ -23,7 +24,7 @@
 
 <body>
 	<!--header-->
-	<div>
+	<div class="main">
 		<%@ include file="nav.jsp"%>
 		<%
 		BankAccountDAO baDAO = new BankAccountDAO();
@@ -43,17 +44,20 @@
 							name="host">
 								<%
 								ArrayList<BankAccount> list = baDAO.getUserAccountList(userID);
+								DecimalFormat decFormat = new DecimalFormat("#,###");
 								for (int i = 0; i < list.size(); i++) {
+									
 									BankAccount ba = list.get(i);
+									String balance = decFormat.format(ba.getBalance());
 									String disabled = null;
 									if (!ba.getStatus().equals("거래가능")) {
 										disabled = "disabled";
 
 									}
 								%>
-								<option value="<%=ba.getBankNumber()%>" <%=disabled%>><%=ba.getBankNumber()%>
+								<option value="<%=ba.getBankNumber()%>" <%=disabled%>><%=baDAO.replace(ba.getBankNumber())%>
 									(잔액 :
-									<%=ba.getBalance()%>)
+									<%=balance%>)
 									<%=ba.getStatus()%>
 								</option>
 								<%
@@ -68,7 +72,7 @@
 						<h3>
 							<label>비밀번호 입력</label>
 						</h3>
-						<span> <input type="password" id="sendpasswd" maxlength="4">
+						<span> <input type="password" id="sendpasswd" maxlength="4" name="password">
 						</span>
 						<!-- 받는 은행 및 받는 분 표기 -->
 						<div class="middle">

@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="source.Deal"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="source.DealDAO"%>
@@ -38,11 +39,14 @@
 				<%
 					String bankNumber = (String)request.getParameter("bankNumber");
 				
+					DecimalFormat decFormat = new DecimalFormat("#,###");
 					
 					DealDAO dealDAO = new DealDAO();
 					ArrayList<Deal> list = dealDAO.getDealList(bankNumber);
 					for(int i = 0; i<list.size();i++){
 						Deal deal = list.get(i);
+						String amount = decFormat.format(deal.getAmount());
+						String balance = decFormat.format(deal.getBalance());
 				%>
 				<fieldset id="mytransfer">
 					<div id="user_transfer">
@@ -58,8 +62,8 @@
 							<h4><%=deal.getTransfertime() %></h4>
 						</div>
 						<div>
-							<p id="mybank_money"> 금액 : <%=deal.getAmount() %></h1>
-							<p id="mybank_money"> 잔액 : <%=deal.getBalance() %></h1>
+							<p id="mybank_money"> 금액 : <%=amount %></h1>
+							<p id="mybank_money"> 잔액 : <%=balance %></h1>
 						</div>
 					</div>
 				</fieldset>

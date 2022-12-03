@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -95,7 +96,7 @@ public class BankAccountDAO {
 	public ResultSet getMyAccounts(String id) {
 		String sql;
 		try {
-			sql = "select * from bank_account where id = ? ";
+			sql = "select * from bank_account where id = ? order by banknumber asc ";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -161,7 +162,7 @@ public class BankAccountDAO {
 		String sql;
 		ArrayList<BankAccount> list = new ArrayList<BankAccount>();
 		try {
-			sql = "select * from bank_account where id = ?";
+			sql = "select * from bank_account where id = ? order by banknumber desc";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -183,6 +184,17 @@ public class BankAccountDAO {
 			System.out.println("계좌 목록 실패");
 		}
 		return list;
+	}
+	public String replace(String bankNumber) {
+		StringBuilder str = new StringBuilder(bankNumber);
+		str.insert(4,"-");
+		str.insert(8,"-");
+		return str.toString();
+	}
+	public String comma(int balance) {
+		DecimalFormat decFormat = new DecimalFormat("#,###");
+		String val =  decFormat.format(balance);
+		return val;
 	}
 
 }
