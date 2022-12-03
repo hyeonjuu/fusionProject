@@ -1,3 +1,6 @@
+<%@page import="source.Deal"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="source.DealDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -32,27 +35,36 @@
 					</div>
 				</fieldset>
 				<!--이체내역1-->
+				<%
+					String bankNumber = (String)request.getParameter("bankNumber");
+				
+					
+					DealDAO dealDAO = new DealDAO();
+					ArrayList<Deal> list = dealDAO.getDealList("12340000043");
+					for(int i = 0; i<list.size();i++){
+						Deal deal = list.get(i);
+				%>
 				<fieldset id="mytransfer">
 					<div id="user_transfer">
 						<div>
-							<h3 id="mytransfer_h3">받는사람</h3>
-							<h3 id="mytransfer_h3">계좌번호</h3>
+							<h3 id="mytransfer_h3"><%=deal.getShowMessage() %></h3>
+							<h3 id="mytransfer_h3"></h3>
 						</div>
 						<div id="dropdownmenu"></div>
 					</div>
 					<div id="transfer_money">
 						<div>
-							<h4>입금</h4>
-							<h4>22/12/02</h4>
+							<h4><%=deal.getType() %></h4>
+							<h4><%=deal.getTransfertime() %></h4>
 						</div>
 						<div>
-							<h1 id="mybank_money"> 100원</h1>
-							<h1 id="mybank_money"> 50원</h1>
+							<p id="mybank_money"> 금액 : <%=deal.getAmount() %></h1>
+							<p id="mybank_money"> 잔액 : <%=deal.getBalance() %></h1>
 						</div>
 					</div>
 				</fieldset>
 
-					
+				<%} %>
 
 				<!--계좌2-->
 				

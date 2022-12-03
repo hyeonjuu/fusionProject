@@ -10,7 +10,7 @@ public class Deal {
 	private String targetBankAccount;
 	private int amount;
 	private int balance;
-	private String targetShow;
+	private String showMessage;
 	public int getNo() {
 		return no;
 	}
@@ -67,11 +67,11 @@ public class Deal {
 	public void setBalance(int balance) {
 		this.balance = balance;
 	}
-	public String getTargetShow() {
-		return targetShow;
+	public String getShowMessage() {
+		return showMessage;
 	}
-	public void setTargetShow(String targetShow) {
-		this.targetShow = targetShow;
+	public void setShowMessage(String showMessage) {
+		this.showMessage = showMessage;
 	}
 	
 	

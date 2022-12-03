@@ -12,6 +12,7 @@ public class BankAccount {
 	private String status;
 	private String name;
 	private String date;
+	private String userName;
 	public String getBankNumber() {
 		return bankNumber;
 	}
@@ -65,6 +66,12 @@ public class BankAccount {
 	}
 	public void setDate(String date) {
 		this.date = date;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	
 	

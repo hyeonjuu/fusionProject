@@ -69,22 +69,23 @@ public class UserDAO {
 		return "오류";
 	}
 	
-	public int checkId(String s) {
-		String sql = "select id from account where id = ?"; //아이디 중복 체크
+	public int checkId(String id) {
+		String sql = "select id from member where id = ?"; //아이디 중복 체크
+		int idCheck = 0;
 		try {
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1,s); 
+		pstmt.setString(1,id); 
 		rs = pstmt.executeQuery();
-		if(rs.next()) {
-			if(rs.getString(1).equals(s)){  // 입력된 ID값이 존재하나
-				return -2;  //아이디 중복 생성
-			}
+		if(rs.next() || id.equals("")) {
+			idCheck = 0;  // 이미 존재하는 경우, 생성 불가능
+		} else {
+			idCheck = 1;  // 존재하지 않는 경우, 생성 가능
 		}
 		
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return 0;
+		return idCheck;
 	}
 	
 

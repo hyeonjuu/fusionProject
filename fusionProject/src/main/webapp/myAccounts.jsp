@@ -50,7 +50,7 @@
 				</fieldset>
 				<!--계좌1-->
 				<% while(rs.next()){ %>
-				<fieldset id="mybank">
+				<fieldset id="mybank" onclick="location.href='transferList.jsp?bankNumber=<%=rs.getString("banknumber") %>'">
 					<div id="user_bank">
 						<div>
 							<h3 id="mybank_h3"><%=userName %></h3>
