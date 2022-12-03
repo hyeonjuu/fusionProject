@@ -39,14 +39,21 @@ th {
 }
 
 table {
-	text-align: center;
-	border: 1px solid #dddddd;
+	border-spacing: 1;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 6px;
+	overflow: hidden;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
 }
 
 button.writeBtn {
 	border: none;
 	background-color: #ff7979;
-	float: reight;
+	float: right;
 	width: 6%;
 	height: 30px;
 	color: #ffffff;
