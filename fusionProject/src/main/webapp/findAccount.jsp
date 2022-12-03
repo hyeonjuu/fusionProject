@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,42 +25,38 @@
             <!--아이디 찾기-->
             <fieldset class="find_id">
                 <legend class="fIdPw">아이디 찾기</legend>
-                <form action="#" method="post" name="member" id="find_Id">
+                <form action="findId.jsp" method="post" name="member" id="find_Id">
                     <div>
                         <div id="flexId">
                             <div id="flex_input">         
-                                <input type="text" id="fText" placeholder="이름">
+                                <input type="text" id="fText" placeholder="이름" name = "name">
                             </div>
                             <div id="flex_input">
-                                <input type="text" id="fText" placeholder="E-mail">
+                                <input type="text" id="fText" placeholder="E-mail" name="email">
                             </div>
                         </div>
                     </div>
                     <div class="btn_area">
-                        <button type="submit" id="btnFind">
-                            <span>찾기</span>
-                        </button>
+                        <input type="submit" id="btnFind" value = "찾기">
                     </div>
                 </form>
             </fieldset>
             <!--비밀번호 찾기-->
             <fieldset class="find_pw">
                 <legend class="fIdPw">비밀번호 찾기</legend>
-                <form action="#" method="post" name="member" id="find_Pw">
+                <form action="findPassword.jsp" method="post" name="member" id="find_Pw">
                     <div>
                         <div id="flexPw">
                             <div id="flex_input">
-                                <input type="text" id="fText" placeholder="아이디">
+                                <input type="text" id="fText" placeholder="아이디" name="id">
                             </div>
                             <div id="flex_input">
-                                <input type="text" id="fText" placeholder="E-mail">
+                                <input type="text" id="fText" placeholder="E-mail" name="email">
                             </div>
                         </div>
                     </div>
                     <div class="btn_area">
-                        <button type="submit" id="btnFind">
-                            <span>찾기</span>
-                        </button>
+                        <input type="submit" id="btnFind" value = "찾기">
                     </div>
                 </form>
             </fieldset>

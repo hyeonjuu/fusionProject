@@ -49,16 +49,28 @@
 						href="#" id="navMoeny">계좌</a>
 					  <ul id="sub">
             			<li><a class="" href="myAccounts.jsp">내 계좌</a></li>
-            			<li><a class="" href="bankAccountSignUp.jsp">계좌 생성</a></li>
+            			<li><a class="" href="bankAccountTerms.jsp">계좌 생성하기</a></li>
           				</ul>
 						</li>
 					<div class="line"></div>
 					<li class="nav-item"><a class="nav-link"
-						href="transfer.jsp" id="navGive">이체</a></li>
+						href="transfer.jsp" id="navGive">이체</a>
+						<ul id="sub">
+            			<li><a class="" href="transfer.jsp">이체하기</a></li>
+            			<li><a class="" href="myAccounts.jsp">이체 내역 조회</a></li>
+          				</ul></li>
 					<div class="line"></div>
-					<li class="nav-item"><a class="nav-link" href="changeInfo.jsp" id="navInfo">정보</a></li>
+					<li class="nav-item"><a class="nav-link" href="news.jsp" id="navInfo">정보</a>
+					<ul id="sub">
+            			<li><a class="" href="news.jsp">새소식</a></li>
+            			<li><a class="" href="notice.jsp">공지사항</a></li>
+            			<li><a class="" href="qna.jsp">자주 묻는 질문</a></li>
+          				</ul></li>
 					<div class="line"></div>
-					<li class="nav-item"><a class="nav-link" href="users.jsp" id="navInfo">관리자</a></li>
+					<li class="nav-item"><a class="nav-link" href="users.jsp" id="navInfo">관리자</a>
+					<ul id="sub">
+            			<li><a class="" href="users.jsp">고객 목록</a></li>
+          				</ul></li>
 				</ul>
 			</div>
 			<div class="collapse navbar-collapse justify-content-end"
