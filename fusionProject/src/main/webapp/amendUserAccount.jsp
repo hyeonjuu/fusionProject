@@ -13,7 +13,8 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/basic.css">
+<link rel="stylesheet" href="css/basic.css?after">
+<link rel="stylesheet" href="css/amendUserAccount.css?after">
 
 </head>
 
@@ -26,21 +27,17 @@
 
 		<!--main-->	
 		<div class="amenduseraccount">
-			<fieldset>
+			<fieldset class="main_field">
 				<legend>User님의 정보</legend>
 				<form action="#" method="post" name="modify">
 					<p>ID</p>
-					<input type="text" class="form-control" name="id" maxlength="15"
-						size="10" style="width: 70%;" value ="">
+					<input type="text" class="form-control" name="id" maxlength="15" value ="">
 
 					<p>이메일</p>
-					<input type="email" class="form-control" name="adress" size="10"
-						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;"value="" >
+					<input type="email" class="form-control" name="adress" value="" >
 
 					<p>전화번호</p>
-					<input type="tel" class="form-control" name="tel"
-						size="10"
-						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;" value="">
+					<input type="tel" class="form-control" name="tel" value="">
 
                     <p>신용도</p>
                     <select class="form-control" name="creditrating">
@@ -51,18 +48,20 @@
                         <option value="5">5</option>
                     </select>
 
-                    <p>은행 계좌</p>
-                    <select class="form-control" name="bankaccount">
-                        <option value="xxxx-xx-xxxxxxx">xxxx-xx-xxxxxxx</option>
-                        <option value="0000-00-0000000">0000-00-0000000</option>
-                    </select>
-
-                    <input type="button" class="btn form-control" value="계좌 조회"
-                        style="width: 20%; margin-left: 25%; margin-bottom: 5%; background-color: #ff7979; color: #ffffff;">
-
-					<br> <br> <input type="submit"
-						class="btn btn-primary form-control" value="변경"
-						style="width: 20%; margin-left: 25%; margin-bottom: 5%;">
+					<p>은행 계좌</p>
+					<div class="account_flex">
+						<div>
+							<select class="flex form-control" name="bankaccount">
+                   	     		<option value="xxxx-xx-xxxxxxx">xxxx-xx-xxxxxxx</option>
+                   	     		<option value="0000-00-0000000">0000-00-0000000</option>
+                  	  		</select>
+						</div>
+                		<div>
+                			<input type="button" class="flex btn btn-primary" value="계좌 조회">
+                		</div>
+					</div>
+					
+                    <input type="submit" class="btn btn-primary" value="변경">
 				</form>
 			</fieldset>
 		</div>
