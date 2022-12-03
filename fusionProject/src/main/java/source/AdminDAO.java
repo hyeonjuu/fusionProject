@@ -244,4 +244,20 @@ public class AdminDAO {
 		}
 		return -1;
 	}
+	public String getUserName(String id) {
+		String sql;
+		try {
+			sql = "select name from Admin where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getString(1);
+			}
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return "오류";
+	}
 }

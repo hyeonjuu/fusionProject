@@ -29,7 +29,13 @@ request.setCharacterEncoding("UTF-8");
 	int amount = Integer.parseInt(request.getParameter("amount"));
 
 	DealDAO dealDAO = new DealDAO();
-	BankAccount host = dealDAO.getBankAccount(hostBankAccount);
+	BankAccount host = dealDAO.getBankAccount(hostBankAccount, password);
+	if (host == null){
+		script.println("<script>");
+		script.println("alert('비밀번호가 틀립니다.')");
+		script.println("location.href='transfer.jsp'");
+		script.println("</script>");
+	}
 	BankAccount target = dealDAO.getBankAccount(targetBankAccount);
 
 	

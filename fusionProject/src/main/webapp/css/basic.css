@@ -1,3 +1,124 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, code, em, img, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, footer, header, hgroup, menu, nav, section, main, audio, video { margin: 0; padding: 0; }
+
+/* html의 모든 요소와 가상요소선택자에 border-box사용하여 padding, border사용시
+늘어나지않게함 */
+*, :before, :after {box-sizing: border-box;}
+
+/*html5추가 시멘틱엘리먼트를 익스하위버전에서 블럭으로 인식되도록함*/
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main { display: block }
+
+/* button태그에 손모양 커서 */
+button { cursor: pointer }
+
+/* 반응형에서 이미지 원본크기보다 커지지않고 줄어들수는 있게함 */
+img {max-width: 100%;}
+
+/* 익스하위버전에서 이미지 선없애기 */
+fieldset, img { border: 0; vertical-align: top }
+
+/* 리스트 기호 빼기 */
+ol, ul { list-style: none }
+
+/* 태그 기본 기울임꼴 제거 */
+address, em { font-style: normal }
+
+/* 페이지안에서 가장 많은 링크색 지정 */
+a { text-decoration: none; color: #666;  font-weight:400; cursor:pointer;}
+
+/* iframe으로 외부컨텐츠를 연결했을때
+외부컨텐츠안쪽내용이 우리페이지에 영향을 주지못하도록 가려줌
+iframe아래쪽 간격없애기*/
+iframe { overflow: hidden; border: 0; vertical-align: top; }
+
+/* 칸의 선을 합치기, 칸의 간격없애기, 가로를 늘려줌 */
+table { border-collapse: collapse; border-spacing: 0; width: 100%; table-layout: fixed; }
+
+/* 굵기 빼고 헤딩태그 폰트크기를 body에 선언한 크기와 일치시킴 */
+/* h1, h2, h3, h4, h5, h6 { font-weight: normal; font-size: 100% } */
+
+/* 폼요소의 높이가 다를때 요소끼리 세로정렬시킴 */
+input, select, textarea, button { vertical-align: middle; margin: 0; padding: 0 }
+
+/* 스왈 얼럿창 */
+.swal2-styled.swal2-confirm {
+    background-color: #607d8b !important;
+}
+.swal2-styled.swal2-confirm:focus {
+    box-shadow: 0 0 0 3px rgb(96 125 139 / 32%) !important;
+}
+
+/* ios,safari input 초기화 */
+input {
+    appearance:none;
+    border-radius:0;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+}
+input[type='radio'] {
+    appearance:auto;
+    display:none;
+}
+input[type='radio'] + label {
+    display:inline-block;
+    margin:0 auto;
+    position:relative;
+    width:24px;
+    height:22px;
+    border:none;
+    transition:all .2s;
+    cursor:pointer;
+}
+input[type='radio'] + label:after {
+    content:'';
+    position:absolute;
+    top:-12px;
+    right:-11px;
+    background:url(../images/answer_check2.svg) center center no-repeat;
+    background-size:100%;
+    width:0;
+    height:0;
+    transition:all .2s;
+}
+input[type='radio']:checked + label:after {
+    content:'';
+    width:30px;
+    height:30px;
+    transition:all .2s;
+}
+
+/* textarea 리사이즈기능 빼기 */
+textarea { resize: none }
+
+/* 페이지안의 모든 폰트의 줄간격을 1.5로 통일시킴
+모바일 크롬, 모바일 사파리 브라우져의 텍스트 자동확대 방지
+*/
+/* body { line-height: 1.5; -webkit-text-size-adjust: none } */
+/* 지금 작업하는 페이지는 line-height:1.5를 제외하고 작업함 */
+body {-webkit-text-size-adjust: none}
+
+/* 선택영역 */
+::-moz-selection {background: #e91e63; color:#fff;}
+::selection {background: #e91e63; color:#fff;}
+
+/* legend,caption,메뉴제목,섹션제목 블라인드 */
+legend, caption, .blind { position: absolute; overflow: hidden; clip: rect(0 0 0 0); margin: -1px; width: 1px; height: 1px }
+
+/* 공통스타일 */
+/* skip Navgation */
+#skipNavi a {display:block; position: absolute; left: 0; top: -999px; transition:all 0.5s; width: 100%; padding:10px 0; background:#fff; color: #000; z-index: 99999; text-align: center; transform: translateY(-100%); }
+
+#skipNavi a:focus, #skipNavi a:hover, #skipNavi a:active { transform: translateY(0); }
+
+body, input, select, textarea, button, table { font-family: 'pretendard'; font-size: 16px; color: #222; letter-spacing: -0.025em; font-weight:400;}
+
+
+/* placeholder공통 */
+:-ms-input-placeholder { /* Internet Explorer 10-11 */ color: #999; }
+::-ms-input-placeholder { /* Microsoft Edge */ color: #999; }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */ color: #999; opacity: 1; /* Firefox */ }
+
 
 .main {
     margin-top: 30px;
@@ -83,18 +204,18 @@ footer {
     width: 100%;
     height: 100px;
     bottom: 0px;
-    padding-top: 15px;
     border-top: 1px solid #ff7979;
     color: #808080;
-    font-size: 14px;
-    margin-top: 200px;
+    font-size: 20px;
+    margin-top: 100px;
+    margin-bottom : 100px;
 }
 
 footer a {
     display: inline-block;
     margin: 0 20px 10px 20px;
     color: #808080;
-    font-size: 11px;
+    font-size: 20px;
 }
 
 footer a:visited {
@@ -104,7 +225,7 @@ footer a:visited {
 footer p {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 10px;
+    font-size: 15px;
 }
 
 footer p span {
@@ -115,10 +236,26 @@ footer p span {
 
 #footer_logo {
     float: left;
+   	margin-top:20px;
     margin-left: 20px;
     margin-right: 20px;
-    width: 120px;
-    height: 50px;
+    width: 300px;
     font-size: 10px;
 }
 
+.footer_content{
+	margin-top:  20px;
+}
+
+.nav-item #sub {
+	padding:2% 3%;
+	box-shadow:0px 0px 8px rgba(0,0,0,.2);
+	border-radius:10px;
+	z-index: 9;
+}
+#sub li {
+	margin-top:10px;
+}
+#sub li:first-child {
+	margin-top:0;
+}

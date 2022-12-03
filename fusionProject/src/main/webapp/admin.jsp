@@ -7,14 +7,14 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>로그인</title>
+<title>개발혁동조합 관리자 페이지</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="css/basic.css">
-<link rel="stylesheet" href="css/LogIn.css">
+<!-- <link rel="stylesheet" href="css/LogIn.css?after"> -->
 
 <style>
 html {
@@ -41,18 +41,65 @@ html {
 	outline: none !important;
 	box-shadow: none !important;
 }
+.main_admin{
+	background-color:#f7f9f6;
+	in-width: 360px;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.login_box{
+	background-color:#ffffff;
+	    min-width: 0;
+    padding: 0;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    text-align: center;
+    border-color: #ff7979;
+    margin: 10% 25% 5% 25%;
+}
+
+.search {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.bottomLine{
+    border-left :1px solid #808080;
+    height: 25px;
+    margin: 0px 10px 0px 10px;
+}
+
+
+.search a {
+    text-decoration: none;
+    color: #000000;
+}
+.search a:hover {
+    text-decoration-line: underline;
+}
+.login_field{
+	margin-top: 1em;
+}
+.login_field > h3{
+	color:#ff7979;
+}
+
 </style>
 </head>
 
 <body>
 	<!--header-->
-	<div class="main">
-		<%@ include file="nav.jsp"%>
+	<div class="main_admin">
 
 		<!--main-->
 		<div class="login">
-			<div class="ji">
-				<fieldset>
+			<div class="login_wrap">
+				
+			<div class="login_box">
+				<fieldset class="login_field">
+				<h3>개발혁동조합 관리자 페이지</h3>
 					<legend>관리자 로그인</legend>
 					<form action="adminProcess.jsp" method="post" name="member">
 						<input type="text" placeholder="ID" class="form-control" name="id"
@@ -82,9 +129,8 @@ html {
 		</div>
 
 	</div>
+</div>
 
-
-	<%@ include file="footer.jsp"%>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

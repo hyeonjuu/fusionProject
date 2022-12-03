@@ -54,6 +54,29 @@ public class DealDAO {
 		return bankAccount;
 		
 	}
+	public BankAccount getBankAccount(String bankNumber,String password) {
+		String sql;
+		BankAccount bankAccount = null;
+		try {
+			sql = "select b.banknumber ,b.bank,b.balance, m.name from bank_account b, member m where b.id = m.id and b.banknumber = ? and b.password = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,bankNumber);
+			pstmt.setString(2, password);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				bankAccount = new BankAccount();
+				bankAccount.setBankNumber(rs.getString(1));
+				bankAccount.setBank(rs.getString(2));
+				bankAccount.setBalance(rs.getInt(3));
+				bankAccount.setUserName(rs.getString(4));
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return bankAccount;
+		
+	}
 	public int depositLog(BankAccount host, BankAccount target, int amount,String showMessage) {
 		String sql;
 		try{
@@ -85,7 +108,7 @@ public class DealDAO {
 			pstmt.setString(4, target.getBankNumber());
 			pstmt.setInt(5, amount);
 			pstmt.setInt(6, host.getBalance());
-			pstmt.setString(7, host.getUserName());
+			pstmt.setString(7, target.getUserName());
 			
 			return pstmt.executeUpdate();
 		}catch(SQLException e) {

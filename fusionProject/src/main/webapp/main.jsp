@@ -28,18 +28,43 @@
 
 
 		<!--main-->	
-		<div class="mainEvent">
-			<div class="mainImg">
-				<p>이미지 넣을 곳</p>
-			</div>
-
-		</div>
-		<ol class="paging">
-			<li class="on"><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-
-		</ol>
+		
+		<div class="slidebox">
+            <input type="radio" name="slide" id="slide01" checked>
+            <input type="radio" name="slide" id="slide02" >
+            <input type="radio" name="slide" id="slide03" >
+            <input type="radio" name="slide" id="slide04" >
+                <ul class="slidelist">
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide04" class="left"><img src="img/left.png" width="25" height="25" alt=""/></label>
+                            <label for="slide02" class="right"><img src="img/right.png" width="25" height="25" alt=""/></label>
+                            <a><img src="img/slide01.png" alt="이미지"></a>
+                        </div>
+                    </li>
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide01" class="left"><img src="img/left.png" width="25" height="25" alt=""/></label>
+                            <label for="slide03" class="right"><img src="img/right.png" width="25" height="25" alt=""/></label>
+                            <a><img src="img/slide02.png" alt="이미지"></a>
+                        </div>
+                    </li>
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide02" class="left"><img src="img/left.png" width="25" height="25" alt=""/></label>
+                            <label for="slide04" class="right"><img src="img/right.png" width="25" height="25" alt=""/></label>
+                            <a><img src="img/slide03.png" alt="이미지"></a>
+                        </div>
+                    </li>
+                    <li class="slideitem">
+                        <div>
+                            <label for="slide03" class="left"><img src="img/left.png" width="25" height="25" alt=""/></label>
+                            <label for="slide01" class="right"><img src="img/right.png" width="25" height="25" alt=""/></label>
+                            <a><img src="img/slide04.png" alt="이미지"></a>
+                        </div>
+                    </li>
+                </ul>
+        </div>
 		<div class="mainAdd">
 			<p>도움이 되실만한 정보를 원한다면</p>
 		</div>

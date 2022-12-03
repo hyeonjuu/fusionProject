@@ -137,15 +137,7 @@
 									type="tel" id="tel" name="tel" class="int" maxlength="13">
 								</span>
 							</div>
-							<div class="join_row join_admin_code">
-								<h3 class="join_title">
-									<label for="admin_code">관리자 번호</label>
-								</h3>
-								<span class="ps_box int_admin_code box_right_space"> <input
-									type="text" id="admin_code" name="admin_code" class="int"
-									maxlength="#">
-								</span>
-							</div>
+							
 						</div>
 						<div class="join_row_group">
 							<!--버튼-->
