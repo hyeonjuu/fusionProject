@@ -1,25 +1,27 @@
-
-
-
+.main {
+	margin-top: 30px;
+	margin-left: 10%;
+	margin-right: 10%;
+}
 
 fieldset {
-    width: 80%;
-    padding: 3% 25% 3% 25%;
-    border-radius: 10px;
-    margin: 2% 0 2% 10% ;
-    border: 1px solid #ff7979;
+	border: 1px solid #ff7979;
+	border-radius: 10px;
+	padding-top: 30px;
+	margin: 3% 20% 10px 20%;
 }
 
 legend {
     margin-top: 10px;
-    margin-bottom: 60px;
+    margin-bottom: 5%;
     text-align: center;
     font-size: 40px;
 }
 
 .join_title {
-    margin: 30px 0 20px;
+    margin: 30px 0 10px;
     font-size: 18px;
+    margin-left: 20%;
 }
 
 h3 {
@@ -42,7 +44,9 @@ div {
 
 button {
     margin-top: 50px;
-    width: 100%;
+    margin-bottom: 5%;
+    margin-left: 20%;
+    width: 60%;
     height: 50px;
     background-color: #ff7979;
     border: none;
@@ -55,10 +59,11 @@ input{
     border-left: none;
     border-right: none;
     border-bottom: 1px solid #dfdfdf;
-    width: 100%;
+    width: 60%;
     height: 50px;
     margin-bottom: 1px;
     font-size: 15px;
+   	margin-left: 20%;
 }
 
 .bir_wrap{
@@ -75,5 +80,13 @@ input{
 .btn_type {
     color: #ffffff;
     font-weight: 1000;
+}
+
+input.gender-code {
+	margin-left: 20%;
+}
+
+label.gender {
+	display: inline;
 }
 

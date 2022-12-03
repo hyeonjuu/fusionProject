@@ -10,7 +10,7 @@
     <title>회원가입</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/SignUp.css">
+    <link rel="stylesheet" href="css/SignUp.css?after">
     <link rel="stylesheet" href="css/basic.css?after">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <script>
@@ -119,8 +119,8 @@
                                 <label for="gender">성별</label>
                             </h3>
                             <div class="ps_box gender_code">
-                                <label><input type="radio" name="gender" value="male"> 남 </label>
-                                <label><input type="radio" name="gender" value="female"> 여 </label>
+                                <label class="gender"><input class="gender-code" type="radio" name="gender" value="male"> 남 </label>
+                                <label class="gender"><input type="radio" name="gender" value="female"> 여 </label>
                             </div>
                         </div>
                         <!--이메일-->
