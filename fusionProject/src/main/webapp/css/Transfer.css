@@ -1,10 +1,14 @@
+.main {
+	margin-top: 30px;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
 fieldset.main_field{
-    width: 80%;
-    padding: 3% 10% 5% 10%;
-    border-radius: 10px;
-    margin: 2% 0 2% 10% ;
-    border: none;
-    border: 1px solid #ff7979;
+	border: 1px solid #ff7979;
+	border-radius: 10px;
+	padding-top: 30px;
+	margin: 3% 20% 10px 20%;
 }
 
 legend {
@@ -13,11 +17,11 @@ legend {
     text-align: center;
     font-size: 40px;
 }
-#btn {
-	position: absolute;
-	margin-bottom: 10px;
-    margin-left: 10%;
-    width: 38.4%;
+button {
+	margin-bottom: 5%;
+    margin-left: 30%;
+    margin-top: 5%;
+    width: 485px;
     height: 50px;
     background-color: #ff7979;
     border: none;
