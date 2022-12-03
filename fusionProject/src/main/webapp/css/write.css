@@ -1,0 +1,35 @@
+.main {
+	margin-top: 30px;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+thead {
+	background-color: #ffb3b3;
+	color: #ffffff;
+	font-size: 30px;
+}
+
+tbody {
+	background-color: #ffffff;
+}
+
+th {
+	background-color: #ffffff;
+}
+
+td {
+	margin: 2% 0 2% 0;
+}
+
+table {
+	margin-top: 5%;
+	text-align: center;
+}
+
+input.btn-primary {
+	border: none;
+	float: right;
+	background-color: #ff7979;
+	color: #ffffff;
+}

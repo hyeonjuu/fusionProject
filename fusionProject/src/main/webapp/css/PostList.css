@@ -1,11 +1,12 @@
-
-
-
-
+.main{
+	margin-top: 30px;
+	margin-left: 10%;
+	margin-right: 10%;
+}
 
 fieldset.main_field {
-    width: 80%;
-    padding: 3% 0 0 0;
+    width: 100%;
+    padding: 3% 20% 0 20%;
     border-radius: 10px;
     margin: 2% 0 2% 2% ;
     border: 1px solid #ff7979;
@@ -29,9 +30,37 @@ span.post_type {
     font-size: 15px;
 }
 
-fieldset.middle_field {
-    width: 80%;
-    padding: 3% 10px 3% 10px;
-    border-top: 1px solid #808080;
-    border-bottom: 1px solid #808080;
+thead {
+	background-color: #ffb3b3;
+}
+
+th {
+	background-color: #ffffff;
+}
+
+table {
+	text-align: center;
+	border: 1px solid #dddddd;
+}
+
+button.writeBtn {
+	border: none;
+	background-color: #ff7979;
+	float: reight;
+	width: 6%;
+	height: 30px;
+	color: #ffffff;
+}
+
+button.nextBtn {
+	border: none;
+	background-color: #ff7979;
+	width: 6%;
+	height: 30px;
+	color: #ffffff;
+}
+
+button:hover {
+	color: #ffffff;
+	background-color: #ff5656;
 }

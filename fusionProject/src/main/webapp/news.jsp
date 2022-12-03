@@ -15,8 +15,8 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="/css/PostList.css">
-<link rel="stylesheet" href="css/basic.css?after">
+<link rel="stylesheet" href="css/PostList.css?after">
+<link rel="stylesheet" href="css/basic.css?after?after">
 </head>
 
 
@@ -37,10 +37,9 @@
 				<div class="container">
 					<legend>새소식</legend>
 					<div class="row">
-						<table class="table"
-							style="text-align: center; border: 1px solid #dddddd;">
+						<table class="table">
 							<thead>
-								<tr style="background-color: #eeeeee;">
+								<tr>
 									<th>번호</th>
 									<th>작성자</th>
 									<th>제목</th>
@@ -70,11 +69,11 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="writeBtn">
+					<div>
 						<%
 						if (pageNumber != 1) {
 						%>
-						<button type="button"
+						<button class="nextBtn" type="button"
 							onclick="location.href='news.jsp?pageNumber=<%=pageNumber - 1%>';">
 							<span>이전</span>
 						</button>
@@ -82,7 +81,7 @@
 						}
 						if (postDAO.nextPage("news", pageNumber + 1)) {
 						%>
-						<button type="button"
+						<button class="nextBtn" type="button"
 							onclick="location.href='news.jsp?pageNumber=<%=pageNumber + 1%>';">
 							<span>다음</span>
 						</button>
@@ -91,8 +90,8 @@
 						%>
 
 					</div>
-					<div class="writeBtn">
-						<button type="button" onclick="location.href='./write.jsp';">
+					<div>
+						<button class="writeBtn" type="button" onclick="location.href='./write.jsp';">
 							<span>글쓰기</span>
 						</button>
 					</div>
