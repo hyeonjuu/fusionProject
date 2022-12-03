@@ -47,7 +47,11 @@
 					</div>
 					<div>
 						<p>거래자금의 원천</p>
-						<input type="text" class="form-control" name="forWhy" maxlength="15" size="10">
+						<select class="form-control2" name="forWhy">
+							<option value="근로 및 연금소득">근로 및 연금소득</option>
+							<option value="퇴직소득">퇴직소득</option>
+							<option value="사업소득">사업소득</option>
+						</select>
 					</div>
 					<div class="radio_div">
 						<p>거래자금이 본인 소유인가요?</p>
