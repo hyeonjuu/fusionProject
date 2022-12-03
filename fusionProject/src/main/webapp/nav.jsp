@@ -1,3 +1,5 @@
+<%@page import="source.Admin"%>
+<%@page import="source.AdminDAO"%>
 <%@page import="source.UserDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -21,11 +23,16 @@
 	<%
 	String userID = null;
 	String userName = null;
-		if(session.getAttribute("userID") != null){
+	String adminID = null;
+	if(session.getAttribute("userID") != null){
 			userID = (String) session.getAttribute("userID");
 			UserDAO userDAO = new UserDAO();
 			userName = userDAO.getUserName(userID);
 	}
+	if(session.getAttribute("adminID") != null){
+		adminID = (String) session.getAttribute("adminID");
+		AdminDAO adminDAO = new AdminDAO();
+}
 	%>
 	<nav class="navbar navbar-expand navbar-light" id="nav">
 		<div class="container-fluid" id="navbarLogo">
@@ -67,11 +74,20 @@
 					<li class="nav-item"><a class="nav-link"
 						href="signUpTerms.jsp" id="signIn">회원가입</a></li>
 					<%
+					}else if(adminID != null){
+						%>
+						<li class="nav-item"><a class="nav-link" href="changeInfo.jsp"
+						id="logIn">님 어서오세요</a></li>
+					<div class="line"></div>
+					<li class="nav-item"><a class="nav-link" href="logout.jsp"
+						id="signIn">로그아웃</a></li>
+						
+						<% 
 					}else
 					{
 					%>
 					<li class="nav-item"><a class="nav-link" href="changeInfo.jsp"
-						id="logIn"><%=userName%>님 어서오세요</a></li>
+						id="logIn"><span class="navName"><%=userName%></span>님 어서오세요</a></li>
 					<div class="line"></div>
 					<li class="nav-item"><a class="nav-link" href="logout.jsp"
 						id="signIn">로그아웃</a></li>

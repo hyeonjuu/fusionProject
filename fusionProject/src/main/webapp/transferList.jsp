@@ -40,7 +40,7 @@
 				
 					
 					DealDAO dealDAO = new DealDAO();
-					ArrayList<Deal> list = dealDAO.getDealList("12340000043");
+					ArrayList<Deal> list = dealDAO.getDealList(bankNumber);
 					for(int i = 0; i<list.size();i++){
 						Deal deal = list.get(i);
 				%>

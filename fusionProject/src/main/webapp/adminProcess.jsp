@@ -19,7 +19,7 @@
 	int result = adminDAO.login(Admin.getId(),Admin.getPassword());
 	switch(result){
 	case 1:
-		
+		session.setAttribute("adminID", Admin.getId());
 		script.println("<script>");
 		script.println("alert('로그인 성공')");
 		script.println("location.href='main.jsp'");
