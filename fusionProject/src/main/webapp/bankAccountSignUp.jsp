@@ -30,11 +30,20 @@
 				<form action="bankAccountProcess.jsp" method="post" name="ADMIN">
 					<div>
 						<p>직업구분</p>
-						<input type="text" class="form-control" name="id" maxlength="15" size="10">
+						<select class="form-control2" name="forWhy">
+							<option value="직장인">직장인</option>
+							<option value="학생">학생</option>
+						</select>
 					</div>
 					<div>
 						<p>거래목적</p>
-						<input type="text" class="form-control" name="forWhy" maxlength="15" size="10">
+						<select class="form-control2" name="forWhy">
+							<option value="급여 계좌">급여 계좌</option>
+							<option value="공과금 이체 계좌">공과금 이체 계좌</option>
+							<option value="아르바이트">아르바이트</option>
+							<option value="모임 계좌">모임 계좌</option>
+							<option value="법인 계좌">법인 계좌</option>
+						</select>
 					</div>
 					<div>
 						<p>거래자금의 원천</p>

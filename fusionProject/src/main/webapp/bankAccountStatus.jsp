@@ -18,14 +18,14 @@
 			<fieldset class="main_field">
 				<!-- 거래가능 및 거래중지 (대기)-->
 				<fieldset class="account_status">
-					<form action="#" method="post" name="member" id="accountstatus">
-						<label>계좌번호</label>
+					<form action="bankAccountStatusProcess.jsp" method="post" name="member" id="accountstatus">
+						<label>계좌번호 : </label> <input type="text" name="bankNumber" value="" readonly>
 						<div> 
 							<input type="radio" name="status" value="거래가능"> 거래가능
 							<input type="radio" name="status" value="거래중지"> 거래중지
 							<input type="radio" name="status" value="대기"> 대기	
 						</div>
-						<input type="submit" value="저장">
+						<input class="submitBtn" type="submit" value="저장">
 					</form>
 				</fieldset>
 			</fieldset>
