@@ -28,10 +28,10 @@
                     <div>
                         <div id="flexId">
                             <div id="flex_input">         
-                                <input type="text" id="fText" placeholder="이름">
+                                <input class="form-control" type="text" id="fText" placeholder="이름">
                             </div>
                             <div id="flex_input">
-                                <input type="text" id="fText" placeholder="E-mail">
+                                <input class="form-control" type="text" id="fText" placeholder="E-mail">
                             </div>
                         </div>
                     </div>
@@ -49,10 +49,10 @@
                     <div>
                         <div id="flexPw">
                             <div id="flex_input">
-                                <input type="text" id="fText" placeholder="아이디">
+                                <input class="form-control" type="text" id="fText" placeholder="아이디">
                             </div>
                             <div id="flex_input">
-                                <input type="text" id="fText" placeholder="E-mail">
+                                <input class="form-control" type="text" id="fText" placeholder="E-mail">
                             </div>
                         </div>
                     </div>
