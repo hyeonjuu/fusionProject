@@ -33,7 +33,7 @@ input {
 	border: 1px solid #cccccc;
 }
 
-button {
+#btnFind {
 	width: 70%;
 	height: 40px;
 	margin: 3% 0 0 15%;

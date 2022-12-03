@@ -150,4 +150,37 @@ public class UserDAO {
 		}
 		return -1;
 	}
+	public String findId(String name, String email) {
+		String sql;
+		try {
+			sql = "select id from member where name = ? and email = ?";
+			pstmt= conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, email);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getString(1);
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public String findPassword(String id, String email) {
+		String sql;
+		try {
+			sql = "select password from member where id = ? and email = ?";
+			pstmt= conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, email);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getString(1);
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }
