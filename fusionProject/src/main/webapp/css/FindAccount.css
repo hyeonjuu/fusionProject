@@ -27,8 +27,7 @@ legend.fIdPw {
 
 input {
 	text-align: center;
-	margin: 0 0 0 15%;
-	width: 70%;
+	margin: 0 0 10px 15%;
 	height: 40px;
 	border: 1px solid #cccccc;
 }
@@ -47,4 +46,8 @@ button:hover {
 	color: #ffffff;
 	background-color: #ff5656;
 	border-color: #ff5656;
+}
+
+input.form-control {
+	width: 70%;
 }
