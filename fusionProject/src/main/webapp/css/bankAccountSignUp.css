@@ -8,7 +8,7 @@ fieldset {
 	border: 1px solid #ff7979;
 	border-radius: 10px;
 	padding-top: 30px;
-	margin: 3% 15% 10px 15%;
+	margin: 3% 30% 10px 30%;
 }
 
 form {
@@ -29,6 +29,14 @@ input.form-control {
     height: 50px;
     margin: 0 0 1px 23%;
     font-size: 15px;
+}
+
+select.form-control2 {
+	width: 50%;
+	height: 50px;
+	margin: 5px 0 1px 23%;
+	font-size: 15px;
+	border: 1px solid #dfdfdf;
 }
 
 p {

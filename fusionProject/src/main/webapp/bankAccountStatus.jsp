@@ -26,17 +26,18 @@
 				<!-- 거래가능 및 거래중지 (대기)-->
 				<fieldset class="account_status">
 					<form action="bankAccountStatusProcess.jsp" method="post" name="member" id="accountstatus">
-						<label>계좌번호 : <input type="text" name="bankNumber" value= "<%=bankNumber %>" readonly></label>
+						<label>계좌번호 : </label><input type="text" name="bankNumber" value= "<%=bankNumber %>" readonly>
 						<div> 
 							<input type="radio" name="status" value="거래가능"> 거래가능
 							<input type="radio" name="status" value="거래중지"> 거래중지
 							<input type="radio" name="status" value="대기"> 대기	
 						</div>
-						<input type="submit" value="저장">
+						<input class="submitBtn" type="submit" value="저장">
 					</form>
 				</fieldset>
 			</fieldset>
 		</div>
+
 
 		<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
