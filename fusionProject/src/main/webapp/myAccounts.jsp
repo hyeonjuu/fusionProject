@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="source.BankAccountDAO"%>
@@ -25,8 +26,11 @@
 		<%@ include file="nav.jsp"%>
 		<%
 			BankAccountDAO baDAO = new BankAccountDAO();
+			
+			
 			ResultSet rs = baDAO.getMyAccounts(userID);
-			int totalBalance = baDAO.totalBalance(userID);
+			int total = baDAO.totalBalance(userID);
+			String totalBalance = baDAO.comma(total);
 			int accounts = baDAO.countRow(userID);
 			if(rs == null){
 				PrintWriter script = response.getWriter();
@@ -35,6 +39,7 @@
 				script.println("location.href='main.jsp'");
 				script.println("</script>");
 			}
+			
 			
 		%>
 		<!--main-->
@@ -45,16 +50,19 @@
 				<fieldset id="bank_list_field">
 					<div id="bank_list_money">
 						<h3 id="bank_list_h3">총 <%= accounts %>개</h3>
-						<h1 id="mybank_money"><%=totalBalance %>원</h1>
+						<h1 id="mybank_money"><%=totalBalance %> 원</h1>
 					</div>
 				</fieldset>
 				<!--계좌1-->
-				<% while(rs.next()){ %>
+				<% while(rs.next()){
+					String bankNumber = rs.getString("banknumber");
+					String balance = baDAO.comma(rs.getInt("balance"));
+					%>
 				<fieldset id="mybank" onclick="location.href='transferList.jsp?bankNumber=<%=rs.getString("banknumber") %>'">
 					<div id="user_bank">
 						<div>
 							<h3 id="mybank_h3"><%=userName %></h3>
-							<h3 id="mybank_h3"><%=rs.getString("banknumber") %></h3>
+							<h3 id="mybank_h3"><%=baDAO.replace(bankNumber)%></h3>
 						</div>
 						<div id="dropdownmenu"></div>
 					</div>
@@ -64,7 +72,7 @@
 							<h4><%=rs.getString("creationDate") %></h4>
 						</div>
 						<div>
-							<h1 id="mybank_money"><%=rs.getString("balance") %>원</h1>
+							<h1 id="mybank_money"><%=balance %>원</h1>
 						</div>
 					</div>
 				</fieldset>

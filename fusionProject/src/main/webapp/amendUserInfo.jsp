@@ -70,7 +70,7 @@
                     ArrayList<BankAccount> list = adminDAO.getUserAccountList(id);
                 	for (int i = 0; i < list.size(); i++) {
 						BankAccount ba = list.get(i); %>
-                        <option value="<%=ba.getBankNumber()%>"><%=ba.getBankNumber()%></option>
+                        <option value="<%=ba.getBankNumber()%>"><%=adminDAO.replace(ba.getBankNumber())%></option>
                         <%} %>
                     </select>
 					

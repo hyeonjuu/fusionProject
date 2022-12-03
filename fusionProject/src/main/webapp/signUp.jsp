@@ -20,6 +20,15 @@
 <script type="text/javascript">
 	function available() {
 		let userId = $('#id').val(); // input_id에 입력되는 값
+		var idlength = /^[a-zA-z0-9]{8,20}$/;  //정규식
+		
+		if(!idlength.test(userId)){
+			$("#available").html('사용할 수 없는 아이디입니다.');
+			$("#available").css("color","#ff7979");
+			$("#btnJoin").attr("disabled",true);
+			$("#id").focus();
+	    }else{
+		
 		$.ajax({
 			url : "IdCheckService",
 			type : "post",
@@ -29,11 +38,13 @@
 				if(result == 0){
 					$("#available").html('사용할 수 없는 아이디입니다.');
 					$("#available").css("color","#ff7979");
+					$("#btnJoin").attr("disabled",true);
 					$("#id").focus();
 					
 				} else{
 					$("#available").html('사용할 수 있는 아이디입니다.');
 					$("#available").css("color","#15db15");
+					$("#btnJoin").attr("disabled",false);
 				} 
 			},
 			 error: function (request, status, error) {
@@ -42,7 +53,71 @@
 			        console.log("error: " + error);
 			    }
 		})
+	    }
 	}
+	
+	function phone(){
+		$(document).on("keyup", "#tel", function() { 
+			$(this).val( $(this).val().replace(/[^0-9]/g, "").replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/,"$1-$2-$3").replace("--", "-") );
+		});
+	}
+
+
+
+	function check(){
+		
+	    var form = document.getElementById("form");
+
+	    if(form.id.value == ""){
+	        alert("아이디를 입력하세요.");
+	        form.id.focus();
+	        return false;
+
+	    }
+	    var idlength = /^[a-zA-z0-9]{8,20}$/;  //정규식
+
+	    if(!idlength.test(form.id.value)){
+	        alert("아이디는 영문 대/소문자 8~20글자만 가능합니다.");
+	        form.id.focus();
+	        return false;
+	    }
+	    if (form.password.value == ""){
+	        alert("비밀번호를 입력하세요.");
+	        form.password.focus();
+	        return false;
+	    }
+	    if(form.password.value != form.pwcheck.value){
+	        alert("비밀번호가 틀립니다.");
+	        return false;
+	    }
+	    if (form.name.value == ""){
+	        alert("이름을 입력하세요.");
+	        form.name.focus();
+	        return false;
+	    }
+	    if (form.birth.value == ""){
+	        alert("생년월일을 입력하세요.");
+	        form.birth.focus();
+	        return false;
+	    }
+	    if (form.gender.value == ""){
+	        alert("성별을 선택하세요.");
+	        form.gender.focus();
+	        return false;
+	    }
+	    if (form.email.value == ""){
+	        alert("이메일을 입력하세요.");
+	        form.email.focus();
+	        return false;
+	    }
+	    if (form.tel.value == ""){
+	        alert("전화번호를 입력하세요.");
+	        form.tel.focus();
+	        return false;
+	    }
+	    return true;
+	}
+
 	</script>
 
 
@@ -57,7 +132,7 @@
 		<div class="signup">
 			<fieldset>
 				<legend>회원가입</legend>
-				<form action="signUpProcess.jsp" method="post" name="member">
+				<form action="signUpProcess.jsp" method="post" id = "form" name="member" onsubmit="check()">
 					<div class="join_content">
 						<div class="join_row_group">
 							<h3 class="join_title">
@@ -134,7 +209,7 @@
 									<label for="tel">전화번호</label>
 								</h3>
 								<span class="ps_box int_tel box_right_space"> <input
-									type="tel" id="tel" name="tel" class="int" maxlength="13">
+									type="tel" id="tel" name="tel" class="int" maxlength="13" oninput="phone()">
 								</span>
 							</div>
 							
