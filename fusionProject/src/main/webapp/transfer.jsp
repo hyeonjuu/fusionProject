@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="source.BankAccountDAO"%>
 <%@page import="source.BankAccount"%>
@@ -22,41 +23,46 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
+	$(document).ready(function() {
+		var pwdReg = RegExp(/^[0-9]{4}$/);
+		$("#sendpasswd").change(function() {
+			if (!pwdReg.test($("#sendpasswd").val())) {
+				alert("비밀번호는 숫자로만 4글자 입력하세요.");
+				$("#sendpasswd").val("");
+				$("#sendpasswd").focus();
 
-$(document).ready(function(){
-	var pwdReg = RegExp(/^[0-9]{4}$/);
-	$("#sendpasswd").change(function(){
-		if(!pwdReg.test($("#sendpasswd").val())){
-        	alert("비밀번호는 숫자로만 4글자 입력하세요.");
-        	$("#sendpasswd").val("");
-            $("#sendpasswd").focus();
-            
-        }
-	})
-	
-	
-	$("#btn").click(function(){    
-        
-        if($("#sendpasswd").val() == ""){
-        	alert("비밀번호를 입력하세요.");
-            $("#sendpasswd").focus();
-            return;
-        }
-       	else{
-            $("#bankaccountwelcome").submit();
-        }
-    });
+			}
+		})
 
+		$("#btn").click(function() {
 
-	
- });
- </script>
+			if ($("#sendpasswd").val() == "") {
+				alert("비밀번호를 입력하세요.");
+				$("#sendpasswd").focus();
+				return;
+			} else {
+				$("#bankaccountwelcome").submit();
+			}
+		});
+
+	});
+</script>
 </head>
 
 <body>
+	
 	<!--header-->
 	<div class="main">
 		<%@ include file="nav.jsp"%>
+		<%
+		PrintWriter script = response.getWriter();
+		if(userID == null){
+			script.println("<script>");
+			script.println("alert('로그인 후 이용하세요.')");
+			script.println("location.href='main.jsp'");
+			script.println("</script>");
+		}
+	%>
 		<%
 		BankAccountDAO baDAO = new BankAccountDAO();
 		%>
@@ -77,7 +83,7 @@ $(document).ready(function(){
 								ArrayList<BankAccount> list = baDAO.getUserAccountList(userID);
 								DecimalFormat decFormat = new DecimalFormat("#,###");
 								for (int i = 0; i < list.size(); i++) {
-									
+
 									BankAccount ba = list.get(i);
 									String balance = decFormat.format(ba.getBalance());
 									String disabled = null;
@@ -103,7 +109,8 @@ $(document).ready(function(){
 						<h3>
 							<label>비밀번호 입력</label>
 						</h3>
-						<span> <input type="password" id="sendpasswd" maxlength="4" name="password">
+						<span> <input type="password" id="sendpasswd" maxlength="4"
+							name="password">
 						</span>
 						<!-- 받는 은행 및 받는 분 표기 -->
 						<div class="middle">
@@ -146,9 +153,9 @@ $(document).ready(function(){
 						<div class="btn">
 							<input type="button" id="btn" class="mainBtn" value="이체하기">
 						</div>
-						</div>
+					</div>
 					<!-- 이체하기 버튼 -->
-						
+
 				</form>
 			</fieldset>
 		</div>

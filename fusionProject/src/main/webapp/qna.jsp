@@ -88,12 +88,13 @@
 						%>
 
 					</div>
+					<% if(adminID != null){ %>
 					<div>
 						<button class="writeBtn" type="button" onclick="location.href='./write.jsp';">
 							<span>글쓰기</span>
 						</button>
 					</div>
-
+					<%} %>
 
 				</div>
 			</fieldset>

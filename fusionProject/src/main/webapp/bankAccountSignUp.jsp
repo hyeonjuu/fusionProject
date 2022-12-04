@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -73,6 +74,15 @@ $(document).ready(function(){
 	<!--header-->
 	<div class="main">
 		<%@ include file="nav.jsp"%>
+		<%
+		PrintWriter script = response.getWriter();
+		if(userID == null){
+			script.println("<script>");
+			script.println("alert('로그인 후 이용하세요.')");
+			script.println("location.href='main.jsp'");
+			script.println("</script>");
+		}
+	%>
 
 		<!--main-->
 		<div class="signup">

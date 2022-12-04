@@ -25,6 +25,14 @@
 	<div class="main">
 		<%@ include file="nav.jsp"%>
 		<%
+		
+		PrintWriter script = response.getWriter();
+		if(userID == null){
+			script.println("<script>");
+			script.println("alert('로그인 후 이용하세요.')");
+			script.println("location.href='main.jsp'");
+			script.println("</script>");
+		}
 			BankAccountDAO baDAO = new BankAccountDAO();
 			
 			
@@ -33,7 +41,6 @@
 			String totalBalance = baDAO.comma(total);
 			int accounts = baDAO.countRow(userID);
 			if(rs == null){
-				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('오류')");
 				script.println("location.href='main.jsp'");

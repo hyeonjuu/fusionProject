@@ -46,21 +46,21 @@
                         <div>
                             <label for="slide01" class="left"><img src="img/left.png" width="25" height="25" alt=""/></label>
                             <label for="slide03" class="right"><img src="img/right.png" width="25" height="25" alt=""/></label>
-                            <a><img src="img/slide02.png" alt="이미지"></a>
+                            <a><img src="img/slide02.png" onclick="location.href='bankAccountTerms.jsp'" alt="이미지"></a>
                         </div>
                     </li>
                     <li class="slideitem">
                         <div>
                             <label for="slide02" class="left"><img src="img/left.png" width="25" height="25" alt=""/></label>
                             <label for="slide04" class="right"><img src="img/right.png" width="25" height="25" alt=""/></label>
-                            <a><img src="img/slide03.png" alt="이미지"></a>
+                            <a><img src="img/slide03.png" onclick="location.href='postView.jsp?no=5&category=news'" alt="이미지"></a>
                         </div>
                     </li>
                     <li class="slideitem">
                         <div>
                             <label for="slide03" class="left"><img src="img/left.png" width="25" height="25" alt=""/></label>
                             <label for="slide01" class="right"><img src="img/right.png" width="25" height="25" alt=""/></label>
-                            <a><img src="img/slide04.png" alt="이미지"></a>
+                            <a><img src="img/slide04.png" onclick="location.href='postView.jsp?no=4&category=news'" alt="이미지"></a>
                         </div>
                     </li>
                 </ul>

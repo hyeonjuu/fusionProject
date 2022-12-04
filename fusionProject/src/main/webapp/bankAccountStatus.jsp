@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<!DOCTYPE html>
@@ -14,6 +15,14 @@
 	
 	<body>
 	<%
+	PrintWriter script = response.getWriter();
+	String adminID = (String)session.getAttribute("adminID");
+	if(adminID == null){
+		script.println("<script>");
+		script.println("alert('관리자만 접근 가능합니다.')");
+		script.println("location.href='main.jsp'");
+		script.println("</script>");
+	}
 		String bankNumber = null;
 		if(request.getParameter("bankNumber") != null){
 			bankNumber = (String)request.getParameter("bankNumber");

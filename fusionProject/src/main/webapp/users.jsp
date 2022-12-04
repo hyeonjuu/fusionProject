@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import="source.Member"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="source.AdminDAO"%>
@@ -23,7 +24,15 @@
 	<!--header-->
 	<div class="main">
 		<%@ include file="nav.jsp"%>
-
+		<%
+		PrintWriter script = response.getWriter();
+		if(adminID == null){
+			script.println("<script>");
+			script.println("alert('관리자만 접근 가능합니다.')");
+			script.println("location.href='main.jsp'");
+			script.println("</script>");
+		}
+	%>
 		<!--main-->
 		<div class="users">
 			<fieldset id="main_field">
