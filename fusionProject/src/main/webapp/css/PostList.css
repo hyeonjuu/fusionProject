@@ -12,6 +12,8 @@ fieldset.main_field {
     border: 1px solid #ff7979;
 }
 
+
+
 legend {
     margin-top: 5%;
     margin-bottom: 40px;
@@ -76,6 +78,14 @@ button.nextBtn {
 button:hover {
 	color: #ffffff;
 	background-color: #ff5656;
+}
+
+button.viewBtn {
+	width: 6%;
+	height: 30px;
+	border: none;
+	background-color : #ff7979;
+	color: #ffffff;
 }
 
 td.title_td {

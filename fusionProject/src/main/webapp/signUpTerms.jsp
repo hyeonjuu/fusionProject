@@ -65,7 +65,7 @@ $(document).ready(function(){
 		<!--main-->
 		<div class="signupterms">
 			<fieldset>
-				<legend>회원가입 이용약</legend>
+				<legend>회원가입 이용약관</legend>
 				<form action="signUp.jsp" method="post" name="member" id="joinForm">
 					<ul class="join_box">
 						<li class="checkBox check01">
