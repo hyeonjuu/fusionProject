@@ -1,4 +1,5 @@
 
+<%@page import="source.AdminDAO"%>
 <%@page import="source.PostDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -22,11 +23,20 @@
 	PrintWriter script = response.getWriter();
 	String userID = null;
 	String userName = null;
+	String adminID = null;
+	String userRank = null;
 		if(session.getAttribute("userID") != null){
 			userID = (String) session.getAttribute("userID");
 			UserDAO userDAO = new UserDAO();
 			userName = userDAO.getUserName(userID);
 	}
+		if(session.getAttribute("adminID") != null){
+			session.removeAttribute("userID");
+			adminID = (String) session.getAttribute("adminID");
+			AdminDAO adminDAO = new AdminDAO();
+			userName = adminDAO.getUserName(adminID);
+			userRank = adminDAO.getUserRank(adminID);
+		}
 	
 	
 	Post.setWriter(userName);
