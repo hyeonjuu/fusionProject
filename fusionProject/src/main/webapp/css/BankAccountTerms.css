@@ -44,6 +44,7 @@ textarea {
     height: 120px;
     resize: none;
     font-size: 15px;
+    border: 1px solid #dedede;
 }
 
 input {
@@ -58,7 +59,7 @@ input {
     background-color: #ff7979;
     font-size: 17px;
     border: none;
-    margin-left: 120px;
+    margin-left: 85%;
 }
 #checkradio {
 	margin-left: 23%;
@@ -75,5 +76,13 @@ button.textarea {
 	text-align: left;
 	font-size: 15px;
 	background-color: #ffffff;
-	border: 1px solid #000000;
+	border: 1px solid #dedede;
+}
+
+li.question {
+	margin-right: 35%;
+}
+
+.allCheckBtn {
+	display: flex;
 }
