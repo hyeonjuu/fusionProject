@@ -113,19 +113,7 @@ html {
 				</fieldset>
 			</div>
 
-			<div class="search">
-				<div class="searchID">
-					<a class="s-ID" href="findAccount.jsp">아이디 찾기</a>
-				</div>
-				<div class="bottomLine"></div>
-				<div class="searchPW">
-					<a class="s-PW" href="findAccount.jsp">비밀번호 찾기</a>
-				</div>
-				<div class="bottomLine"></div>
-				<div class="signIn">
-					<a class="s-In" href="signUpAdmin.jsp">회원가입</a>
-				</div>
-			</div>
+
 		</div>
 
 	</div>
