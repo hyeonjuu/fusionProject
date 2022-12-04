@@ -3,7 +3,7 @@
 	border: 1px solid #ff7979;
 	border-radius: 10px;
 	padding-top: 30px;
-	margin: 3% 20% 10px 20%;
+	margin: 3% 25% 10px 25%;
 }
 #transfer_list_field {
 	border: 1px solid #ff7979;
@@ -29,16 +29,19 @@ legend {
 #bank_list_h3 {
     font-size: 20px;
     margin : 0 0 0 0;
+    margin-left: 3%;
 }
 
 #mytransfer_h3 {
     font-size: 18px;
+    margin-left: 3%;
     
 }
 
 h4 {
     font-size: 15px;
     color: #808080;
+    margin-left: 3%;
 }
 
 .transfer_list_money {
@@ -55,4 +58,18 @@ h4 {
 	display: grid;
 	grid-auto-flow: column;
 	grid-template-columns: 1fr;
+	justify-content: end;
+}
+
+.transfer_list_h3 {
+	margin-left: 3%;
+	font-size: 20px;
+}
+
+#money {
+	margin-right: 5%;
+}
+
+p#transfer_money {
+	margin-right: 20%;
 }
