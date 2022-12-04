@@ -41,8 +41,8 @@
 							<thead>
 								<tr>
 									<th>번호</th>
-									<th>작성자</th>
 									<th>제목</th>
+									<th>작성자</th>
 									<th>작성일자</th>
 								</tr>
 							</thead>
@@ -58,10 +58,10 @@
 							
 								<tr>
 									<td><%=post.getNo()%></td>
-									<td><%=post.getWriter() %></td>
 									<td><a href="postView.jsp?no=<%=post.getNo()%>&category=<%=post.getCategory()%>">
 										<%=title%>
 										</a></td>
+									<td><%=post.getWriter() %></td>
 									<td><%=post.getDateeOfIssue()%></td>
 								</tr>
 								<%
