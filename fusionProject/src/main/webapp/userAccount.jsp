@@ -16,7 +16,7 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="/css/PostList.css">
+<link rel="stylesheet" href="css/PostList.css?after">
 <link rel="stylesheet" href="css/basic.css?after">
 </head>
 
@@ -48,10 +48,9 @@
 						<legend><%=id%>님의 계좌
 						</legend>
 						<div class="row">
-							<table class="table"
-								style="text-align: center; border: 1px solid #dddddd;">
+							<table class="table">
 								<thead>
-									<tr style="background-color: #eeeeee;">
+									<tr>
 										<th>번호</th>
 										<th>계좌번호</th>
 										<th>잔고</th>
@@ -60,7 +59,7 @@
 										<th>상태</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody style="border-top: none;">
 								<%
                                 AdminDAO adminDAO = new AdminDAO();
                             	ArrayList<BankAccount> list = adminDAO.getUserAccountList(id);
@@ -84,8 +83,8 @@
 								</tbody>
 							</table>
 						</div>
-						<div class="saveBtn">
-							<button type="submit">
+						<div>
+							<button class="saveBtn" type="submit">
 								<span> 저장 </span>
 							</button>
 						</div>

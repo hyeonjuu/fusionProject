@@ -91,3 +91,23 @@ button.viewBtn {
 td.title_td {
 	width: 70%;
 }
+
+.saveBtn {
+	border: none;
+	background-color: #ff7979;
+	width: 6%;
+	height: 30px;
+	color: #ffffff;
+	margin-top: 2%;
+}
+
+.user_search {
+	display: flex;
+	gap: 5px;
+}
+
+input.searchBtn {
+	border: none;
+	color: #ffffff;
+	background-color: #ff7979;
+}

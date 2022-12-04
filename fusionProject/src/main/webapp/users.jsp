@@ -16,7 +16,7 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="/css/PostList.css">
+<link rel="stylesheet" href="css/PostList.css?after">
 <link rel="stylesheet" href="css/basic.css?after">
 </head>
 
@@ -39,10 +39,9 @@
                     <div class="account">
                         <legend>고객 목록</legend>
                         <div class="row">
-                            <table class="table"
-                                style="text-align: center; border: 1px solid #dddddd;">
+                            <table class="table">
                                 <thead>
-                                    <tr style="background-color: #eeeeee;">
+                                    <tr>
                                         <th>번호</th>
                                         <th>아이디</th>
                                         <th>고객명</th>
@@ -65,7 +64,7 @@
                                 	for (int i = 0; i < list.size(); i++) {
         								Member member = list.get(i);
                                 %>
-                                <tbody>
+                                <tbody style="border-top: none">
                                     <tr onclick="location.href = 'amendUserInfo.jsp?id=<%=member.getId()%>'">
                                         <td><%=i+1%></td>
                                         <td><%=member.getId() %></td>
@@ -82,8 +81,11 @@
                         </div>
                         <div class="saveBtn">
                         	<form action="users.jsp" method="get">
-                            <input type="text" placeholder="이름" name="name">
-                            <input type="submit" value="검색" >
+                        	<div class="user_search">
+                        		<input type="text" placeholder="이름" name="name">
+                            	<input class="searchBtn" type="submit" value="검색" >
+                        	</div>
+                            
                             </form>
                         </div>
                     </div>
