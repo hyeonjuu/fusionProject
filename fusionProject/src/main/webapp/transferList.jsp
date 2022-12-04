@@ -30,9 +30,9 @@
 				<legend>이체 내역</legend>
 				<!--총 계좌 목록-->
 				<fieldset id="transfer_list_field">
-					<div id="transfer_list_money">
-						<h3 id="transfer_list_h3">총 개</h3>
-						<h1 id="transfer_money">원</h1>
+					<div class="transfer_list_money">
+						<h3 id="transfer_list_h3 left_list">계좌번호</h3>
+						<h1 id="transfer_money">잔액</h1>
 					</div>
 				</fieldset>
 				<!--이체내역1-->
@@ -50,18 +50,18 @@
 				%>
 				<fieldset id="mytransfer">
 					<div id="user_transfer">
-						<div>
+						<div id="left_list">
 							<h3 id="mytransfer_h3"><%=deal.getShowMessage() %></h3>
 							<h3 id="mytransfer_h3"></h3>
 						</div>
 						<div id="dropdownmenu"></div>
 					</div>
 					<div id="transfer_money">
-						<div>
+						<div id="left_list">
 							<h4><%=deal.getType() %></h4>
 							<h4><%=deal.getTransfertime() %></h4>
 						</div>
-						<div>
+						<div id="money">
 							<p id="mybank_money"> 금액 : <%=amount %></h1>
 							<p id="mybank_money"> 잔액 : <%=balance %></h1>
 						</div>

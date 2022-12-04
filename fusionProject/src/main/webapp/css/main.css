@@ -135,11 +135,11 @@ label.right {
 
 .mainMenu {
     display: flex;
+    gap: 300px;
 }
 .box {
     background-color: #d9d9d9;
-    margin: auto;
-    width: 33%;
+    width: 20%;
     height: 500px;
 }
 .boxHeader1 {
@@ -150,4 +150,9 @@ label.right {
 }
 .bottom {
     margin-top: 50px;
+}
+.mainAdd {
+	font-size: 30px;
+	color: #ff7979;
+	font-weight: bold;
 }

@@ -1,67 +1,58 @@
 
-
-
-.search {
-    display: flex;
-    text-align: center;
-    margin-left: 33%;
-}
-.line{
-    border-left :1px solid #808080;
-    height: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-
-
 #main_field {
-    width: 80%;
-    padding: 3% 5% 3% 5%;
-    border-radius: 10px;
-    margin: 2% 0 2% 10% ;
-    border: 1px solid #ff7979;
+	border: 1px solid #ff7979;
+	border-radius: 10px;
+	padding-top: 30px;
+	margin: 3% 20% 10px 20%;
 }
 #transfer_list_field {
-    width: 100%;
-    padding: 3% 5% 3% 5%;
-    border-radius: 10px;
-    margin: 2% 0 2% 0%;
-    border: 1px solid #ff7979;
+	border: 1px solid #ff7979;
+	border-radius: 10px;
+	padding-top: 30px;
+	margin: 3% 10% 10px 10%;
 }
-#transfer_list_money {
-    display: flex;
-    gap: 60%;
-}
+
 #mytransfer {
-    width: 100%;
-    padding: 3% 2% 3% 5%;
-    border-radius: 10px;
-    margin: 2% 0% 2% 0%;
-    border: 1px solid #ff7979;
+	border: 1px solid #ff7979;
+	border-radius: 10px;
+	padding-top: 30px;
+	margin: 3% 10% 5% 10%;
 }
+
 legend {
     margin-top: 10px;
     margin-bottom: 15px;
     text-align: center;
     font-size: 40px;
 }
+
 #bank_list_h3 {
     font-size: 20px;
     margin : 0 0 0 0;
 }
+
 #mytransfer_h3 {
     font-size: 18px;
     
 }
+
 h4 {
     font-size: 15px;
     color: #808080;
 }
-#transfer_money {
-    display: flex;
-    gap: 45%;
+
+.transfer_list_money {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 1fr;
 }
+
 #mytransfer_money {
     font-size: 25px;
+}
+
+#transfer_money {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 1fr;
 }
