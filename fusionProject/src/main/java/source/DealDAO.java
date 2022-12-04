@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -163,6 +164,17 @@ public class DealDAO {
 		}
 		
 		return list;
+	}
+	public String replace(String bankNumber) {
+		StringBuilder str = new StringBuilder(bankNumber);
+		str.insert(4,"-");
+		str.insert(8,"-");
+		return str.toString();
+	}
+	public String comma(int balance) {
+		DecimalFormat decFormat = new DecimalFormat("#,###");
+		String val =  decFormat.format(balance);
+		return val;
 	}
 
 }
