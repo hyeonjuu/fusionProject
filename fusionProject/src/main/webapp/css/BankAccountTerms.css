@@ -24,8 +24,8 @@ ul {
 }
 
 .clearfix {
-    font-size: 27px;
-    margin-left: 60px;
+    font-size: 15px;
+    margin-left: 18%;
 }
 
 .clearfix > li {
@@ -39,7 +39,7 @@ ul {
 }
 
 textarea {
-    margin-left: 100px;
+    margin-left: 23%;
     width: 50%;
     height: 120px;
     resize: none;
@@ -60,6 +60,20 @@ input {
     border: none;
     margin-left: 120px;
 }
-radio.checkRadio {
-	margin-left: 50%;
+#checkradio {
+	margin-left: 23%;
+}
+
+label.radio {
+	display: inline;
+}
+
+button.textarea {
+	margin-left: 23%;
+	width: 50%;
+	height: 40px;
+	text-align: left;
+	font-size: 15px;
+	background-color: #ffffff;
+	border: 1px solid #000000;
 }
