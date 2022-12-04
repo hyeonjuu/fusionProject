@@ -46,6 +46,7 @@
 									<th>작성일자</th>
 								</tr>
 							</thead>
+							<tbody style="border-top: none">
 							<%
 							PostDAO postDAO = new PostDAO();
 							ArrayList<Post> list = postDAO.getPostList("news", pageNumber);
@@ -54,7 +55,7 @@
 								String title = post.getTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>");
 								
 								%>
-							<tbody>
+							
 								<tr>
 									<td><%=post.getNo()%></td>
 									<td><%=post.getWriter() %></td>

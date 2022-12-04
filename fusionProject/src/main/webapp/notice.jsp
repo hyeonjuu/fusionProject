@@ -45,13 +45,14 @@
 									<th>작성일자</th>
 								</tr>
 							</thead>
+							<tbody style="border-top: none">
 							<%
 							PostDAO postDAO = new PostDAO();
 							ArrayList<Post> list = postDAO.getPostList("notice", pageNumber);
 							for (int i = 0; i < list.size(); i++) {
 								Post post = list.get(i);
 							%>
-							<tbody>
+							
 								<tr>
 									<td><%=post.getNo()%></td>
 									<td><%=post.getWriter()%></td>

@@ -56,14 +56,6 @@
 	    }
 	}
 	
-	function phone(){
-		$(document).on("keyup", "#tel", function() { 
-			$(this).val( $(this).val().replace(/[^0-9]/g, "").replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/,"$1-$2-$3").replace("--", "-") );
-		});
-	}
-
-
-
 	function check(){
 		
 	    var form = document.getElementById("form");
@@ -132,7 +124,7 @@
 		<div class="signup">
 			<fieldset>
 				<legend>회원가입</legend>
-				<form action="signUpProcess.jsp" method="post" id = "form" name="member" onsubmit="check()">
+				<form action="signUpProcess.jsp" method="post" id = "form" name="member" onsubmit="return check()">
 					<div class="join_content">
 						<div class="join_row_group">
 							<h3 class="join_title">

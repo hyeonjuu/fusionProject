@@ -15,6 +15,44 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="css/SignUpTerms.css?after">
 <link rel="stylesheet" href="css/basic.css?after">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	$("#chkAll").click(function(){
+
+	    if($(this).is(":checked")){ //대상이 체크 되어 있을 때
+	    
+	    	//모든 체크박스 체크
+	        $(".chk").attr("checked", true);
+	        
+	    }else{ //대상이 체크 해제 되어 있을 때
+	    
+	    	//모든 체크박스 체크해제
+	        $(".chk").attr("checked", false);
+	        
+	    }
+	});
+	
+	$("#go").click(function(){    
+        if($("#chk1").is(":checked") == false){
+            alert("모든 약관에 동의하셔야합니다.");
+            return;
+        }else if($("#chk2").is(":checked") == false){
+            alert("모든 약관에 동의하셔야합니다.");
+            return;
+        }else{
+            $("#joinForm").submit();
+        }
+    });
+
+
+	
+ });
+
+    
+</script>
 </head>
 
 
@@ -28,11 +66,11 @@
 		<div class="signupterms">
 			<fieldset>
 				<legend>계좌개설</legend>
-				<form action="#" method="post" name="member" id="joinForm">
+				<form action="signUp.jsp" method="post" name="member" id="joinForm">
 					<ul class="join_box">
 						<li class="checkBox check01">
 							<ul class="clearfix">
-								<li class="checkBtn"><input type="checkbox" name="chk">
+								<li class="checkBtn"><input type="checkbox" id="chk1"class="chk" name="chk">
 								</li>
 								<li>[필수] 개혁은행 이용약관 동의</li>
 							</ul> <textarea name="" id="">
@@ -42,7 +80,7 @@
 						</li>
 						<li class="checkBox check02">
 							<ul class="clearfix">
-								<li class="checkBtn"><input type="checkbox" name="chk">
+								<li class="checkBtn"><input type="checkbox" id="chk2" class="chk" name="chk">
 								</li>
 								<li>[필수] 개인정보 수집 및 이용 동의</li>
 							</ul> <textarea name="" id="">
@@ -51,7 +89,7 @@
 						</li>
 						<li class="checkBox check03">
 							<ul class="clearfix">
-								<li class="checkAllBtn"><input type="checkbox" name="chk">
+								<li class="checkAllBtn"><input type="checkbox" id="chkAll" class="chk" name="chk">
 								</li>
 								<li>개혁은행 이용약관, 개인정보 수집 및 이용에 모두 동의합니다.</li>
 							</ul>
@@ -59,7 +97,7 @@
 					</ul>
 					<ul class="footBtwrap clearfix">
 						<li><button type="button" class="fpmgBt1" onclick="location.href='main.jsp'">취소</button></li>
-						<li><button type="button" class="fpmgBt2" onclick="location.href='signUp.jsp'">확인</button></li>
+						<li><button type="button" class="fpmgBt2" id="go" >확인</button></li>
 					</ul>
 				</form>
 			</fieldset>
