@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -180,9 +181,8 @@
 									<label for="gender">성별</label>
 								</h3>
 								<div class="ps_box gender_code">
-									<label><input type="radio" name="gender" value="male">
-										남 </label> <label><input type="radio" name="gender"
-										value="female"> 여 </label>
+									<label class="male"><input type="radio" name="gender" value="male">남 </label>
+									<label class="female"><input type="radio" name="gender" value="female"> 여 </label>
 								</div>
 							</div>
 							<!--이메일-->

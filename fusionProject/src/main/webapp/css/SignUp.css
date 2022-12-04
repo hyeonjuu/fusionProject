@@ -86,7 +86,20 @@ input.gender-code {
 	margin-left: 20%;
 }
 
-label.gender {
-	display: inline;
+label.male {
+	margin-left: 20%;
+	display: flex;
 }
 
+label.female {
+	margin-left: 2%;
+	display: flex;
+}
+
+p#available {
+	margin-left: 20%;
+}
+
+.gender_code {
+	display: flex;
+}
