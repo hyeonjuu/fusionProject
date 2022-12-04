@@ -8,23 +8,19 @@ thead {
 	background-color: #ffb3b3;
 	color: #ffffff;
 	font-size: 30px;
-}
-
-tbody {
-	background-color: #ffffff;
-}
-
-th {
-	background-color: #ffffff;
+	border-width: none;
 }
 
 td {
 	margin: 2% 0 2% 0;
+	background-color: #ffffff;
 }
 
 table {
 	margin-top: 5%;
 	text-align: center;
+	border-collapse: inherit;
+	border: none;
 }
 
 input.btn-primary {
@@ -32,4 +28,8 @@ input.btn-primary {
 	float: right;
 	background-color: #ff7979;
 	color: #ffffff;
+}
+
+.table {
+	box-shadow: white;
 }

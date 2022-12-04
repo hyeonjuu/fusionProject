@@ -14,7 +14,8 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/basic.css">
+<link rel="stylesheet" href="css/basic.css?after">
+<link rel="stylesheet" href="css/write.css?after">
 </head>
 
 <body>
@@ -38,13 +39,10 @@
 		<div class="container">
 			<div class="row">
 				<form method="post" action="updateProcess.jsp?no=<%=postNo%>&category=<%=category%>">
-					<table class="table table-striped"
-						style="text-align: center; border: 1px solid #dddddd">
+					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th colspan="2"
-									style="background-color: #eeeeee; text-align: center;">게시글 수정하기
-								</th>
+								<th class="thead_th">게시글 수정하기</th>
 							</tr>
 						</thead>
 						<tbody>
