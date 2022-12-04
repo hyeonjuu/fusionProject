@@ -10,7 +10,9 @@
     <title>회원가입 완료 페이지</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/SignUpWelcome.css">
+    <link rel="stylesheet" href="css/SignUpWelcome.css">
+    <link rel="stylesheet" href="css/basic.css">
+    
 </head>
 <body>
 <!--header-->
@@ -26,13 +28,13 @@
                     <span id="t_bottom">환영합니다!</span>
                 </div>
                 <div class="middle">
-                    <span id="m">안녕하세요. ??? 회원님</span>
+                    <span id="m">안녕하세요. </span>
                 </div>
-                <div class="bottom">
-                    <span id="b">개혁은행에 가입해 주셔서 감사합니다. <br> 회원님의 정보는 철저한 보안 아래 안전하게 유지됩니다.</span>
+                <div class="middle">
+                    <span id="m">개혁은행에 가입해 주셔서 감사합니다. <br> 회원님의 정보는 철저한 보안 아래 안전하게 유지됩니다.</span>
                 </div>
                 <div class="btn">
-                    <button class="mainBtn">메인화면으로</button>
+                    <button type="button" class="mainBtn">메인화면으로</button>
                     <button class="loginBtn">로그인하기</button>
                 </div>
             </form>

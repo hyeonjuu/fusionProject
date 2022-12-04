@@ -19,7 +19,38 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="css/basic.css?after">
 <link rel="stylesheet" href="css/Transfer.css?after">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
 
+$(document).ready(function(){
+	var pwdReg = RegExp(/^[0-9]{4}$/);
+	$("#sendpasswd").change(function(){
+		if(!pwdReg.test($("#sendpasswd").val())){
+        	alert("비밀번호는 숫자로만 4글자 입력하세요.");
+        	$("#sendpasswd").val("");
+            $("#sendpasswd").focus();
+            
+        }
+	})
+	
+	
+	$("#btn").click(function(){    
+        
+        if($("#sendpasswd").val() == ""){
+        	alert("비밀번호를 입력하세요.");
+            $("#sendpasswd").focus();
+            return;
+        }
+       	else{
+            $("#bankaccountwelcome").submit();
+        }
+    });
+
+
+	
+ });
+ </script>
 </head>
 
 <body>
@@ -113,11 +144,11 @@
 							</span>
 						</div>
 						<div class="btn">
-							<input type="submit" id="btn" class="mainBtn" value="이체하기">
+							<input type="button" id="btn" class="mainBtn" value="이체하기">
 						</div>
-					</div>
+						</div>
 					<!-- 이체하기 버튼 -->
-
+						
 				</form>
 			</fieldset>
 		</div>
@@ -129,10 +160,6 @@
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
 
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous"></script>
 
 </body>
 </html>

@@ -38,7 +38,7 @@
 	else{
 		script.println("<script>");
 		script.println("alert('가입 성공')");
-		script.println("location.href='login.jsp'");
+		script.println("location.href='signUpWelcome.jsp'");
 		script.println("</script>");
 			
 		

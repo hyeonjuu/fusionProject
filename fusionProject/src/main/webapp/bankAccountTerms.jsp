@@ -13,7 +13,40 @@
     <link rel="stylesheet" href="css/BankAccountTerms.css?after">
     <link rel="stylesheet" href="css/basic.css?after">
 </head>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
 
+$(document).ready(function(){
+	
+	$("#go").click(function(){    
+        if($("#chk1").is(":checked") == false){
+            alert("모든 약관에 동의하셔야합니다.");
+            return;
+        }else if($("#chk2").is(":checked") == false){
+            alert("모든 약관에 동의하셔야합니다.");
+            return;
+        }else if($("#chk3").is(":checked") == false){
+            alert("모든 약관에 동의하셔야합니다.");
+            return;
+        }else if($("#chk4").is(":checked") == false){
+            alert("보이스 피싱이 의심됩니다. 다시 한 번 확인해 주세요.");
+            return;
+        }else if($("#chk5").is(":checked") == false){
+            alert("보이스 피싱이 의심됩니다. 다시 한 번 확인해 주세요.");
+            return;
+        }else if($("#chk6").is(":checked") == false){
+            alert("모든 약관에 동의하셔야합니다.");
+            return;
+        }else{
+            $("#bankaccountterms").submit();
+        }
+    });
+
+
+	
+ });
+</script>
 <body>
 <!--header-->
     <div class="main">
@@ -23,12 +56,12 @@
     <div class="bankaccountterms">
         <fieldset>
             <legend>계좌개설</legend>
-            <form action="#" method="post" name="member" id="bankaccountterms">
+            <form action="bankAccountSignUp.jsp" method="post" name="member" id="bankaccountterms">
                 <ul class="join_box">
                     <li class="checkBox check01">
                         <ul class="clearfix">
                             <li class="checkBtn">
-                                <input type="checkbox" name="chk">
+                                <input type="checkbox" name="chk" id="chk1">
                             </li>
                             <li>약관 및 상품 설명서</li>
                         </ul>
@@ -40,7 +73,7 @@
                     <li class="checkBox check02">
                         <ul class="clearfix">
                             <li class="checkBtn">
-                                <input type="checkbox" name="chk">
+                                <input type="checkbox" name="chk" id="chk2">
                             </li>
                             <li>불법 및 탈법 차명거래 금지 설명 확인</li>
                         </ul>
@@ -51,7 +84,7 @@
                     <li class="checkBox check03">
                         <ul class="clearfix">
                             <li class="checkBtn">
-                                <input type="checkbox" name="chk">
+                                <input type="checkbox" name="chk" id="chk3">
                             </li>
                             <li>[필수] 예금자 보호법</li>
                         </ul>
@@ -64,7 +97,7 @@
                             <li>타인으로부터 통장대여 요청을 받은 적이 있습니까?</li>
                         </ul>
                         <div id="checkradio">
-                            <label class="radio"><input type="radio" name="checkask" value="no">아니요</label>
+                            <label class="radio"><input type="radio" name="checkask" value="no" id="chk4">아니요</label>
                             <label class="radio"><input type="radio" name="checkask" value="yes">예</label>
                         </div>
                     </li>
@@ -73,21 +106,21 @@
                             <li>타인으로부터 신용등급 상향, 대출 등의 목적으로<br>통장개설 등 금융거래요청 받은 사실이 있습니까?</li>
                         </ul>
                         <div id="checkradio">
-                            <label class="radio"><input type="radio" name="checkask2" value="no">아니요</label>
+                            <label class="radio"><input type="radio" name="checkask2" value="no" id="chk5">아니요</label>
                             <label class="radio"><input type="radio" name="checkask2" value="yes">예</label>
                         </div>
                     </li>
                     <li class="checkBox check06">
                         <ul class="clearfix">
                             <li class="checkAllBtn">
-                                <input type="checkbox" name="chk">
+                                <input type="checkbox" name="chk" id="chk6">
                             </li>
                             <li>약관 및 상품 설명서를 제공받고 그 내용을 충분히<br>이해하며 본 상품에 가입함을 확인합니다.</li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="footBtwrap clearfix">
-                    <li><button class="fpmgBt1">다음</button></li>
+                    <li><button type="button" id="go" class="fpmgBt1">다음</button></li>
                 </ul>
             </form>
         </fieldset>

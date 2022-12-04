@@ -59,6 +59,51 @@ p {
 	margin-top: 5px;
 }
 </style>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	var pwdReg = RegExp(/^[0-9]{4}$/);
+	$("#password").change(function(){
+		if(!pwdReg.test($("#password").val())){
+        	alert("비밀번호는 숫자로만 4글자 입력하세요.");
+        	$("#password").val("");
+            $("#password").focus();
+            
+        }
+	})
+	$("#pwdChk").change(function(){
+		if(!pwdReg.test($("#pwdChk").val())){
+        	alert("비밀번호는 숫자로만 4글자 입력하세요.");
+        	$("#pwdChk").val("");
+            $("#pwdChk").focus();
+            
+        }
+	})
+	
+	
+	$("#go").click(function(){    
+        
+        if($("#password").val() == ""){
+        	alert("비밀번호를 입력하세요.");
+            $("#password").focus();
+            return;
+        }
+        
+        if($("#password").val() != ($("#pwdChk").val())){
+            alert("비밀번호가 일치하지 않습니다.");
+            $("#pwdChk").focus();
+            return;
+        }else{
+            $("#form").submit();
+        }
+    });
+
+
+	
+ });
+ </script>
 
 </head>
 
@@ -86,11 +131,11 @@ p {
 					<input type="text" class="form-control" name="id" maxlength="15"
 						size="10" style="width: 70%;" value ="<%=id%>">
 					<p>비밀번호</p>
-					<input type="password" class="form-control" name="password"
+					<input type="password" id="password" class="form-control" name="password"
 						maxlength="15" size="10"
 						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;">
 					<p>비밀번호 확인</p>
-					<input type="password" class="form-control" name="passwordChk"
+					<input type="password" id="pwdChk" class="form-control" name="passwordChk"
 						maxlength="15" size="10"
 						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;">
 					<p style="color: #15db15; font-size: 10px;">&nbsp;&nbsp;&nbsp;&nbsp;비밀번호가

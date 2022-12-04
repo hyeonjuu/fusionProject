@@ -16,6 +16,57 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="css/basic.css?after">
 <link rel="stylesheet" href="css/bankAccountSignUp.css?after">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	var pwdReg = RegExp(/^[0-9]{4}$/);
+	$("#password").change(function(){
+		if(!pwdReg.test($("#password").val())){
+        	alert("비밀번호는 숫자로만 4글자 입력하세요.");
+        	$("#password").val("");
+            $("#password").focus();
+            
+        }
+	});
+	$("#pwdChk").change(function(){
+		if(!pwdReg.test($("#pwdChk").val())){
+        	alert("비밀번호는 숫자로만 4글자 입력하세요.");
+        	$("#pwdChk").val("");
+            $("#pwdChk").focus();
+            
+        }
+	})
+	
+	
+	$("#go").click(function(){    
+        if($("#chk1").is(":checked") == false){
+            alert("다시 한 번 확인해 주세요.");
+            return;
+        }else if($("#chk2").is(":checked") == false){
+            alert("다시 한 번 확인해 주세요.");
+            return;
+        }
+        if($("#password").val() == ""){
+        	alert("비밀번호를 입력하세요.");
+            $("#password").focus();
+            return;
+        }
+        
+        if($("#password").val() != ($("#pwdChk").val())){
+            alert("비밀번호가 일치하지 않습니다.");
+            $("#pwdChk").focus();
+            return;
+        }else{
+            $("#form").submit();
+        }
+    });
+
+
+	
+ });
+ </script>
 </head>
 
 <body>
@@ -27,7 +78,7 @@
 		<div class="signup">
 			<fieldset>
 				<legend>개인정보 입력</legend>
-				<form action="bankAccountProcess.jsp" method="post" name="ADMIN">
+				<form action="bankAccountProcess.jsp" method="post" name="ADMIN" id="form">
 					<div>
 						<p>직업구분</p>
 						<select class="form-control2" name="forWhy">
@@ -56,23 +107,23 @@
 					<div class="radio_div">
 						<p>거래자금이 본인 소유인가요?</p>
 						<input type="radio" name="own" class="form-radio1">아니요
-						<input type="radio" name="own" class="form-radio2"> 예 <br> <br>
+						<input type="radio" name="own" class="form-radio2" id="chk1"> 예 <br> <br>
 					</div>
 					<div class="radio_div">
 						<p>해외 납세 의무자인가요?</p>
-						<input type="radio" name="foreign" class="form-radio1">아니요
+						<input type="radio" name="foreign" class="form-radio1" id="chk2">아니요
 						<input type="radio" name="foreign" class="form-radio2"> 예 <br> <br>
 					</div>
 					<div>
 						<p>비밀번호</p>
-						<input type="password" class="form-control" name="password" maxlength="15" size="10"> <br>
+						<input type="password" id="password" class="form-control" name="password" maxlength="15" size="10"> <br>
 					</div>
 					<div>
 						<p>비밀번호 확인</p>
-						<input type="password" class="form-control" name="password" maxlength="15" size="10"> <br> <br>
+						<input type="password" id="pwdChk"class="form-control" name="passwordCheck" maxlength="15" size="10"> <br> <br>
 					</div>	
 					<div>
-						<input type="submit" class="btn btn-primary form-control" value="다음">
+						<input type="button" id="go" class="btn btn-primary form-control" value="개설하기">
 					</div>
 				</form>
 			</fieldset>

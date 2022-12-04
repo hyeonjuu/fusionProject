@@ -30,8 +30,8 @@
 		<!--main-->
 		<div class="bankaccountwelcome">
 			<fieldset>
-				<img src="" alt="QR코드">
-				<legend>상품 가입이 완료되었습니다.</legend>
+				<img src="img/welcomeBA.png" alt="QR코드">
+				<div class="field">
 				<form action="" method="post" name="member" id="bankaccountwelcome">
 					<!-- 신청인 -->
 					<div class="applicant">
@@ -73,6 +73,7 @@
 						</button>
 					</div>
 				</form>
+				</div>
 			</fieldset>
 		</div>
 		
