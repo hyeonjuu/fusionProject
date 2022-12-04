@@ -42,16 +42,16 @@
 				<form action="amendUserInfoProcess.jsp" method="post" name="modify">
 					<p>ID</p>
 					<input type="text" class="form-control" name="id" maxlength="15"
-						size="10" style="width: 70%;" value ="<%=member.getId()%>">
+						size="10" value ="<%=member.getId()%>">
 
 					<p>이메일</p>
 					<input type="email" class="form-control" name="email" size="10"
-						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;"value="<%=member.getEmail() %>" >
+						value="<%=member.getEmail() %>" >
 
 					<p>전화번호</p>
 					<input type="tel" class="form-control" name="tel"
 						size="10"
-						style="width: 70%; border-top: 0px; border-left: 0px; border-right: 0px; border-radius: 0;" value="<%=member.getTel()%>">
+						value="<%=member.getTel()%>">
 
                     <p>신용도</p>
                     <select class="form-control" name="rank">
@@ -64,8 +64,8 @@
 
                     <p>은행 계좌</p>
                      
-                	
-                    <select class="form-control" name="bankAccount">
+                	<div class="bankAccount_f">
+                		<select class="mybankAccount form-control" name="bankAccount">
                     <%
                     ArrayList<BankAccount> list = adminDAO.getUserAccountList(id);
                 	for (int i = 0; i < list.size(); i++) {
@@ -75,12 +75,12 @@
                     </select>
 					
                     <input type="submit" class="btn form-control" value="계좌 조회"
-                        style="width: 20%; margin-left: 25%; margin-bottom: 5%; background-color: #ff7979; color: #ffffff;"
                         formaction="userAccount.jsp">
+                	</div>
+                    
 					
 					<br> <br> <input type="submit"
-						class="btn btn-primary form-control" value="변경"
-						style="width: 20%; margin-left: 25%; margin-bottom: 5%;">
+						class="btn btn-primary form-control" value="변경">
 				</form>
 			</fieldset>
 		</div>
