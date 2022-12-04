@@ -70,7 +70,7 @@
                     </li>
                     <li class="checkBox check05">
                         <ul class="clearfix">
-                            <li>타인으로부터 신용등급 상향, 대출 등의 목적으로<br>통장개설 등 금융거래요청 받은 사실이 있습니까?</li>
+                            <li class="question">타인으로부터 신용등급 상향, 대출 등의 목적으로<br>통장개설 등 금융거래요청 받은 사실이 있습니까?</li>
                         </ul>
                         <div id="checkradio">
                             <label class="radio"><input type="radio" name="checkask2" value="no">아니요</label>
@@ -78,14 +78,14 @@
                         </div>
                     </li>
                     <li class="checkBox check06">
-                        <ul class="clearfix">
+                        <ul class="clearfix allCheckBtn">
                             <li class="checkAllBtn">
                                 <input type="checkbox" name="chk">
                             </li>
-                            <li>약관 및 상품 설명서를 제공받고 그 내용을 충분히<br>이해하며 본 상품에 가입함을 확인합니다.</li>
+                            <li class="question">약관 및 상품 설명서를 제공받고 그 내용을 충분히<br>이해하며 본 상품에 가입함을 확인합니다.</li>
                         </ul>
                     </li>
-                </ul>
+                </ul>         
                 <ul class="footBtwrap clearfix">
                     <li><button class="fpmgBt1">다음</button></li>
                 </ul>
