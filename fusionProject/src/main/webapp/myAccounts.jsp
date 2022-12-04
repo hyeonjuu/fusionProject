@@ -49,8 +49,8 @@
 				<!--총 계좌 목록-->
 				<fieldset id="bank_list_field">
 					<div id="bank_list_money">
-						<h3 id="bank_list_h3">총 <%= accounts %>개</h3>
-						<h1 id="mybank_money"><%=totalBalance %> 원</h1>
+						<p id="bank_list_h3">총 <%= accounts %>개</p>
+						<p id="mybank_money"><%=totalBalance %> 원</p>
 					</div>
 				</fieldset>
 				<!--계좌1-->
@@ -68,11 +68,11 @@
 					</div>
 					<div id="bank_money">
 						<div>
-							<h4><%=rs.getString("name") %></h4>
-							<h4><%=rs.getString("creationDate") %></h4>
+							<p><%=rs.getString("name") %></p>
+							<p><%=rs.getString("creationDate") %></p>
 						</div>
 						<div>
-							<h1 id="mybank_money"><%=balance %>원</h1>
+							<p id="mybank_money"><%=balance %>원</p>
 						</div>
 					</div>
 				</fieldset>
