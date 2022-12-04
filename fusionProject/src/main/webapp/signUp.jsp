@@ -27,6 +27,7 @@
 			$("#available").html('사용할 수 없는 아이디입니다.');
 			$("#available").css("color","#ff7979");
 			$("#btnJoin").attr("disabled",true);
+			$("#btnJoin").css("background","#797979");
 			$("#id").focus();
 	    }else{
 		
@@ -40,12 +41,14 @@
 					$("#available").html('사용할 수 없는 아이디입니다.');
 					$("#available").css("color","#ff7979");
 					$("#btnJoin").attr("disabled",true);
+					$("#btnJoin").css("background","#797979");
 					$("#id").focus();
 					
 				} else{
 					$("#available").html('사용할 수 있는 아이디입니다.');
 					$("#available").css("color","#15db15");
 					$("#btnJoin").attr("disabled",false);
+					$("#btnJoin").css("background","#ff7979");
 				} 
 			},
 			 error: function (request, status, error) {
