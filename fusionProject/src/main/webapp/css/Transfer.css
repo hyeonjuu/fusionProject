@@ -8,7 +8,7 @@ fieldset.main_field{
 	border: 1px solid #ff7979;
 	border-radius: 10px;
 	padding-top: 30px;
-	margin: 3% 20% 10px 20%;
+	margin: 3% 30% 10px 30%;
 }
 
 legend {
@@ -17,7 +17,7 @@ legend {
     text-align: center;
     font-size: 40px;
 }
-button {
+input.mainBtn {
 	margin-bottom: 5%;
     margin-left: 30%;
     margin-top: 5%;
@@ -55,10 +55,7 @@ select {
 label {
 	margin-top: 30px;
 	margin-left: 20%;
+	font-size: 18px;
 	
 }
 
-lable {
-	margin-top: 30px;
-	margin-left: 20%;
-}
