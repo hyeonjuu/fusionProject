@@ -69,7 +69,7 @@
 					<div id="user_bank">
 						<div>
 							<h3 id="mybank_h3"><%=userName %></h3>
-							<h3 id="mybank_h3"><%=baDAO.replace(bankNumber)%></h3>
+							<h3 id="mybank_h3"><%=baDAO.replace(bankNumber)%> | <%= rs.getString("status")%></h3>
 						</div>
 						<div id="dropdownmenu"></div>
 					</div>
