@@ -89,5 +89,15 @@ td.title_td {
 	height: 30px;
 	color: #ffffff;
 	margin-top: 2%;
-	float: right;
+}
+
+.user_search {
+	display: flex;
+	gap: 5px;
+}
+
+input.searchBtn {
+	border: none;
+	color: #ffffff;
+	background-color: #ff7979;
 }
