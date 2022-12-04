@@ -70,7 +70,7 @@
 		</div>
 
 		<div class="mainMenu">
-			<div class="box">
+			<div class="box1">
 				<div class="boxHeader1">
 					<h2 onclick="location.href='news.jsp'">새소식</h2>
 					<hr>
@@ -100,7 +100,7 @@
 				for (int i = 0; i < 5; i++) {
 					Post post = list.get(i);
 				%>
-					<li>
+					<li class="post_title">
 					<a href="postView.jsp?no=<%=post.getNo()%>&category=<%=post.getCategory()%>">
 					<%=post.getTitle() %></a>
 					</li>
