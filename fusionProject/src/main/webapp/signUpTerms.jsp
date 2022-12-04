@@ -65,7 +65,7 @@ $(document).ready(function(){
 		<!--main-->
 		<div class="signupterms">
 			<fieldset>
-				<legend>계좌개설</legend>
+				<legend>회원가입 이용약</legend>
 				<form action="signUp.jsp" method="post" name="member" id="joinForm">
 					<ul class="join_box">
 						<li class="checkBox check01">
@@ -73,7 +73,7 @@ $(document).ready(function(){
 								<li class="checkBtn"><input type="checkbox" id="chk1"class="chk" name="chk">
 								</li>
 								<li>[필수] 개혁은행 이용약관 동의</li>
-							</ul> <textarea name="" id="">
+							</ul> <textarea readonly name="" id="">
 여러분을 환영합니다.
 개혁은행 서비스를 이용해 주셔서 감사합니다. 본 약관은 다양한 개혁은행 서비스의 이용과 관련하여 개혁은행 서비스를 제공하는 개혁은행 주식회사(이하 '개혁은행')와 이를 이용하는 개혁은행 서비스 회원(이하 '회원') 또는 비회원과의 관계를 설명하며, 아울러 여러분의 개혁은행 서비스 이용에 도움이 될 수 잇는 융익한 정보를 포함하고 있습니다.
                         </textarea>
@@ -83,7 +83,7 @@ $(document).ready(function(){
 								<li class="checkBtn"><input type="checkbox" id="chk2" class="chk" name="chk">
 								</li>
 								<li>[필수] 개인정보 수집 및 이용 동의</li>
-							</ul> <textarea name="" id="">
+							</ul> <textarea readonly name="" id="">
 개인정보보호법에 따라 개혁은행에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
                         </textarea>
 						</li>
