@@ -71,7 +71,7 @@
                                         <td><%=member.getName()%></td>
                                         <td><%=member.getBirth() %></td>
                                         <td><%=member.getTel()%></td>
-                                        <td><%=member.getRank() %></td>
+                                        <td><%=member.getRank() %>성</td>
                                         
                                     </tr>
                                     

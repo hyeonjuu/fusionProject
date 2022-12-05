@@ -38,8 +38,8 @@
 				<!--총 계좌 목록-->
 				<fieldset id="transfer_list_field">
 					<div class="transfer_list_money">
-						<h3 id="transfer_list_h3 left_list"><%=dealDAO.replace(ba.getBankNumber()) %></h3>
-						<h1 id="transfer_money">잔액 : <%=dealDAO.comma(ba.getBalance()) %></h1>
+						<p id="transfer_number"><%=dealDAO.replace(ba.getBankNumber()) %></h3>
+						<p id="transfer_money">잔액 : <%=dealDAO.comma(ba.getBalance()) %></h1>
 					</div>
 				</fieldset>
 				<!--이체내역1-->
@@ -69,8 +69,8 @@
 							<h4><%=deal.getTransfertime() %></h4>
 						</div>
 						<div id="money">
-							<p id="mybank_money"> 금액 : <%=amount %></h1>
-							<p id="mybank_money"> 잔액 : <%=balance %></h1>
+							<p id="transfer_money"> 금액 : <%=amount %></h1>
+							<p id="transfer_money"> 잔액 : <%=balance %></h1>
 						</div>
 					</div>
 				</fieldset>

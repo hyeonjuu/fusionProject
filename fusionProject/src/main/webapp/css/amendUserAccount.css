@@ -3,6 +3,7 @@ fieldset.main_field {
 	border-radius: 10px;
 	padding-top: 30px;
 	margin: 3% 25% 10px 25%;
+	background:white;
 }
 
 legend {
@@ -27,7 +28,8 @@ input.form-control {
     border-right: none;
     border-bottom: 1px solid #dfdfdf;
     width: 55%;
-    margin: 2% 23% 0 0;
+    
+    margin: 2% 0 0 23%;
     font-size: 15px;
 }
 
@@ -59,4 +61,14 @@ input.btn-primary {
 	margin-left: 23%;
 	margin-bottom: 5%;
 	width: 55%;
+}
+
+input.btn-change{
+	margin: 2% 23% 0 0;
+	border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #dfdfdf;
+    width: 55%;
+    font-size: 15px;
 }

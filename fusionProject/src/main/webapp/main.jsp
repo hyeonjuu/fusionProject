@@ -75,26 +75,26 @@
 					<h2 onclick="location.href='news.jsp'">새소식</h2>
 					<hr>
 				</div>
-				<ul>
+				<ul class="post">
 				<%
 				PostDAO postDAO = new PostDAO();
 				ArrayList<Post> list = postDAO.getPostList("news", 1);
 				for (int i = 0; i < 5; i++) {
 					Post post = list.get(i);
 				%>
-					<li>
+					<li class="post_title">
 					<a href="postView.jsp?no=<%=post.getNo()%>&category=<%=post.getCategory()%>">
 					<%=post.getTitle() %></a>
 					</li>
 					<%} %>
 				</ul>
 			</div>
-			<div class="box">
+			<div class="box1">
 				<div class="boxHeader2">
 					<h2 onclick="location.href='notice.jsp'">공지사항</h2>
 					<hr>
 				</div>
-				<ul>
+				<ul class="post">
 				<%
 				list = postDAO.getPostList("notice", 1);
 				for (int i = 0; i < 5; i++) {
@@ -107,18 +107,18 @@
 				<% } %>
 				</ul>
 			</div>
-			<div class="box">
+			<div class="box1">
 				<div class="boxHeader3">
 					<h2 onclick="location.href='qna.jsp'">QnA</h2>
 					<hr>
 				</div>
-				<ul>
+				<ul class="post">
 				<%
 				list = postDAO.getPostList("qna", 1);
 				for (int i = 0; i < 5; i++) {
 					Post post = list.get(i);
 				%>
-					<li>
+					<li class="post_title">
 					<a href="postView.jsp?no=<%=post.getNo()%>&category=<%=post.getCategory()%>">
 					<%=post.getTitle() %></a>
 					</li>

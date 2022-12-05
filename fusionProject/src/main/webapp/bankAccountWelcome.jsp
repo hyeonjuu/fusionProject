@@ -1,3 +1,5 @@
+<%@page import="source.BankAccountDAO"%>
+<%@page import="source.BankAccount"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,6 +27,8 @@
 		String bankNumber = (String)request.getAttribute("bankNumber"); 
 		String bank = (String)request.getAttribute("bank"); 
 		String date = (String)request.getAttribute("date"); 
+		BankAccountDAO baDAO = new BankAccountDAO();
+		
 
 	%>
 		<!--main-->
@@ -54,7 +58,7 @@
 							<h3 class="title">
 								<label>계좌번호</label>
 							</h3>
-							<span class="accountNum"> <input type="text" value="<%=bankNumber%>">
+							<span class="accountNum"> <input type="text" value="<%=baDAO.replace(bankNumber)%>">
 							</span>
 						</div>
 					</div>

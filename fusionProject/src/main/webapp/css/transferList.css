@@ -34,14 +34,14 @@ legend {
 
 #mytransfer_h3 {
     font-size: 18px;
-    margin-left: 3%;
+    margin-left: 10px;
     
 }
 
 h4 {
     font-size: 15px;
     color: #808080;
-    margin-left: 3%;
+    margin-left: 10px;
 }
 
 .transfer_list_money {
@@ -60,6 +60,9 @@ h4 {
 	grid-template-columns: 1fr;
 	justify-content: end;
 }
+p#transfer_number{
+	margin-left:10px;
+}
 
 .transfer_list_h3 {
 	margin-left: 3%;
@@ -67,9 +70,12 @@ h4 {
 }
 
 #money {
-	margin-right: 5%;
+	/* margin-right: 5%; */
 }
 
 p#transfer_money {
-	margin-right: 20%;
+	margin-right: 10px;
+}
+p#mybank_money{
+	margin-right:10px;
 }

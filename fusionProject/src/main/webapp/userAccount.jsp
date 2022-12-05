@@ -68,7 +68,7 @@
                                 %>
 								
 									<tr onclick="window.open('bankAccountStatus.jsp?bankNumber=<%=ba.getBankNumber() %>','popup',
-							            'width=400, height=300, top=200, left=50, scrollbars=0, toolbar=0, menubar=no');">
+							            'width=400, height=300, top=200, left=50,status=no,resizable=no,location = no, scrollbars=0, toolbar=0, menubar=no');">
 										<td><%=i+1 %></td>
 										<td><%=adminDAO.replace(ba.getBankNumber())%></td>
 										<td><%=adminDAO.comma(ba.getBalance()) %></td>

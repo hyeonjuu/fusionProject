@@ -13,7 +13,6 @@ legend {
 fieldset.middle_field {
 	width: 80%;
 	padding: 3% 10px 3% 10px;
-	border-top: 1px solid #808080;
 	border-bottom: 1px solid #808080;
 }
 
@@ -24,6 +23,6 @@ button {
 	margin-top: 40px;
 }
 
-sapn.title_text {
-	font-size: 25px;
+span.title_text {
+	font-size: 30px;
 }

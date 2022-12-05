@@ -75,8 +75,8 @@
 					</div>
 					<div id="bank_money">
 						<div>
-							<p><%=rs.getString("name") %></p>
-							<p><%=rs.getString("creationDate") %></p>
+							<p class="text1"><%=rs.getString("name") %></p>
+							<p class="text"><%=rs.getString("creationDate") %></p>
 						</div>
 						<div>
 							<p id="mybank_money"><%=balance %>원</p>

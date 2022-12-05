@@ -8,7 +8,7 @@ fieldset.main_field{
 	border: 1px solid #ff7979;
 	border-radius: 10px;
 	padding-top: 30px;
-	margin: 3% 30% 10px 30%;
+	margin: 3% 25% 10px 25%;
 }
 
 legend {
@@ -19,7 +19,6 @@ legend {
 }
 input.mainBtn {
 	margin-bottom: 5%;
-    margin-left: 30%;
     margin-top: 5%;
     width: 485px;
     height: 50px;
@@ -29,8 +28,11 @@ input.mainBtn {
     font-size: 18px;
     color: #ffffff;
 }
+.btn{
+	margin-left:12%;
+}
 
-input{
+input.text{
     border-top: none;
     border-left: none;
     border-right: none;

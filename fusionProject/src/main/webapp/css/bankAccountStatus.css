@@ -1,5 +1,4 @@
 fieldset.main_field {
-	width: 30%;
 	height: 200px;
 	border: 2px solid #ff7979;
 }
@@ -27,4 +26,6 @@ radio.checkRadio {
 #radioList {
 	margin-left: 5%;
 }
-
+#accountstatus{
+	margin-top: 20px;
+}

@@ -109,9 +109,10 @@
 						<h3>
 							<label>비밀번호 입력</label>
 						</h3>
-						<span> <input type="password" id="sendpasswd" maxlength="4"
+						<span> <input type="password" class="text" id="sendpasswd" maxlength="4"
 							name="password">
 						</span>
+						</div>
 						<!-- 받는 은행 및 받는 분 표기 -->
 						<div class="middle">
 							<div class="middle1">
@@ -128,7 +129,7 @@
 								<h3 class="title">
 									<label>받는 분 계좌번호</label>
 								</h3>
-								<span class="openingDate_main"> <input type="text"
+								<span class="openingDate_main"> <input type="text" class="text"
 									name="target">
 								</span>
 							</div>
@@ -136,7 +137,7 @@
 								<h3 class="title">
 									<label>받는 분 표기</label>
 								</h3>
-								<span class="accountNum"> <input type="text"
+								<span class="accountNum"> <input type="text" class="text"
 									id="accountNum" name="showMessage" value="<%=userName%>">
 								</span>
 							</div>
@@ -147,13 +148,14 @@
 							<h3>
 								<label>보낼 금액</label>
 							</h3>
-							<span> <input type="text" id="sendmoney" name="amount">
+							<span> <input type="text" id="sendmoney" class="text" name="amount">
 							</span>
 						</div>
-						<div class="btn">
+						
+					
+					<div class="btn">
 							<input type="button" id="btn" class="mainBtn" value="이체하기">
 						</div>
-					</div>
 					<!-- 이체하기 버튼 -->
 
 				</form>

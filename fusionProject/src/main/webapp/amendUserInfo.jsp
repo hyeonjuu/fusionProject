@@ -48,12 +48,13 @@
 
 		<!--main-->	
 		<div class="amenduseraccount">
-			<fieldset>
+			<fieldset class="main_field">
+			
 				<legend><%=id %>님의 정보</legend>
 				<form action="amendUserInfoProcess.jsp" method="post" name="modify">
 					<p>ID</p>
 					<input type="text" class="form-control" name="id" maxlength="15"
-						size="10" value ="<%=member.getId()%>">
+						size="10" value ="<%=member.getId()%>" readonly>
 
 					<p>이메일</p>
 					<input type="email" class="form-control" name="email" size="10"
@@ -66,11 +67,11 @@
 
                     <p>신용도</p>
                     <select class="form-control" name="rank">
-                        <option value="1"<%=member.getRank()==1?"selected":"" %>>1</option>
-                        <option value="2"<%=member.getRank()==2?"selected":"" %>>2</option>
-                        <option value="3"<%=member.getRank()==3?"selected":"" %>>3</option>
-                        <option value="4"<%=member.getRank()==4?"selected":"" %>>4</option>
-                        <option value="5"<%=member.getRank()==5?"selected":"" %>>5</option>
+                        <option value="1"<%=member.getRank()==1?"selected":"" %>>1성</option>
+                        <option value="2"<%=member.getRank()==2?"selected":"" %>>2성</option>
+                        <option value="3"<%=member.getRank()==3?"selected":"" %>>3성</option>
+                        <option value="4"<%=member.getRank()==4?"selected":"" %>>4성</option>
+                        <option value="5"<%=member.getRank()==5?"selected":"" %>>5성</option>
                     </select>
 
                     <p>은행 계좌</p>
@@ -85,7 +86,7 @@
                         <%} %>
                     </select>
 					
-                    <input type="submit" class="btn form-control" value="계좌 조회"
+                    <input type="submit" class="btn btn-change" value="계좌 조회"
                         formaction="userAccount.jsp">
                 	</div>
                     
